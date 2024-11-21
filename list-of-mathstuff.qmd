@@ -43,23 +43,23 @@
 
  [**Example 1.21**](#inequality-is-a-total-order): Inequality is a total order\Pageref{inequality-is-a-total-order}
 
- [**Definition 1.22**](#absolute-value-1): Absolute value\Pageref{absolute-value-1}
+ [**Definition 1.22**](#principle-of-inducion): Principle of Inducion\Pageref{principle-of-inducion}
 
- [**Proposition 1.23**](#Proposition-1.23)\Pageref{Proposition-1.23}
+ [**Example 1.23**](#formula-for-summing-first-n-natural-numbers): Formula for summing first $n$ natural numbers\Pageref{formula-for-summing-first-n-natural-numbers}
 
- [**Lemma 1.24**](#lemma-absolute-value)\Pageref{lemma-absolute-value}
+ [**Example 1.24**](#bernoullis-inequality): Bernoulli’s inequality\Pageref{bernoullis-inequality}
 
- [**Corollary 1.25**](#Corollary-1.25)\Pageref{Corollary-1.25}
+ [**Definition 1.25**](#absolute-value-1): Absolute value\Pageref{absolute-value-1}
 
- [**Theorem 1.26**](#theorem-triangle-inequality): Triangle inequality\Pageref{theorem-triangle-inequality}
+ [**Proposition 1.26**](#Proposition-1.26)\Pageref{Proposition-1.26}
 
- [**Proposition 1.27**](#Proposition-1.27)\Pageref{Proposition-1.27}
+ [**Lemma 1.27**](#lemma-absolute-value)\Pageref{lemma-absolute-value}
 
- [**Definition 1.28**](#principle-of-inducion): Principle of Inducion\Pageref{principle-of-inducion}
+ [**Corollary 1.28**](#Corollary-1.28)\Pageref{Corollary-1.28}
 
- [**Example 1.29**](#formula-for-summing-first-n-natural-numbers): Formula for summing first $n$ natural numbers\Pageref{formula-for-summing-first-n-natural-numbers}
+ [**Theorem 1.29**](#theorem-triangle-inequality): Triangle inequality\Pageref{theorem-triangle-inequality}
 
- [**Example 1.30**](#bernoullis-inequality): Bernoulli’s inequality\Pageref{bernoullis-inequality}
+ [**Proposition 1.30**](#Proposition-1.30)\Pageref{Proposition-1.30}
 
  [**Definition 2.1**](#binary-operation): Binary operation\Pageref{binary-operation}
 

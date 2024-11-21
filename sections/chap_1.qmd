@@ -31,24 +31,19 @@ $$
 
 3. Square the equation to get
 $$
- \frac{m^2}{n^2} = 2 \,.
-$$ {#eq-contradiction-root-2-2}
-
-
-4.  Equation (@eq-contradiction-root-2-2) implies 
-$$
+\frac{m^2}{n^2} = 2 \quad \implies \quad
 m^2 = 2 n^2 \,.
-$$ {#eq-contradiction-root-2-3}
+$${#eq-contradiction-root-2-3}
 Therefore the integer $m^2$ is an even number. 
 
 
-5. Since $m^2$ is an even number, it follows that also $m$ is an even number. Then there exists $p \in \N$ such that 
+4. Since $m^2$ is an even number, it follows that also $m$ is an even number. Then there exists $p \in \N$ such that 
 $$
 m = 2p \,.
 $$ {#eq-contradiction-root-2-4}
 
    
-6. Substitute (@eq-contradiction-root-2-4) in (@eq-contradiction-root-2-3) to get
+5. Substitute (@eq-contradiction-root-2-4) in (@eq-contradiction-root-2-3) to get
 $$
 m^2 = 2n^2 \, \implies \,  (2p)^2 = 2n^2 \, \implies \,  4 p^2 = 2 n^2
 $$
@@ -57,16 +52,13 @@ $$
 n^2 = 2p^2\,. 
 $${#eq-contradiction-root-2-5}
 
-7. We now make a series of observations:
+6. We now make a series of observations:
     * Equation (@eq-contradiction-root-2-5) says that $n^2$ is even.
-    * The same argument in Step 5 guarantees that also $n$ is even.
-    * We have already seen that $m$ is even.
-    * Therefore $n$ and $m$ are both even.  
-    * Hence $n$ and $m$ have $2$ as common factor.
-    * But Step 2 says that $n$ and $m$ have no common factors.
-    * **Contradiction**
+    * The same argument in Step 4 guarantees that also $n$ is even.
+    * Therefore $n$ and $m$ are both even, meaning they have $2$ as common factor.
+    * But Step 2 says that $n$ and $m$ have no common factors. **Contradiction**
 
-8. Our reasoning has run into a **contradiction**, stemming  from assumption (@eq-contradiction-root-2-false). Therefore (@eq-contradiction-root-2-false) is **FALSE**, and so 
+7. Our reasoning has run into a **contradiction**, stemming from assumption (@eq-contradiction-root-2-false). Therefore (@eq-contradiction-root-2-false) is **FALSE**, and so 
 $$
 \sqrt{2} \notin \Q \,
 $$
@@ -542,72 +534,6 @@ $$
 
 
 
-## Absolute value
-
-::: Definition
-### Absolute value 
-For $x \in \R$ we define its **absolute value** as the quantity
-$$
-|x| = 
-\begin{cases}
-x  & \text{ if } \, x \geq 0 \\
--x  & \text{ if } \, x < 0 
-\end{cases}
-$$
-:::
-
-::: Proposition
-For all $x \in \R$ they hold:
-
-1. $|x| \geq 0$.
-2. $|x| = 0$ if and only if $x = 0$.
-3. $|x| = |-x|$.
-
-:::
-
-
-::: {.Lemma #lemma-absolute-value}
-Let $x,y \in \R$. Then
-$$
-|x| \leq y  \iff -y \leq x \leq y \,.
-$$
-:::
-
-::: Corollary
-Let $x,y \in \R$. Then
-$$
-|x| < y  \iff -y < x < y \,.
-$$
-:::
-
-
-
-
-::: Theorem
-### Triangle inequality  {#theorem-triangle-inequality}
-
-For every $x, y \in \R$ we have
-$$
-| |x| - |y| | \leq |x+y| \leq |x| + |y| \,.
-$$ {#eq-triangle-inequality}
-:::
-
-
-
-
-::: Proposition
-For any $x,y \in \R$ it holds
-$$
-||x|-|y|| \leq |x-y| \leq |x|+|y|\,.
-$${#eq-triangle-inequality-bis}
-Moreover for any  $x,y,z \in \R$ it holds
-$$
-|x-y| \leq |x-z| + |z-y| \,.
-$$
-:::
-
-
-
 ## Induction
 
 
@@ -691,4 +617,72 @@ where we used that $kx^2 \geq 0$. Then (@eq-bernoulli-inequality) holds for $n=k
 
 By induction we conclude (@eq-bernoulli-inequality).
 
+:::
+
+
+
+
+
+## Absolute value
+
+::: Definition
+### Absolute value 
+For $x \in \R$ we define its **absolute value** as the quantity
+$$
+|x| = 
+\begin{cases}
+x  & \text{ if } \, x \geq 0 \\
+-x  & \text{ if } \, x < 0 
+\end{cases}
+$$
+:::
+
+::: Proposition
+For all $x \in \R$ they hold:
+
+1. $|x| \geq 0$.
+2. $|x| = 0$ if and only if $x = 0$.
+3. $|x| = |-x|$.
+
+:::
+
+
+::: {.Lemma #lemma-absolute-value}
+Let $x,y \in \R$. Then
+$$
+|x| \leq y  \iff -y \leq x \leq y \,.
+$$
+:::
+
+::: Corollary
+Let $x,y \in \R$. Then
+$$
+|x| < y  \iff -y < x < y \,.
+$$
+:::
+
+
+
+
+::: Theorem
+### Triangle inequality  {#theorem-triangle-inequality}
+
+For every $x, y \in \R$ we have
+$$
+| |x| - |y| | \leq |x+y| \leq |x| + |y| \,.
+$$ {#eq-triangle-inequality}
+:::
+
+
+
+
+::: Proposition
+For any $x,y \in \R$ it holds
+$$
+||x|-|y|| \leq |x-y| \leq |x|+|y|\,.
+$${#eq-triangle-inequality-bis}
+Moreover for any  $x,y,z \in \R$ it holds
+$$
+|x-y| \leq |x-z| + |z-y| \,.
+$$
 :::
