@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+  \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+  \draw[->] (0,-1.5) -- (0,1.5) node[above] {$x^2$};
+  
+  \draw[domain=-1:1,smooth,variable=\x,magenta, thick] plot ({\x},{(\x)^2});
+\end{tikzpicture}
+\end{document}

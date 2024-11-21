@@ -1,0 +1,552 @@
+::: {.content-hidden}
+$
+{{< include macros.tex >}}
+$
+:::
+
+
+
+# Real Numbers
+
+
+## Fields
+
+
+::: Definition
+### Binary operation
+A binary operation on a set $K$ is a function 
+$$
+\circ \ \colon K \times K \to K
+$$
+which maps the ordered pair $(x,y)$ into $x \circ y$.
+:::
+
+
+
+::: Definition
+Let $K$ be a set and $\circ \ \colon K \times K \to K$ be a binary operation on $K$. We say that:
+
+1. $\circ$ is **commutative** if 
+    $$
+    x \circ y = y \circ x \,, \quad \, \forall \, x,y \in K
+    $$
+2. $\circ$ is **associative** if 
+    $$
+    (x \circ y) \circ z = x \circ (y \circ z) \,, \quad \, \forall \, x,y,z \in K
+    $$
+3. An element $e \in K$ is called **neutral element** of $\circ$ if
+    $$ 
+    x \circ e = e \circ x = x \,, \quad \, \forall \, x \in K
+    $$
+4. Let $e$ be a neutral element of $\circ$ and let $x \in K$. An element $y \in K$ is called an **inverse** of $x$ with respect to $\circ$ if 
+$$
+x \circ y = y \circ x = e \,.
+$$
+:::
+
+
+
+
+::: Example
+
+**Question.** Let $K=\{0,1\}$ be a set with binary operation $\circ$ defined by the table
+$$
+\begin{array}{c|cc}
+ \circ & 0 & 1 \\ \hline
+ 0     & 1 & 1 \\
+ 1     & 0 & 0 \\
+\end{array}	
+$$
+
+1. Is $\circ$ commutative? Justify your answer.
+
+2. Is $\circ$ associative? Justify your answer.
+
+**Solution.**
+
+1. We have
+$$
+0 \circ 1 = 1 \, , \quad 1 \circ 0 = 0
+$$
+and therefore
+$$
+0 \circ 1 \neq 1 \circ 0 \,.
+$$
+showing that $\circ$ is not commutative.
+
+2. We have
+$$
+(0 \circ 1) \circ 1 = 1 \circ 1 = 0 \,,
+$$
+while 
+$$
+0 \circ (1 \circ 1) = 0 \circ 0 = 1 \,,
+$$
+so that 
+$$
+(0 \circ 1) \circ 1  \neq 0 \circ (1 \circ 1)\,.
+$$
+Thus, $\circ$ is not associative.
+
+:::
+
+
+
+
+::: Definition
+### Field
+
+Let $K$ be a set with binary operations of **addition** 
+$$
++\ \colon K \times K \to K \,, \quad (x,y) \mapsto x + y 
+$$
+and **multiplication** 
+$$
+\cdot\ \colon K \times K \to K \,, \quad (x,y) \mapsto x \cdot y  = xy \,. 
+$$ 
+We call the triple $(K, + , \cdot)$ a **field** if:
+
+1. The addition $+$ satisfies: $\,\forall \, x,y,z \in K$
+    - (A1) **Commutativity and Associativity**: 
+    $$
+    x+y = y+x 
+    $$
+    $$
+    (x+y)+z = x+(y+z) 
+    $$
+    - (A2) **Additive Identity**: There exists a **neutral element** in $K$ for $+$, which we call $0$. It holds:
+    $$ 
+    x + 0 = 0 + x = x 
+    $$
+    - (A3) **Additive Inverse**: There exists an **inverse** of $x$ with respect to $+$. We call this element the **additive inverse** of $x$ and denote it by $-x$. It holds
+    $$
+    x + (-x) = (-x) + x = 0 
+    $$
+
+2. The multiplication $\cdot$ satisifes: $\,\forall \, x,y,z \in K$
+    - (M1) **Commutativity and Associativity**: 
+    $$
+    x \cdot y = y \cdot x 
+    $$
+    $$
+    (x \cdot y) \cdot z = x \cdot (y \cdot z) 
+    $$
+    - (M2) **Multiplicative Identity**: There exists a **neutral element** in $K$ for $\cdot$, which we call $1$. It holds:
+    $$ 
+    x \cdot 1 = 1 \cdot x = x 
+    $$
+    - (M3) **Multiplicative Inverse**: If $x \neq 0$ there exists an **inverse** of $x$ with respect to $\cdot$. We call this element the **multiplicative inverse** of $x$ and denote it by $x^{-1}$. It holds
+    $$
+    x \cdot x^{-1} = x^{-1} \cdot x = 1 
+    $$
+
+3. The operations $+$ and $\cdot$ are related by 
+    - (AM) **Distributive Property**: $\,\forall \, x,y,z \in K$
+    $$
+    x \cdot (y + z) = (x \cdot y) + (y \cdot z) \,.
+    $$
+:::
+
+
+::: Theorem
+Consider the sets $\N$, $\Z$, $\Q$ with the usual operations $+$ and $\cdot$. We have:
+
+- $(\N, + , \cdot)$ is **not a field**.
+
+- $(\Z, + , \cdot)$ is **not a field**.
+
+- $(\Q, + , \cdot)$ **is a field**.
+
+
+:::
+
+
+
+
+
+
+::: Theorem
+
+Let $K$ with $+$ and $\cdot$ defined by
+$$
+\begin{array}{c|cc}
+ + & 0 & 1 \\ \hline
+ 0 & 0 & 1 \\
+ 1 & 1 & 0 \\
+\end{array}	
+\qquad \qquad
+\begin{array}{c|cc}
+\cdot & 0 & 1 \\ \hline
+    0 & 0 & 0 \\
+    1 & 0 & 1 \\
+\end{array}
+$$
+Then $(K,+,\cdot)$ is a field. 
+
+:::
+
+
+
+
+::: Proposition
+### Uniqueness of neutral elements and inverses
+
+Let $(K,+,\cdot)$ be a field. Then
+
+1. There is a unique element in $K$ with the property of $0$.
+2. There is a unique element in $K$ with the property of $1$.
+3. For all $x \in K$ there is a unique additive inverse $-x$.
+4. For all $x \in K$, $x \neq 0$, there is a unique multiplicative inverse $x^{-1}$.
+:::
+
+::: Proof
+1. Suppose that $0 \in K$ and $\widetilde{0} \in K$ are both neutral element of $+$, that is, they both satisfy (A2). Then 
+$$
+0 + \widetilde{0} = 0
+$$
+since $\widetilde{0}$ is a neutral element for $+$. Moreover
+$$
+\widetilde{0} + 0 = \widetilde{0}
+$$
+since $0$ is a neutral element for $+$. By commutativity of $+$, see property (A1), we have
+$$
+0 = 0 + \widetilde{0} = \widetilde{0} + 0 = \widetilde{0} \,,
+$$
+showing that $0 = \widetilde{0}$. Hence the neutral element for $+$ is unique.
+2. Exercise.
+3. Let $x \in K$ and suppose that $y, \widetilde{y} \in K$ are both additive inverses of $x$, that is, they both satisfy (A3). Therefore
+$$
+x + y = 0
+$$
+since $y$ is an additive inverse of $x$ and
+$$
+x + \widetilde{y} = 0 
+$$
+since $\widetilde{y}$ is an additive inverse of $x$. Therefore we can use commutativity and associativity and of $+$, see property (A1), and the fact that $0$ is the neutral element of $+$, to infer
+\begin{align*}
+y & = y + 0 = y + (x + \widetilde{y}) \\ 
+  & = (y + x) + \widetilde{y} = (x + y) + \widetilde{y} \\
+  & = 0 + \widetilde{y} = \widetilde{y} \,,    
+\end{align*}
+concluding that $y = \widetilde{y}$. Thus there is a unique additive inverse of $x$, and 
+$$
+y = \widetilde{y} = -x \,,
+$$
+with $-x$ the element from property (A3).
+4. Exercise.
+:::
+
+
+
+::: Definition
+Let $K$ be a set with binary operations $+$ and $\cdot$, and with an order relation $\leq$. We call $(K,+,\cdot,\leq)$ an **ordered field** if:
+
+1. $(K,+,\cdot)$ is a field
+
+3. There $\leq$ is of **total order** on $K$:  $\, \forall \, x, y, z \in K$ 
+    - (O1) **Reflexivity**: 
+    $$
+    x \leq x
+    $$ 
+    - (O2) **Antisymmetry**: 
+    $$
+    x \leq y \, \mbox{ and } \, y \leq x \,\, \implies \,\, x = y 
+    $$
+    - (O3) **Transitivity**: 
+    $$
+    x \leq y \,\, \mbox{ and } \,\, y \leq z \,\, \implies \,\, x = z 
+    $$
+    - (O4) **Total order**:  
+    $$
+    x \leq y \,\, \mbox{ or } \,\, y \leq x 
+    $$
+
+4. The operations $+$ and $\cdot$, and the total order $\leq$, are related by the following properties: $\, \forall x, y, z \in K$
+    - (AM) **Distributive**: Relates addition and multiplication via
+    $$
+    x \cdot (y + z) = x \cdot y + x \cdot z 
+    $$
+    - (AO) Relates addition and order with the requirement:
+    $$
+    x \leq y \,\, \implies \,\, x + z \leq y + z
+    $$
+    - (MO) Relates multiplication and order with the requirement:
+    $$
+    x \geq 0, \, y \geq 0  \,\, \implies \,\, x \cdot y  \geq 0
+    $$
+:::
+
+
+::: Theorem
+$(\Q,+,\cdot,\leq)$ is an **ordered field**.
+:::
+
+
+
+
+
+ 
+## Supremum and infimum
+
+
+::: Definition
+### Upper bound, bounded above, supremum, maximum
+
+Let $A \subseteq K$:
+
+1. We say that $b \in K$ is an **upper bound** for $A$ if
+$$
+a \leq b \,, \quad \forall \, a \in A \,.
+$$
+2. We say that $A$ is **bounded above** if there exists and upper bound $b \in K$ for $A$.
+
+3. We say that $s \in K$ is the **least upper bound** or **supremum** of $A$ if:
+    - $s$ is an upper bound for $A$,
+    - $s$ is the smallest upper bound of $A$, that is, 
+    $$
+    \mbox{If } \, b \in K \, \mbox{ is upper bound for } \, A \, \mbox{ then } \, s \leq b \,.  
+    $$
+    If it exists, the supremum is denoted by
+    $$
+    s = \sup \ A \,.
+    $$
+
+4. Let $A \subseteq K$. We say that $M \in K$ is the **maximum** of $A$ if:
+$$
+M \in A   \,\, \mbox{ and } \,\, a \leq M  \,, \, \forall a \in A \,.
+$$
+If it exists, we denote the maximum by
+$$
+M = \max A \,.
+$$
+
+:::
+
+
+
+::: Remark
+Note that if a set $A \subseteq K$ in **NOT** bounded above, then the supremum does not exist, as there are no upper bounds of $A$. 
+:::
+
+
+
+
+
+
+::: Proposition 
+### Relationship between Max and Sup {#proposition-max-sup}
+
+Let $A \subseteq K$. If the maximum of $A$ exists, then also the supremum exists, and
+$$
+\sup A = \max A \,.
+$$
+:::
+
+::: Definition
+### Upper bound, bounded below, infimum, minimum
+
+Let $A \subseteq K$:
+
+1. We say that $l \in K$ is a **lower bound** for $A$ if
+$$
+l \leq a \,, \quad \forall \, a \in A \,.
+$$
+2. We say that $A$ is **bounded below** if there exists a lower bound $l \in K$ for $A$.
+3. We say that $i \in K$ is the **greatest lower bound** or **infimum** of $A$ if:
+
+    - $i$ is a lower bound for $A$,
+    - $i$ is the largest lower bound of $A$, that is, 
+    $$
+    \mbox{If } \, l \in K \, \mbox{ is a lower bound for } \, A \, \mbox{ then } \, l \leq i \,.  
+    $$
+If it exists, the infimum is denoted by 
+$$
+i = \inf A \,.
+$$
+4. We say that $m \in K$ is the **minimum** of $A$ if:
+$$
+m \in A   \,\, \mbox{ and } \,\, m \leq a  \,, \, \forall a \in A \,.
+$$
+If it exists, we denote the minimum by
+$$
+m = \min A \,.
+$$
+:::
+
+
+
+::: Proposition
+Let $A \subseteq K$. If the minimum of $A$ exists, then also the infimum exists, and
+$$
+\inf A = \min A \,.
+$$  
+
+:::
+
+
+::: Proposition
+Let $A \subseteq K$. If $\inf A$ and $\sup A$ exist, then
+$$
+\inf A \leq a \leq \sup A \,, \quad \forall \, a \in A \,.
+$$
+:::
+
+
+::: Proposition
+### Relationship between sup and inf {#proposition-inf-sup}
+
+Let $A \subseteq K$. Define 
+$$
+- A := \{ - a \divider a \in A \} \,.
+$$
+They hold
+
+1. If $\sup A$ exists, then $\inf A$ exists and
+$$
+\inf(-A) = - \sup A \,.
+$$
+2. If $\inf A$ exists, then $\sup A$ exists and
+$$
+\sup(-A) = - \inf A \,.
+$$
+:::
+
+
+
+
+
+## Axioms of Real Numbers
+
+
+::: Definition
+### Completeness
+
+Let $(K,+,\cdot,\leq)$ be an ordered field. We say that $K$ is **complete** if it holds the property:
+
+- (AC) For every $A \subseteq K$ non-empty and bounded above 
+$$
+\sup A \in K \,.
+$$
+
+:::
+
+
+::: {.Theorem  #theorem-Q-not-complete}
+$\Q$ is not complete. In particular, there exists a set $A \subseteq \Q$ such that 
+
+- $A$ is non-empty,
+- $A$ is bounded above,
+- $\sup A$ does not exist in $\Q$. 
+
+One of such sets is, for example,
+$$
+A = \{ q \in \Q  \divider q \geq 0 \,, \,\, q^2 < 2 \} \,.
+$$
+
+:::
+
+
+
+
+
+::: Proposition
+Let $(K,+,\cdot,\leq)$ be a complete ordered field. Suppose that $A \subseteq K$ is non-empty and bounded below. Then 
+$$
+\inf A \in K\,.
+$$
+:::
+
+
+
+
+
+::: Definition
+### System of Real Numbers $\R$   {#definition-R}
+
+A system of Real Numbers is a set $\R$ with two operations $+$ and $\cdot$, and
+a total order relation $\leq$, such that
+
+
+- $(\R,+,\cdot, \leq)$ is an ordered field
+
+- $\R$ sastisfies the Axiom of Completeness   
+
+:::
+
+
+
+
+### Inductive sets
+
+::: Definition
+### Inductive set
+Let $S \subseteq \R$. We say that $S$ is an inductive set if they are satisfied:
+
+- $1 \in S$,
+- If $x \in S$, then $(x + 1) \in S$.
+
+:::
+
+
+::: Example
+
+**Question.** Prove the following:
+
+1. $\R$ is an inductive set.  
+
+2. The set $A=\{0,1\}$ is not an inductive set.  
+
+**Solution.**
+
+1. We have that $1 \in \R$ by axiom (M2). Moreover $(x + 1) \in \R$ for every $x \in \R$, by definition of sum $+$.
+
+2. We have $1 \in A$, but $(1 + 1) \notin A$, since $1 + 1 \neq 0$.
+
+:::
+
+
+::: Proposition
+
+Let $\mathcal{M}$ be a collection of inductive subsets of $\R$. Then
+$$
+S := \bigcap_{M \in \mathcal{M}} \, M 
+$$
+is an inductive subset of $\R$.
+
+:::
+
+
+::: Definition
+### Set of Natural Numbers  {#definition-natural-numbers}
+
+Let $\mathcal{M}$ be the collection of **all** inductive subsets of $\R$. 
+We define the set of natural numbers in $\R$ as 
+$$
+\N := \bigcap_{M \in \mathcal{M}} \, M \,.
+$$
+
+:::
+
+
+
+
+::: Proposition  
+### ${\N}_{\R}$ is the smallest inductive subset of $\R$   {#proposition-smallest-inductive}
+
+Let $C \subseteq \R$ be an inductive subset. Then
+$$
+\N \subseteq C \,.
+$$
+In other words, $\N$ is the smallest inductive set in $\R$.
+:::
+
+
+
+::: {.Theorem   #theorem-n-1} 
+
+Let $x \in \N$. Then
+$$
+x \geq 1 \,.
+$$
+
+:::

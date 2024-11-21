@@ -1,0 +1,1138 @@
+::: {.content-hidden}
+$
+{{< include macros.tex >}}
+$
+:::
+
+
+
+
+
+# Complex Numbers
+
+
+::: Definition
+### Complex Numbers
+
+The set of complex numbers $\C$ is defined as
+
+$$
+\C := \R + i \R  := \{x + i y  \divider x, y \in \R \} \,.
+$$
+For a complex number
+$$
+z = x + i y  \in \C
+$$
+we say that
+
+- $x$ is the **real part** of $z$, and denote it by 
+$$
+x = \Re (z)
+$$
+- $y$ is the **imaginary part** of $z$, and denote it by 
+$$
+y = \Im (z)
+$$
+
+We say that
+
+- If $\Re z = 0$ then $z$ is a **purely imaginary** number.
+- If $\Im z = 0$ then $z$ is a **real** number.
+
+:::
+
+
+::: Definition
+### Addition and multiplication in $\C$   {#definition-addition-C}
+
+Let $z_1,z_2 \in \C$, so that 
+$$
+z_1 = x_1 + i y_1 \,\,, \quad z_2 = x_2 + i  y_2 \,\, ,
+$$
+for some $x_1,x_2,y_1,y_2 \in \R$:
+
+1. The sum of $z_1$ and
+$z_2$ is
+$$
+z_1 + z_2 :=\left(x_{1}+x_{2}\right) + i  \left(y_{1}+y_{2}\right) \,.
+$$ 
+
+2. The multiplication of $z_1$ and $z_2$ is 
+\begin{align*}
+z_1 \cdot z_2 := \left(x_{1} \cdot x_{2} - y_{1} \cdot y_{2}\right) + i \left(x_{1} \cdot y_{2} + x_{2} \cdot y_{1} \right) \,,
+\end{align*}
+
+:::
+
+
+
+::: Example
+
+**Question.** Compute $zw$, where
+$$
+z =  -2+3 i \,, \quad w = 1- i \,.
+$$
+
+**Solution.** Using the definition we compute
+\begin{align*}
+z \cdot w & = (-2+3 i) \cdot (1 -  i) \\ 
+            & = (-2-(-3))+(2+3) i \\
+            & = 1 + 5 i \, .
+\end{align*}
+Alternatively, we can proceed formally: We just need to recall that
+$i^2$ has to be replaced with $-1$:
+\begin{align*}
+z \cdot w & = (-2+3 i) \cdot (1 -  i) \\ 
+            & = - 2 + 2i + 3i - 3 i^2  \\
+            & = (-2  + 3 ) + (  2 + 3 ) i \\
+            & = 1 + 5 i \, .
+\end{align*}
+
+:::
+
+
+
+::: Proposition
+### Additive inverse in $\C$  {#proposition-C-additive-inverse}
+
+The neutral element of addition in $\C$ is the number
+$$
+0 := 0 + 0 i \,.
+$$
+For any $z = x + i y \in \C$, the unique additive inverse is given by
+$$
+- z := -x - i y \,.
+$$
+
+
+:::
+
+
+::: Proposition
+### Multiplicative inverse in $\C$  {#proposition-C-multiplicative-inverse-bis}
+
+The neutral element of multiplication in $\C$ is the number
+$$
+1 := 1 + 0 i \,.
+$$
+For any $z = x + i y \in \C$, the unique multiplicative inverse is given by 
+$$
+z^{-1} := \frac{x}{x^{2}+y^{2}}+ i \, \frac{-y}{x^{2}+y^{2}} \,.
+$$
+
+:::
+
+
+::: Proof
+It is immediate to check that $1$ is the neutral element of 
+multiplication in $\C$. For the remaining part of the statement, set
+$$
+w := \frac{x}{x^{2}+y^{2}}+ i \, \frac{-y}{x^{2}+y^{2}} \,.
+$$
+We need to check that $z \cdot w = 1$
+\begin{align*}
+z \cdot w & = (x+i y) \cdot \left(\frac{x}{x^{2}+y^{2}}+ i \, \frac{-y}{x^{2}+y^{2}} \right) \\
+& = \left(\frac{x^{2}}{x^{2}+y^{2}} - \frac{y \cdot(-y)}{x^{2}+y^{2}}\right) + i \, \left(\frac{x \cdot(-y)}{x^{2}+y^{2}}+\frac{x y}{x^{2}+y^{2}}\right) \\
+& =1 \,,
+\end{align*}
+so indeed $z^{-1}=w$.
+
+:::
+
+
+
+::: Example
+
+**Question.** Let $z = 3 + 2 i$. Compute $z^{-1}$. 
+
+
+**Solution.** By the formula in Propostion \ref{proposition-C-multiplicative-inverse-bis} we immediately get
+$$
+z^{-1} = \frac{3}{3^{2}+2^{2}} +  \, \frac{-2}{3^{2}+2^{2}} \, i = 
+\frac{3}{13}-\frac{2}{13} \, i  \,.
+$$
+Alternatively, we can proceed formally:
+\begin{align*}
+(3+2 i)^{-1} & = \frac{1}{3+2 i} \\ 
+             & = \frac{1}{3+2 i} \, \frac{3-2 i}{3-2 i} \\
+             & = \frac{3-2 i}{3^2+2^2} \\
+             & = \frac{3}{13}-\frac{2}{13} i  \,,
+\end{align*}
+and obtain the same result.
+:::
+
+
+
+::: Theorem 
+
+$(\C,+, \cdot)$ is a field.
+
+:::
+
+
+
+::: Example
+
+**Question.** Let $w=1+i$ and $z=3-i$. Compute $\frac{w}{z}$.
+
+**Solution.** We compute $w/z$ using the two options we have:
+
+1. Using the formula for the inverse from Proposition \ref{proposition-C-multiplicative-inverse-bis} we compute
+\begin{align*}
+z^{-1} & = \frac{x}{x^{2}+y^{2}} + i \, \frac{-y}{x^{2}+y^{2}} \\
+       & = \frac{3}{3^2 + 1^2} - i \, \frac{-1}{3^2 + 1^2} \\
+       & = \frac{3}{10} + \frac{1}{10} \, i
+\end{align*}
+and therefore
+\begin{align*}
+\frac{w}{z} & = w \cdot z^{-1} \\
+            & = (1 + i) \, \left(  \frac{3}{10} + \frac{1}{10} \, i \right) \\
+            & = \left(\frac{3}{10}-\frac{1}{10}\right)+\left(\frac{1}{10}+\frac{3}{10}\right) i \\
+            & = \frac{2}{10}+\frac{4}{10} i \\
+            & = \frac{1}{5}+\frac{2}{5} i
+\end{align*}
+
+2. We proceed formally, using the 
+multiplication by $1$ trick. We have
+\begin{align*}
+\frac{w}{z} & = \frac{1+i}{3-i}  \\
+            & = \frac{1+i}{3-i} \frac{3+i}{3+i} \\
+            & = \frac{3-1+(3+1) i}{3^2+1^2} \\
+            & =\frac{2}{10}+\frac{4}{10} i \\
+            & = \frac{1}{5}+\frac{2}{5} i
+\end{align*}
+
+
+:::
+
+
+
+::: Definition 
+### Complex conjugate
+
+Let $z=x+iy$. We call the **complex conjugate** of $z$, denoted by $\bar{z}$, the complex number
+
+$$
+\bar{z}=x- i y \, .
+$$
+
+
+:::
+
+
+
+
+::: Theorem 
+
+For all $z_1, z_2 \in \mathbb{C}$ it holds:
+
+- $\overline{z_1 +  z_2 }=\overline{z_1}+\overline{z_2}$
+
+- $\overline{z_1 \cdot z_2}=\overline{z_1} \cdot \overline{z_2}$ 
+
+:::
+
+
+## The complex plane
+
+
+::: Definition
+### Modulus
+
+The **modulus** of a complex number $z=x+i y$ is defined by
+$$
+|z|: = \sqrt{x^{2}+y^{2}} \,.
+$$
+:::
+
+
+
+::: Definition
+### Distance in $\C$
+
+Given $z_1,z_2 \in \C$, we define the **distance** between $z_1$ and 
+$z_2$ as the quantity
+$$
+|z_1 - z_2| \,.
+$$
+
+:::
+
+
+::: Theorem
+
+Given $z_1,z_2 \in \C$, we have
+$$
+|z_1 - z_2|  = \sqrt{ (x_1 - x_2)^2 + (y_1 - y_2)^2 }  \,.
+$$
+
+:::
+
+
+
+::: Example
+
+**Question.** Compute the distance between 
+$$
+z = 2-4 i \,, \quad 
+w = -5+i \,.
+$$ 
+
+**Solution.**
+The distance is
+\begin{align*}
+|z- w|  & = |(2-4 i)-(-5+i)| \\
+        & = |7-5 i| \\
+        & =\sqrt{7^{2}+(-5)^{2}} \\
+        & =\sqrt{74}
+\end{align*}
+
+:::
+
+
+
+::: Theorem 
+
+Let $z, z_{1}, z_{2} \in \C$. Then
+
+1. $\left|z_1 \cdot z_2\right|=\left|z_{1}\right|\left|z_{2}\right|$
+
+2. $\left|z^{n}\right|=|z|^{n}$ for all $n \in \N$
+
+3. $z \cdot \bar{z}=|z|^{2}$
+
+:::
+
+
+
+::: Theorem 
+### Triangle inequality in $\C$ 
+
+For all $x, y, z \in \C$,
+
+1. $|x+y| \leq|x|+|y|$
+
+2. $|x-z| \leq|x-y|+|y-z|$
+
+:::
+
+
+
+
+
+::: Definition 
+### Argument
+
+Let $z \in \C$. The angle $\theta$ between the line connecting the origin and $z$ and the positive real axis is called the **argument** of $z$, and is denoted by
+$$
+\theta := \arg (z) \,.
+$$
+
+:::
+
+
+
+::: Example 
+We have the following arguments:
+\begin{align*}
+& \arg (1) = 0  & \quad & \arg (i) = \frac{\pi}{2}  \\
+& \arg (-1) = \pi   & \quad & \arg (-i) = -\frac{\pi}{2}  \\
+& \arg (1+i)=\frac{1}{4} \pi & \quad &  \arg (-1-i)=-\frac{3}{4} \pi
+\end{align*}
+
+:::
+
+
+
+::: Theorem  
+### Polar coordinates {#theorem-polar-coordinates}
+
+Let $z \in \C$ with $z = x + i y$ and $z \neq 0$. Then
+$$
+x = \rho \cos(\theta) \,, \quad y = \rho \sin(\theta) \,,
+$$
+where 
+$$
+\rho := |z| = \sqrt{x^2 + y^2} \,, \quad 
+\theta := \arg(z) \,.
+$$
+
+
+:::
+
+
+
+
+
+::: Definition 
+### Trigonometric form
+
+Let $z \in \mathbb{C}$. The trigonometric form of $z$ is
+$$
+z = |z| \left[ \cos (\theta)+i \sin (\theta) \right] \,,
+$$
+where $\theta = \arg(z)$.
+:::
+
+
+
+
+
+::: {.Example   #example-trigonometric-form} 
+
+**Question.** Suppose that $z \in \C$ has polar coordinates
+$$
+\rho = \sqrt{8}\,, \quad   \theta = \frac{3}{4} \pi \,.
+$$ 
+Therefore, the trigonometric form of $z$ is
+$$
+z = \sqrt{8}  \left[ \cos \left( \frac{3}{4} \pi \right) + i \sin \left( \frac{3}{4} \pi \right)   \right] \,.
+$$
+Write $z$ in cartesian form.
+
+**Solution.** We have
+\begin{gather*}
+x = \rho \cos (\theta) = \sqrt{8} \cos \left( \frac{3}{4} \pi \right) = - \sqrt{8} \cdot \frac{\sqrt{2}}{2} = -2 \\
+y = \rho \sin (\theta) = \sqrt{8} \sin \left( \frac{3}{4} \pi \right) = \sqrt{8} \cdot  \frac{\sqrt{2}}{2} = 2 \,.
+\end{gather*}
+Therefore, the cartesian form of $z$ is
+$$
+z = x + i y = - 2 + 2 i \,.
+$$
+
+:::
+
+
+::: Corollary
+### Computing $\arg(z)$   {#corollary-arg}
+
+Let $z \in \C$ with $z = x + i y$ and $z \neq 0$. Then
+$$
+\arg(z) = 
+\begin{cases}
+\arctan \left(  \dfrac{y}{x}   \right)  &  \,\, \mbox{ if }  x>0 \\
+\arctan \left(  \dfrac{y}{x}   \right) + \pi   &  \,\, \mbox{ if }  x<0\,\, \mbox{and} \,\, y \geq 0 \\
+\arctan \left(  \dfrac{y}{x}   \right) - \pi   &  \,\, \mbox{ if }  x<0\,\, \mbox{and} \,\, y < 0 \\
+\dfrac{\pi}{2}    &  \,\, \mbox{ if }  x=0\,\, \mbox{and} \,\, y > 0 \\
+-\dfrac{\pi}{2}    &  \,\, \mbox{ if }  x=0\,\, \mbox{and} \,\, y < 0 \\
+\end{cases}
+$$
+where $\arctan$ is the inverse of $\tan$.
+
+:::
+
+
+
+
+::: Example 
+
+**Question.** Compute the arguments of the complex numbers 
+$$
+z = 3+4 i\,, \quad \bar{z} = 3-4 i \,, \quad  - \bar{z} = -3+4 i \,, \quad - z= -3-4 i \,.
+$$ 
+
+**Solution.** Using the formula for $\arg$ in Corollary \ref{corollary-arg} we have
+\begin{align*}
+\arg (3+4 i) & =\arctan \left(\frac{4}{3}\right) \\
+\arg (3-4 i) & =\arctan \left(-\frac{4}{3}\right) = -\arctan \left(\frac{4}{3}\right)  \\
+\arg (-3+4 i) & = \arctan \left(-\frac{4}{3}\right) + \pi = - \arctan \left(\frac{4}{3}\right) + \pi \\
+\arg (-3-4 i) & = \arctan \left(\frac{4}{3}\right) - \pi
+\end{align*}
+
+:::
+
+
+
+::: Theorem 
+### Euler's identity   {#theorem-euler-identity}
+
+For all $\theta \in \R$ it holds
+$$
+e^{i \theta}=\cos (\theta)+ i \sin (\theta) \,.
+$$
+
+:::
+
+
+
+::: Theorem 
+For all $\theta \in \R$ it holds
+$$
+\left|e^{i \theta}\right|=1 \,.
+$$
+
+:::
+
+
+
+
+::: Theorem
+
+Let $z \in \C$ with $z = x+iy$ and $z \neq 0$. Then
+$$
+z = \rho e^{i\theta}\,,
+$$
+where 
+$$
+\rho := |z| =  \sqrt{x^2 + y^2} \,, \qquad 
+\theta := \arg(z) \,.
+$$
+
+:::
+
+
+
+
+::: Definition 
+### Exponential form
+
+The **exponential form** of a complex number $z \in \C$ is 
+$$
+z= \rho e^{i\theta} = |z| \, e^{i \arg(z)}  \,.
+$$
+
+:::
+
+
+
+::: {.Example #example-exponential-form}
+
+**Question.** Write the number 
+$$
+z=-2+2 i
+$$ 
+in exponential form.
+
+**Solution.** From Example \ref{example-trigonometric-form} we know that $z = -2+2i$
+can be written in trigonometric form as
+$$
+z = \sqrt{8}  \left[ \cos \left( \frac{3}{4} \pi \right) + i \sin \left( \frac{3}{4} \pi \right)   \right] \,.
+$$
+By Euler's identity we hence obtain the exponential form
+$$
+z=\sqrt{8} e^{i \frac{3}{4} \pi} \,.
+$$
+:::
+
+
+::: Remark
+### Periodicity of exponential
+
+For all $k \in \Z$ we have
+$$
+e^{i \theta}=e^{i(\theta+2 \pi k)} \,,
+$${#eq-exponential-periodic}
+meaning that the complex exponential is $2\pi$-periodic.
+
+
+:::
+
+
+
+::: {.Proposition #proposition-complex-exponential}
+
+Let $z, z_1,z_2 \in \C$ and suppose that
+$$
+z= \rho e^{i \theta} \,, \quad 
+z_1 = \rho_1 e^{i \theta_1}\,, \quad 
+z_2 = \rho_2 e^{i \theta_2}\,.
+$$
+We have
+$$
+z_1 \cdot z_2 = \rho_1 \rho_2 e^{i (\theta_1 + \theta_2)}  \,, \quad 
+z^n = \rho^n  e^{i n \theta} \,,
+$$
+for all $n \in \N$.
+:::
+
+
+::: Example 
+
+**Question.** Compute $(-2+2 i)^{4}$.
+
+**Solution.** We have two possibilities:
+
+1. Use the binomial theorem:
+\begin{align*}
+(-2+2 i)^{4} & =(-2)^{4}+\left(\begin{array}{l}
+4 \\
+1
+\end{array}\right)(-2)^{3} \cdot 2 i+\left(\begin{array}{l}
+4 \\
+2
+\end{array}\right)(-2)^{2} \cdot(2 i)^{2} \\
+& \quad +\left(\begin{array}{l}
+4 \\
+3
+\end{array}\right)(-2) \cdot(2 i)^{3}+(2 i)^{4} \\
+& =16-4 \cdot 8 \cdot 2 i-6 \cdot 4 \cdot 4+4 \cdot 2 \cdot 8 i+16 \\
+& =16-64 i-96+64 i+16=-64 \,.
+\end{align*}
+
+2. A much simpler calculation is possible by using the exponential form: We know that
+$$
+-2+2 i = \sqrt{8} e^{i \frac{3}{4} \pi} 
+$$
+by Example \ref{example-exponential-form}. Hence
+$$
+(-2+2 i)^{4}=\left(\sqrt{8} e^{i \frac{3}{4} \pi}\right)^{4}=8^{2} e^{i 3 \pi}=-64 \,,
+$$
+where we used that 
+$$
+e^{i 3 \pi} = e^{i \pi} = \cos(\pi) + i \sin(\pi) = - 1
+$$
+by $2\pi$ periodicity of $e^{i\theta}$ and Euler's identity. 
+:::
+
+
+::: Definition
+### Complex exponential
+
+The complex exponential of $z \in \C$ is defined as
+$$
+e^z = |z| e^{i\theta} \,, \quad \theta = \arg(z) \,.
+$$
+
+:::
+
+
+
+::: Theorem
+
+Let $z,w \in \C$. Then
+$$
+e^{z+w} = e^z e^w \,, \quad (e^z)^{w} = e^{zw} \,.
+$${#eq-complex-exponential}
+
+:::
+
+
+
+
+::: Example 
+
+**Question.** Compute $i^{i}$.
+
+**Solution.** We know that 
+$$
+|i| = 1 \,, \quad \arg(i) = \frac{\pi}{2} \,.
+$$
+Hence we can write $i$ in exponential form
+$$
+i= |i| e^{i\arg(i)} = e^{i \frac{\pi}{2}} \,.
+$$ 
+Therefore
+$$
+i^{i}=\left(e^{i \frac{\pi}{2}}\right)^{i}=e^{i^2\frac{\pi}{2}}=e^{-\frac{\pi}{2}} \,.
+$$
+
+:::
+
+
+
+## Fundamental Theorem of Algebra
+
+
+::: Theorem 
+### Fundamental theorem of algebra   {#theorem-fta}
+
+Let $p_{n}(z)$ be a polynomial of degree $n$ with complex coefficients, i.e.,
+$$
+p_{n}(z)=a_{n} z^{n}+a_{n-1} z^{n-1}+\ldots+a_{1} z+a_{0},
+$$
+for some coefficients $a_{n}, \ldots, a_{0} \in \C$ with $a_{n} \neq 0$. There exist 
+$$
+z_{1}, \ldots, z_{n} \in \C
+$$ 
+solutions to the polynomial equation
+$$
+p_n(z) = a_{n} z^{n}+a_{n-1} z^{n-1}+\ldots+a_{1} z+a_{0}=0 \,.
+$${#eq-fta}
+In particular, $p_n$ factorizes as
+$$
+p_{n}(z)=a_{n}\left(z-z_{1}\right)\left(z-z_{2}\right) \cdots\left(z-z_{n}\right) \,.
+$${#eq-fta-0}
+
+
+:::
+
+
+
+::: Example 
+
+**Question.** Find all the complex solutions to
+$$
+z^{2}=-1
+$${#eq-fta-example-1}
+
+**Solution.** The equation $z^2 = -1$ is equivalent to
+$$
+p(z) = 0 \,, \quad p(z):=z^{2}+1  \,.
+$$
+Since $p$ has degree $n=2$, the Fundamental Theorem of Algebra tells us that there are two solutions to (@eq-fta-example-1). We have already seen that these two solutions are $z=i$ and $z=-i$. Then $p$ factorizes as
+$$
+p(z) = z^{2} + 1 = (z-i)(z+i) \,.
+$$
+:::
+
+
+::: {.Example   #example-degree-4}
+
+**Question.** Find all the complex solutions to
+$$
+z^{4}-1=0 \,.
+$${#eq-fta-example-2}
+
+**Solution** The associated polynomial equation is 
+$$
+p(z) = 0 \,, \quad p(z) := z^4 - 1 \,. 
+$$
+Since $p$ has degree $n=4$, the Fundamental Theorem of Algebra tells us that there are $4$ solutions to (@eq-fta-example-2). Let us find such solutions. We use the well known identity
+$$
+a^2-b^2 = (a+b)(a-b) \,, \quad \forall \, a,b \in \R \,,
+$$
+to factorize $p$. We get:
+$$
+p(z) = (z^4-1) = (z^2+1)(z^2-1) \,.
+$$
+We know that 
+$$
+z^2 + 1 = 0 
+$$
+has solutions $z = \pm i$. Instead  
+$$
+z^2 - 1 = 0 
+$$
+has solutions $x = \pm 1$. Hence, the four solutions of (@eq-fta-example-2) are given by 
+$$
+z=1,-1, i,-i \,,
+$$
+and $p$ factorizes as
+$$
+p(z) = z^4 - 1 = (z-1)(z+1)(z-i)(z+i) \,.
+$$
+
+:::
+
+
+::: Definition
+
+Suppose that the polynomial $p_n$ factorizes as 
+$$
+p_n(z) = a_n (z-z_1)^{k_1} (z-z_2)^{k_2} \cdots (z-z_m)^{k_m} 
+$$
+with $a_n \neq 0$, $z_1,\ldots, z_m \in \C$ and $k_1, \ldots , k_m \in \N$, $k_i \geq 1$. In this case $p_n$ has degree
+$$
+n = k_1 + \ldots + k_m = \sum_{i=1}^m k_i \,.
+$$
+Note that $z_i$ is solves the equation
+$$
+p_n(z) = 0
+$$
+exactly $k_i$ times. We call $k_i$ the **multiplicity** of the solution $z_i$.
+:::
+
+::: {.Example  #example-multiplicity}
+
+The equation
+$$
+(z-1)(z-2)^{2}(z+i)^{3}=0
+$$
+has 6 solutions: 
+
+- $z=1$ with multiplicity $1$
+- $z=2$ with multiplicity $2$ 
+- $z=-i$ with multiplicity $3$
+
+:::
+
+
+
+
+## Solving polynomial equations
+
+
+
+::: Proposition
+### Quadratic formula    {#proposition-quadratic-formula}
+
+Let $a, b, c \in \R, a \neq 0$ and consider the equation
+$$
+ax^2 + bx + c = 0 \,.
+$${#eq-quadratic-formula}
+Define 
+$$
+\Delta := b^2 - 4 ac \in \R \,.
+$$
+The following hold:
+
+1. If $\Delta > 0$ then (@eq-quadratic-formula) has two distinct real solutions $z_1,z_2 \in \R$ given by
+$$
+z_1 = \frac{-b - \sqrt{\Delta}}{2 a} \,, 
+\quad 
+z_2 = \frac{-b + \sqrt{\Delta}}{2 a} \,.
+$$
+2. If $\Delta = 0$ then (@eq-quadratic-formula) has one real solution $z \in \R$ with multiplicity $2$. Such solution is given by
+$$
+z = z_1 = z_2 = \frac{-b}{2 a} \,.
+$$
+3. If $\Delta < 0$ then (@eq-quadratic-formula) has two distinct complex solutions $z_1,z_2 \in \C$ given by 
+$$
+z_1 = \frac{-b - i\sqrt{-\Delta}}{2 a} \,, 
+\quad 
+z_2 = \frac{-b + i\sqrt{-\Delta}}{2 a} \,,
+$$
+where $\sqrt{-\Delta} \in \R$, since $-\Delta>0$.
+
+In all cases, the polynomial at (@eq-quadratic-formula) factorizes as
+$$
+a z^{2}+b z+c = a (z-z_1)(z-z_2) \,.
+$$
+
+:::
+
+
+
+
+::: Example 
+
+
+**Question.** Solve the following equations:
+
+1. $3 z^{2}-6 z+2 = 0$
+2. $4 z^{2}-8 z+4=0$
+3. $z^{2}+2 z+3=0$
+
+**Solution.**
+
+1. We have that
+$$
+\Delta = (-6)^{2}-4 \cdot 3 \cdot 2 = 12 > 0
+$$
+Therefore the equation has two distinct real solutions, given by
+$$
+z=\frac{-(-6) \pm \sqrt{12}}{2 \cdot 3}=\frac{6 \pm \sqrt{12}}{6}=1 \pm \frac{\sqrt{3}}{3}
+$$
+In particular we have the factorization
+$$
+3 z^{2}-6 z+2  = 3 \left( z - 1 - \frac{\sqrt{3}}{3} \right) \left( z - 1 + \frac{\sqrt{3}}{3} \right) \,.
+$$
+
+
+
+2. We have that 
+$$
+\Delta = (-8)^{2}-4 \cdot 4 \cdot 4 = 0 \,.
+$$
+Therefore there exists one solution with multiplicity $2$. This
+is given by
+$$
+z=\frac{-(-8)}{2 \cdot 4} = 1 \,.
+$$
+In particular we have the factorization
+$$
+4 z^{2}-8 x+4 = 4 (z-1)^2 \,.
+$$
+
+
+
+3. We have
+$$
+\Delta = 2^{2}-4 \cdot 1 \cdot 3 = - 8 < 0 \,.
+$$
+Therefore there are two complex solutions given by
+$$
+z=\frac{-2 \pm i \sqrt{8}}{2 \cdot 1} = -1 \pm i \sqrt{2}  \,.
+$$
+In particular we have the factorization
+$$
+z^{2}+2 z+3 = (z + 1 - i \sqrt{2}) (z + 1 + i\sqrt{2}) \,.
+$$
+
+:::
+
+
+::: Proposition   
+### Quadratic formula with complex coefficients {#proposition-quadratic-formula-C}
+
+Let $a, b, c \in \C, a \neq 0$. The two solutions to 
+$$
+a z^{2}+b z + c=0
+$$ 
+are given by
+$$
+z_1 = \frac{-b + S_1}{2 a} \,, 
+\quad 
+z_2 = \frac{-b + S_2}{2 a} \,, 
+$$
+where $S_1$ and $S_2$ are the two solutions to
+$$
+z^2 = \Delta \,, \quad \Delta := b^2 - 4ac \,.
+$$
+
+:::
+
+
+
+
+
+::: Example
+
+**Question** Find all the solutions to
+$$
+\frac{1}{2} z^{2}-(3+i) z+(4-i)=0 \,.
+$${#eq-example-complex-delta}
+
+**Solution.** We have
+\begin{align*}
+\Delta & = (-(3+i))^{2}-4 \cdot \frac{1}{2} \cdot(4-i) \\
+       & = 8+6 i-8+2 i \\
+       & =8 i \,.
+\end{align*}
+Therefore $\Delta \in \C$. We have to find solutions $S_1$ and $S_2$ to the equation
+$$
+z^2 = \Delta = 8i \,.
+$${#eq-example-complex-delta-2}
+We look for solutions of the form $z=a+ i b$. Then we must have that
+$$
+z^{2}=(a+ ib)^{2}=a^{2}-b^{2}+2 a b i = 8 i \,.
+$$
+Thus
+$$
+a^{2}-b^{2}=0 \,, \quad 2 a b = 8  \,.
+$$ 
+From the first equation we conclude that $|a|=|b|$. From the second equation we have that $ab=4$, and therefore $a$ and $b$ must have the same sign. Hence $a=b$, and 
+$$
+2 a b = 8 \quad \implies \quad a = b = \pm 2 \,.
+$$
+From this we conclude that the solutions to (@eq-example-complex-delta-2)
+are 
+$$
+S_{1} = 2+2 i \,, \quad  S_{2}=-2-2 i \,. 
+$$
+ Hence the solutions to (@eq-example-complex-delta) are
+\begin{align*}
+z_1 & = \frac{3+i+S_{1}}{2 \cdot \frac{1}{2}}  = 3 + i + S_{1} \\
+    & = 3 + i + 2 + 2i = 5 + 3i \,, 
+\end{align*}
+and 
+\begin{align*}
+z_2 & = \frac{3+i+S_{2}}{2 \cdot \frac{1}{2}}  = 3+i+S_{2} \\
+    & = 3+i -2 - 2i  = 1 - i \,. 
+\end{align*}
+In particular, the given polynomial factorizes as
+\begin{align*}
+\frac{1}{2} z^{2}-(3+i) z+(4-i) & = \frac12 (z - z_1)(z-z_2) \\
+                                & = \frac12 (z - 5 - 3i)(z - 1 + i) \,. 
+\end{align*}
+
+:::
+
+
+
+::: Example 
+
+**Question.** Consider the equation
+$$
+z^{3}-7 z^{2}+6 z=0 \,.
+$$ 
+
+1. Check whether $z=0,1,-1$ are solutions.
+2. Using your answer from Point 1, and polynomial division, find all the solutions.
+
+**Solution.**
+
+1. By direct inspection we see that $z=0$ and $z=1$ are solutions.
+
+2. Since $z = 0$ is a solution, we can factorize
+$$
+z^{3}-7 z^{2}+6 z=z\left(z^{2}-7 z+6\right) \,.
+$$
+We could now use the quadratic formula on the term $z^{2}-7 z+6$ to find the remaining two roots. However, we have already observed that $z=1$ is a solution. Therefore $z-1$ divides $z^{2}-7 z+6$. Using polynomial long division, we find that
+$$
+\frac{z^{2}-7 z+6}{z-1}=z-6 \,.
+$$
+Therefore the last solution is $z=6$, and
+$$
+z^{3}-7 z^{2}+6 z=z(z-1)(z-6) \,.
+$$
+
+:::
+
+
+::: Example
+
+**Question.** Find all the complex solutions to
+$$
+z^{3}-7 z+6=0 \,.
+$$ 
+
+**Solution.** It is easy to see $z=1$ is a solution. This means that $z-1$ divides $z^{3}-7 z+6$. By using polynomial long division, we compute that
+$$
+\frac{z^{3}-7 z+6}{z-1}=z^{2}+z-6 \,.
+$$
+We are now left to solve
+$$
+z^{2}+z-6 = 0\,.
+$$
+Using the quadratic formula, we see that the above is solved by $z=2$ and $z=-3$.
+Therefore the given polynomial factorizes as
+$$
+z^{3}-7 z+6 = (z-1)(z-2)(z+3) \,.
+$$
+
+:::
+
+
+
+
+## Roots
+
+::: Theorem
+
+Let $n \in \N$ and consider the equation
+$$
+z^{n}=1 \,.
+$${#eq-root-unity-1}
+All the $n$ solutions to (@eq-root-unity-1) are given by
+$$
+z_k = \exp \left(i \frac{2 \pi k}{n}\right) \,, \quad k = 0, \ldots, n-1 \,,
+$$
+where $\exp(x)$ denotes $e^x$.
+
+:::
+
+
+::: Definition 
+
+The $n$ solutions to 
+$$
+z^{n}=1
+$$ 
+are called the **roots of unity**.
+
+:::
+
+
+::: Example 
+
+**Question.** Find all the solutions to
+$$
+z^{4}=1 \,.
+$$ 
+
+**Solution.** The $4$ solutions are given by
+$$
+z_k = \exp \left(i \frac{2 \pi k}{4} \right) = \exp \left(i \frac{\pi k}{2} \right)  \,,
+$$
+for $k=0,1,2,3$. We compute:
+\begin{align*}
+z_0 & = e^{i 0} = 1 \,, & \quad & z_1 = e^{i \frac{\pi}{2}}=i \,, \\ 
+z_2 & = e^{i \pi}=-1 \,, & \quad & z_3 = e^{i \frac{3 \pi}{2}}=-i \, .
+\end{align*}
+Note that for $k=4$ we would again get the solution $z=e^{i 2 \pi}=1$.
+
+:::
+
+
+::: Example 
+
+**Question.** Find all the solutions to 
+$$
+z^{3}=1 \,.
+$$ 
+
+**Solution.** The $3$ solutions are given by
+$$
+z_k = \exp \left( i \frac{2 \pi k}{3} \right) \,,
+$$
+for $k=0,1,2$. We compute:
+$$
+z_0=e^{i 0}=1, \quad z_1=e^{i \frac{2 \pi}{3}}, \quad z_2=e^{i \frac{4 \pi}{3}} .
+$$
+We can write $z_1$ and $z_2$ in cartesian form:
+$$
+z_1 = e^{i \frac{2 \pi}{3}}=\cos \left(\frac{2 \pi}{3}\right)+i \sin \left(\frac{2 \pi}{3}\right)=-\frac{1}{2}+\frac{\sqrt{3}}{2} i
+$$
+and
+$$
+z_2 = e^{i \frac{4 \pi}{3}}=\cos \left(\frac{4 \pi}{3}\right)+i \sin \left(\frac{4 \pi}{3}\right)=-\frac{1}{2}-\frac{\sqrt{3}}{2} i \,.
+$$
+
+:::
+
+
+
+
+
+
+::: Theorem
+
+Let $n \in \N$, $c \in \C$ and consider the equation
+$$
+z^{n}=c \,.
+$${#eq-root-C}
+All the $n$ solutions to (@eq-root-C) are given by
+$$
+z_k = \sqrt[n]{|c|} \, \exp \left(i \, \frac{\theta + 2 \pi k}{n}\right) \,, \quad k = 0, \ldots, n-1 \,,
+$$
+where $\sqrt[n]{|c|}$ is the $n$-th root of the real number $|c|$, and $\theta = \arg(c)$.
+
+:::
+
+
+::: Example
+
+**Question.** Find all the $z \in \C$ such that
+$$
+z^{5}=-32 \,.
+$$
+
+**Solution.** Let $c = -32$. We have
+$$
+|c| = |-32|=32=2^{5}\,, \quad \theta = \arg (-32)=\pi \,.
+$$ 
+The $5$ solutions are given by
+$$
+z_k =  \left(2^{5}\right)^{\frac{1}{5}} \exp \left(i \pi \, \frac{1+2 k}{5} \right) \,, \quad k \in \Z \,,
+$$
+for $k=0,1,2,3,4$. We get
+\begin{align*}
+z_0 & = 2 e^{i \frac{\pi}{5}} \,  & \quad & z_1 = 2 e^{i \frac{3 \pi}{5}}  \\ 
+z_2 & = 2 e^{i \pi}=-2 \,  & \quad & z_3=2 e^{i \frac{7 \pi}{5}}  \\
+z_4 &= 2 e^{i \frac{9 \pi}{5}}  & \quad & 
+\end{align*}
+
+:::
+
+
+::: Example 
+
+**Question.** Find all the $z \in \C$ such that
+$$
+z^{4}=9\left(\cos \left(\frac{\pi}{3}\right)+i \sin \left(\frac{\pi}{3}\right)\right) \,.
+$$
+
+**Solution.** Set 
+$$
+c:=9\left(\cos \left(\frac{\pi}{3}\right)+i \sin \left(\frac{\pi}{3}\right)\right) \,.
+$$
+The complex number $c$ is already in the trigonometric form, so that we can immediately obtain
+$$
+|c| = 9 \,, \quad \theta = \arg(c) = \frac{\pi}{3} \,.
+$$
+The $4$ solutions are given by
+\begin{align*}
+z_k & = \sqrt[4]{9} \, \exp \left( i \,  \frac{ \pi/3 + 2 \pi k}{4} \right) \\
+& = \sqrt{3} \exp \left(  i \pi \, \frac{1+6 k}{12} \right) 
+\end{align*}
+for $k=0,1,2,3$. We compute
+\begin{align*}
+z_0 & = \sqrt{3} e^{i \pi \frac{1}{12}} & \quad & z_1 = \sqrt{3} e^{i \pi \frac{7}{12}} \\
+z_2 & = \sqrt{3} e^{i \pi \frac{13}{12}}  & \quad &  z_3 = \sqrt{3} e^{i \pi \frac{19}{12}} 
+\end{align*}
+
+:::
+
+
+

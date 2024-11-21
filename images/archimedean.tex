@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{amsfonts}
+
+\begin{document}
+\begin{tikzpicture}
+% Draw the real line
+  \draw[->] (-1,0) -- (7,0) node[right] {$\mathbb{R}$};
+  
+  % Draw the point 'x' and '0'
+   \filldraw (0,0) circle (1pt) node[below] {\footnotesize$0$};
+  \filldraw[magenta] (2,0) circle (1pt) node[below] {$x$};
+    \filldraw (4,0) circle (1pt) node[below] {\footnotesize $2x$};
+        \filldraw (6,0) circle (1pt) node[below] {\footnotesize$3x$};
+  \filldraw[magenta] (5.2,0) circle (1pt) node[below] {$y$};
+
+  
+ 
+\draw (2,0.2) arc (0:180:1);
+\draw (4,0.2) arc (0:180:1);
+\draw (6,0.2) arc (0:180:1);
+  
+  
+  \end{tikzpicture}
+\end{document}

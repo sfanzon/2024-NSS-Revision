@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{amsfonts}
+
+\begin{document}
+\begin{tikzpicture}
+ % Define the starting point
+  \coordinate (O) at (0,0);
+  
+  % Draw the x vector
+  \draw[->] (O) -- (1.5,1) node[pos=0.5, below] {$|x|$};
+  
+  % Draw the y vector
+  \draw[->] (1.5,1) -- (2.5,3) node[pos=0.5, right] {$|y|$};
+  
+  \draw[->] (O) -- (2.5,3) node[pos=0.5, above, left] {$|x+y|$};
+\end{tikzpicture}
+\end{document}

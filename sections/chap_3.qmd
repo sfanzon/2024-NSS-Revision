@@ -1,0 +1,446 @@
+::: {.content-hidden}
+$
+{{< include macros.tex >}}
+$
+:::
+
+
+
+
+# Properties of $\mathbb{R}$
+
+
+
+::: Theorem
+### Archimedean Property   {#theorem-archimedean}
+
+Let $x \in \R$ be given. Then:
+
+1. There exists $n \in \N$ such that
+$$
+n > x \,.
+$$
+
+2. Suppose in addition that $x>0$. There exists $n \in \N$ such that
+$$
+\frac1n < x \,.
+$$
+
+:::
+
+
+
+::: Theorem
+### Archimedean Property (Alternative formulation)  {#theorem-archimedean-alternative}
+
+Let $x,y \in \R$, with $0<x<y$. There exists $n \in \N$ such that 
+$$
+nx > y \,.
+$$
+
+:::
+
+
+
+::: Theorem
+### Nested Interval Property  {#theorem-nested}
+
+For each $n \in \N$ assume given a closed interval
+$$
+I_n := [a_n,b_n] = \{   x \in \R \divider  a_n \leq x \leq b_n   \} \,.
+$$
+Suppose that the intervals are nested, that is,
+$$
+I_n \supset I_{n+1}\,, \quad \forall \, n \in \N \,.
+$$
+Then
+$$
+\bigcap_{n=1}^\infty I_n \neq \emptyset \,.
+$${#eq-theorem-nested-proof-0}
+:::
+
+
+
+
+
+
+::: {.Example #example-nested-open}
+
+**Question.** Consider the **open** intervals 
+$$
+I_n := \left( 0, \frac1n \right) \,.
+$$
+These are clearly nested
+$$
+I_n \supset I_{n+1}\,, \quad \forall \, n \in \N \,.
+$$
+Prove that
+$$
+\bigcap_{n=1}^\infty I_n = \emptyset \,.
+$${#eq-example-nested-2}
+
+**Solution.** Suppose by contradiction that the intersection is non-empty. Then there exists $x \in \N$
+such that 
+$$
+x \in I_n \,, \quad \forall \, n \in \N \,.
+$$
+By definition of $I_n$ the above reads
+$$
+0 < x < \frac1n  \,, \quad \forall \, n \in \N \,.
+$${#eq-example-nested}
+Since $x>0$, by the Archimedean Property in Theorem \ref{theorem-archimedean} Point 2, there exists $n_0 \in \N$ such that
+$$
+0 < \frac{1}{n_0} < x \,.
+$$
+The above contradicts (@eq-example-nested). Therefore (@eq-example-nested-2) holds.
+:::
+
+
+## Revisiting Sup and Inf
+
+::: Proposition 
+### Characterization of Supremum  {#proposition-supremum-characterization}
+
+Let $A \subseteq \R$ be a non-empty set. Suppose that $s \in \R$ is an upper bound for $A$. They 
+are equivalent:
+
+1. $s = \sup A$
+2. For every $\e > 0$ there exists $x \in A$ such that 
+$$
+s - \e < x \,.
+$$
+
+:::
+
+
+
+::: Proposition 
+### Characterization of Infimum  {#prop-supremum-infimum}
+
+Let $A \subseteq \R$ be a non-empty set. Suppose that $i \in \R$ is a lower bound for $A$. They 
+are equivalent:
+
+1. $i = \inf A$
+2. For every $\e \in \R$, with $\e > 0$, there exists $x \in A$ such that 
+$$
+x < i + \e  \,.
+$$
+
+:::
+
+
+
+::: {.Proposition  #proposition-interval-inf-sup}
+
+Let $a, b \in \R$ with $a<b$. Let
+$$
+A:= (a,b) = \{ x \in \R \divider a < x < b \}\,.
+$$
+Then
+$$
+\inf A = a \,, \quad \sup A = b \,.
+$$
+
+:::
+
+
+
+::: Corollary
+
+Let $a, b \in \R$ with $a<b$. Let
+$$
+A:= (a,b) = \{ x \in \R \divider a < x < b \}\,.
+$$
+Then $\min A$ and $\max A$ do not exist.
+:::
+
+
+::: Corollary
+
+Let $a, b \in \R$ with $a<b$. Let
+$$
+A:= [a,b) = \{ x \in \R \divider a \leq x < b \}\,.
+$$
+Then 
+$$
+\min A = \inf A = a \,, \quad \sup A = b \,,
+$$ 
+$\max A$ does not exist.
+
+
+:::
+
+
+::: Proposition
+
+Define the set
+$$
+A :=  \left\{ \frac1n \divider n \in \N   \right\} \,.
+$$
+Then
+$$
+\inf A = 0 \,, \quad \sup A = \max A = 1 \,.
+$$
+:::
+
+
+::: Proof
+
+*Part 1.* We have
+$$
+\frac1n \leq 1 \,, \quad \forall \, n \in \N \,.
+$$
+Therefore $1$ is an upper bound for $A$. Since $1 \in A$, by definition of maximum we conclude that 
+$$
+\max A = 1 \,.
+$$
+Since the maximum exists, we conclude that also the supremum exists, and
+$$
+\sup A = \max A =  1 \,.
+$$
+
+
+
+*Part 2.* We have
+$$
+\frac1n > 0 \,, \quad \forall \, n \in \N \,,
+$$
+showing that $0$ is a lower bound for $A$. Suppose by contradiction that $0$ is not the infimum. Therefore $0$ is not the largest lower bound. Then there exists $\e \in \R$ such that:
+
+- $\e$ is a lower bound for $A$, that is,
+$$
+\e \leq \frac1n  \,, \quad \forall \, n \in \N \,,
+$${#eq-lower-bound-1-n}
+
+- $\e$ is larger than $0$:
+$$
+0 < \e \,.
+$$
+
+As $\e>0$, by the Archimedean Property there exists $n_0 \in \N$ such that
+$$
+0 < \frac{1}{n_0} < \e \,.
+$$
+This contradicts (@eq-lower-bound-1-n). Thus $0$ is the largest lower bound of $A$, that is, $0 = \inf A$.
+
+
+*Part 3.* We have that $\min A$ does not exist. Indeed suppose by contradiction that $\min A$ exists. Then 
+$$
+\min A = \inf A \,.
+$$
+As $\inf A = 0$ by Part 2, we conclude $\min A = 0$. As $\min A \in A$, we obtain $0 \in A$, which is a contradiction.
+:::
+
+
+
+
+## Cardinality
+
+
+::: Definition
+### Cardinality, Finite, Countable, Uncountable {#definition-cardinality}
+
+Let $X$ be a set. The **cardinality** of $X$ is the number of elements in $X$. We denote
+the cardinality of $X$ by
+$$
+|X| := \# \, \mbox{ of elements in } \, X \,.
+$$
+Further, we say that:
+
+1. $X$ is **finite** if there exists a natural number $n \in \N$ and a bijection
+$$
+f \colon \{1,2,\ldots, n \} \to X \,.
+$$
+In particular 
+$$
+|X| = n \,.
+$$
+
+2. $X$ is **countable** if there exists a bijection
+$$
+f \colon \N \to X  \,.
+$$
+In this case we denote the cardinality of $X$ by
+$$
+|X| = |\N| \,.
+$$
+
+3. $X$ is **uncountable** if $X$ is neither finite, nor countable.
+
+:::
+
+
+
+::: {.Proposition #proposition-countable-subset}
+
+Let $X$ be a countable set and $A \subseteq X$. Then either $A$ is finite or countable.
+
+:::
+
+
+
+::: Example
+
+**Question.** Prove that $X = \{a,b,c\}$ is finite. 
+
+**Solution.** Set $Y=\{ 1,2,3\}$. The function $f \colon X \to Y$ defined by
+$$
+f(1)=a \,, \quad f(2) = b \,, \quad f(3) = c \,,
+$$
+is bijective. Therefore $X$ is finite, with $|X| = 3$.
+
+:::
+
+
+
+
+::: Example
+
+**Question.** Prove that the set of natural numbers $\N$ is countable. 
+
+**Solution.** The function $f \colon X \to \N$ defined by
+$$
+f(n):=n \,,
+$$
+is bijective. Therefore $X = \N$ is countable.
+
+:::
+
+
+
+::: Example
+
+**Question.** Let $X$ be the set of even numbers
+$$
+X = \{ 2n \divider n \in \N \} \,.
+$$
+Prove that $X$ is countable.
+
+**Solution.** Define the map $f \colon \N \to X$ by
+$$
+f(n):= 2n \,.
+$$
+We have that:
+
+1. $f$ is injective, because 
+$$
+f(m)=f(k) \, \implies \, 2m=2k \, 
+\quad \, m=k \,.
+$$
+
+2. $f$ is surjective: Suppose that $m \in X$. By definition of $X$, there exists $n \in \N$ such that $m = 2n$. Therefore, $f(n) = m$.
+
+    
+We have shown that $f$ is bijective. Thus, $X$ is countable.
+
+:::
+
+
+
+::: Example
+
+**Question.** Prove that the set of integers $\Z$ is countable. 
+
+**Solution.** Define $f \colon \N \to \Z$ by 
+$$
+f(n):= 
+\begin{cases}
+\dfrac{n}{2}  & \,\, \mbox{ if } \, n \, \mbox{ even }  \\
+-\dfrac{n+1}{2}  & \,\, \mbox{ if } \, n \, \mbox{ odd }  
+\end{cases}
+$$
+For example
+\begin{align*}
+f(0) & = 0 \,, \quad f(1) = -1 \,, \quad f(2) = 1 \,, \quad f(3) = -2 \,, \\
+f(4) & = 2 \,, \quad f(5) = -3 \,, \quad f(6) = 3 \,, \quad f(7) = -4 \,.
+\end{align*}
+We have:
+
+1. $f$ is injective: Indeed, suppose that $m \neq n$. If $n$ and $m$ are both even or both odd we have, respectively
+\begin{align*}
+f(m) = \frac{m}{2} & \neq \frac{n}{2} = f(n)  \\
+f(m) =  -\frac{m+1}{2} & \neq  - \frac{n+1}{2} = f(n) \,.
+\end{align*}
+If instead $m$ is even and $n$ is odd, we get
+$$
+f(m) = \frac{m}{2} \neq  - \frac{n+1}{2} = f(n)  \,,
+$$
+since the LHS is positive and the RHS is negative. The case when $m$ is odd and $n$ even is 
+similar.  
+
+2. $f$ is surjective: Let $z \in \Z$. If $z \geq 0$, then $m:=2z$ belongs to $\N$, is even, and
+$$
+f(m) = f(2z) = z \,.
+$$
+If instead $z < 0$, then $m := -2z -1$ belongs to $\N$, is odd, and
+$$
+f(m) = f(-2z-1) = z \,.
+$$
+    
+Therefore $f$ is bijective, showing that $\Z$ is countable.
+
+:::
+
+
+
+
+:::  {.Proposition  #proposition-countable-union}
+
+Let the set $A_n$ be countable for all $n \in \N$. Define
+$$
+A = \bigcup_{n \in \N} \, A_n \, .
+$$
+Then $A$ is countable.
+
+:::
+
+
+
+
+
+::: Theorem
+### $\Q$ is countable  {#theorem-Q-countable}
+
+The set of rational numbers $\Q$ is countable. 
+
+:::
+
+
+::: Theorem
+### $\R$ is uncountable  {#theorem-R-uncountable}
+
+The set of Real Numbers $\R$ is **uncountable**.
+
+:::
+
+
+
+
+::: Theorem
+
+The set of irrational numbers 
+$$
+\mathcal{I}:=\R \smallsetminus \Q
+$$
+is uncountable.
+
+:::
+
+
+::: Proof
+
+We know that $\R$ in uncountable and $\Q$ is countable. Suppose by contradiction that $\mathcal{I}$ is countable. Then
+$$
+\Q \cup \mathcal{I} 
+$$
+is countable by Proposition \ref{proposition-countable-union}, being union of countable sets. Since by definition
+$$
+\R = \Q \cup \mathcal{I} \,,
+$$
+we conclude that $\R$ is countable. Contradiction.
+
+:::
+
+
+
+

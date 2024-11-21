@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (2,0) node[right] {\footnotesize$\operatorname{Re}$};
+  \draw[->] (0,-2) -- (0,2) node[above] {\footnotesize$\operatorname{Im}$};
+  
+
+
+\draw[magenta, thick] (1,1.5) -- (1.6,0.5);
+
+\draw[dashed] (0,0) -- (1,1.5);
+
+\draw[dashed] (0,0) -- (1.6,0.5);
+
+
+   \filldraw (1,1.5) circle (1pt);
+    \node[anchor=south] at (1.2,1.5) {\footnotesize$z_1$};
+ 
+ 
+   \filldraw (1.6,0.5) circle (1pt);
+    \node[anchor=south] at (1.9,0.2) {\footnotesize$z_2$}; 
+  
+  
+  \filldraw (0,0) circle (1pt);
+  \node[anchor=south] at (0.2,-0.4) {\footnotesize$0$};
+  
+  
+ \node[anchor=south] at (2,0.8) {\footnotesize$|z_1 - z_2|$}; 
+  
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,83 @@
+::: {.content-hidden}
+$$
+{{< include sections/macros.tex >}}
+$$
+:::
+
+
+# Revision Guide {.unnumbered}
+
+Revision Guide document for the module **Numbers, Sequences and Series 400297** 2024/25 at the University of Hull. If you have any question or find any typo, please email me at
+
+
+::: {.content-visible when-format="html"}
+<div style="text-align: center;">
+**[S.Fanzon@hull.ac.uk](mailto: S.Fanzon@hull.ac.uk)**
+</div>
+:::
+
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{mailto: S.Fanzon@hull.ac.uk}{S.Fanzon@hull.ac.uk}
+}
+\end{center}
+:::
+
+Full lenght Lecture Notes of the module available at
+
+::: {.content-visible when-format="html"}
+<div style="text-align: center;">
+**[silviofanzon.com/2024-NSS-Notes](https://www.silviofanzon.com/2024-NSS-Notes)**
+</div>
+:::
+
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\textbf{
+\href{https://www.silviofanzon.com/2024-NSS-Notes}{silviofanzon.com/2024-NSS-Notes}
+}
+\end{center}
+:::
+
+
+
+## Recommended revision strategy {.unnumbered}
+
+
+Make sure you are very comfortable with:
+
+1. The Definitions, Theorems, Proofs, and Examples contained in this Revision Guide
+2. The Tutorial and Homework questions
+3. The 2023/24 Exam Paper questions.
+4. The Checklist below
+
+
+
+
+## Checklist {#sec-checklist} {.unnumbered}
+
+You should be comfortable with the following topics/taks:
+
+
+**Preliminaries**
+
+- Prove that $\sqrt{p} \notin \Q$ for $p$ a prime number
+- 
+
+**Complex Numbers**
+
+- Sum, multiplication and division of complex numbers
+- Computing the complex conjugate
+- Computing the inverse of a complex number
+- Find modulus and argument of a complex number
+- Compute Cartesian, Trigonometric and Exponential form of a complex number
+- Complex exponential and its properties
+- Computing powers of complex numbers
+- Solving degree 2 polynomial equations in $\C$
+- Long division of polynomials
+- Solving higher degree polynomial equations in $\C$
+- Finding the roots of unity
+- Finding the n-th roots of a complex number

@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{amsfonts}
+
+\begin{document}
+\begin{tikzpicture}
+% Draw the real line
+  \draw[->] (-1,0) -- (7,0) node[right] {$\mathbb{R}$};
+  
+  % Draw the point 'x' and '0'
+   \filldraw (0,0) circle (1pt) node[below] {\footnotesize$0$};
+  \filldraw (2,0) circle (1pt) node[below] {$\frac1m$};
+    \filldraw[magenta] (4,0) circle (1pt) node[below] {$x$};
+  \filldraw (5.4,0) circle (1pt) node[below] {$n$};
+
+  
+ 
+
+  
+  \end{tikzpicture}
+\end{document}

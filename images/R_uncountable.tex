@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{amsfonts}
+
+
+\begin{document}
+\begin{tikzpicture}
+% Draw the real line
+  \draw[->] (0,0) -- (7.5,0) node[right] {$\mathbb{R}$};
+  
+  % Draw the point 'x' and '0'
+
+  \filldraw (6.5,0) circle (1pt) node[below] {$x_n$};
+  
+  \filldraw (2,0) circle (1pt) node[below] {$x_{n+1}$};
+  
+  % Draw the brace and label it
+
+  
+  \draw[decorate,decoration={brace,amplitude=5pt}] (1,0.6) -- (5.5,0.6) node[midway,above=5pt] {$I_n$};
+
+  \draw[decorate,decoration={brace,mirror,amplitude=5pt}] (3,-0.6) -- (4.5,-0.6) node[midway,below=5pt] {$I_{n+1}$};
+
+  
+  \draw[magenta, thick] (1, -0.2) -- (1, 0.2);
+   \draw[magenta, thick] (5.5, -0.2) -- (5.5, 0.2); 
+   
+     \draw[magenta] (3, -0.2) -- (3, 0.2);
+   \draw[magenta] (4.5, -0.2) -- (4.5, 0.2);  
+  \end{tikzpicture}
+\end{document}

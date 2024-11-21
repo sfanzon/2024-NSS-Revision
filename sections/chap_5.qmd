@@ -1,0 +1,1588 @@
+::: {.content-hidden}
+$
+{{< include macros.tex >}}
+$
+:::
+
+
+
+
+# Sequences in $\R$
+
+
+::: Definition 
+### Convergent sequence  {#definition-convergent-sequence}
+
+The real sequence $(a_n)$ **converges** to $a$, or equivalently has limit $a$, denoted by
+$$
+\lim_{n \rightarrow \infty} a_{n}=a \,,
+$$
+if for all $\e \in \mathbb{R}, \e>0$, there exists $N \in \N$ such that for all $n \in \N, n \geq N$ it holds that 
+$$
+\left|a_{n}-a\right| < \e \,.
+$$
+Using quantifiers, we can write this as
+$$
+\forall \, \e>0 , \, \exists \, N \in \N \st \forall \, n \geq N \,, \,\left|a_{n}-a\right| < \e \,.
+$$
+The sequence $\left(a_{n}\right)_{n \in \N}$ is **convergent** if it admits limit.
+
+:::
+
+
+::: {.Theorem  #theorem-one-over-np}
+Let $p>0$. Then
+$$
+\lim _{n \rightarrow \infty} \frac{1}{n^{p}}=0 \,.
+$$
+:::
+
+::: Proof
+
+Let $p>0$. We have to show that
+$$
+\forall \e>0 \,, \, \exists \, N \in \N \st  \forall \, n \geq N \,, \, \left|\frac{1}{n^{p}}-0\right| < \e \,.
+$$
+Let $\e>0$. Choose $N \in \N$ such that 
+$$
+N > \frac{1}{\e^{1 / p}} \,.
+$${#eq-theorem-one-over-np-1}
+Let $n \geq N$. Since $p>0$, we have $n^{p} \geq N^{p}$, which implies 
+$$
+\frac{1}{n^p} \leq \frac{1}{N^p} \,.
+$$
+By (@eq-theorem-one-over-np-1) we deduce
+$$
+\frac{1}{N^p} < \e \,.
+$$
+Then
+$$
+\left|\frac{1}{n^{p}}-0\right|=\frac{1}{n^{p}} \leq \frac{1}{N^{p}} < \e \,.
+$$
+
+:::
+
+
+
+::: Example 
+
+**Question.** Using the definition of convergence, prove that
+$$
+\lim_{n \to \infty} \frac{n}{2n+3} = \frac{1}{2} \,.
+$$
+
+**Solution.**
+
+1. *Rough Work:* Let $\e>0$. We want to find $N \in \N$ such that
+$$
+\left|\frac{n}{2n+3}-\frac{1}{2}\right| < \e \,, \quad \forall \, n \geq N \,.
+$$
+To this end, we compute:
+\begin{align*}
+\left|\frac{n}{2 n+3}-\frac{1}{2}\right| & 
+=\left|\frac{2n -(2n + 3)}{2(2n +3)}\right| \\
+& =\left|\frac{- 3}{4n + 6}\right| \\
+& = \frac{3}{4n + 6} \,.
+\end{align*}
+Therefore 
+\begin{align*}
+\left|\frac{n}{2n+3}-\frac{1}{2}\right| < \e
+\quad \iff &  \quad
+\frac{3}{4n + 6} < \e \\
+\quad \iff &  \quad
+\frac{4n + 6}{3} > \frac{1}{\e} \\
+\quad \iff &  \quad
+4n + 6 > \frac{3}{\e} \\
+\quad \iff &  \quad
+4n  > \frac{3}{\e} - 6 \\
+\quad \iff &  \quad
+n  > \frac{3}{4\e} - \frac{6}{4} \,.
+\end{align*}
+Looking at the above equivalences, it is clear that $N \in \N$ has to be chosen so that
+$$
+N  > \frac{3}{4\e} - \frac{6}{4} \,.
+$$
+
+
+2. *Formal Proof:* We have to show that
+$$
+\forall \e>0 \,, \, \exists \, N \in \N \st  \forall \, n \geq N \,, \, \left|\frac{n}{2n+3}-\frac{1}{2}\right| < \e  \,.
+$$
+Let $\e>0$. Choose $N \in \N$ such that
+$$
+N > \frac{3}{4\e} - \frac{6}{4}   \,.
+$${#eq-example-limit-1}
+By the rough work shown above, inequality (@eq-example-limit-1) is equivalent to 
+$$
+ \frac{3}{4N + 6} < \e \,.
+$$
+Let $n \geq N$. Then
+\begin{align*}
+\left|\frac{n}{2n+3}-\frac{1}{2}\right| 
+& = \frac{3}{4 n+ 6 } \\
+& \leq \frac{3}{4 N+ 6 } \\
+& < \e \,,
+\end{align*}
+where in the third line we used that $n \geq N$.
+
+:::
+
+
+
+::: Definition
+### Divergent sequence
+
+We say that a sequence $\left(a_{n}\right)_{n \in \N}$ in $\R$ is **divergent** if it is not convergent.
+
+:::
+
+
+
+
+::: {.Theorem #theorem-1-minus-n}
+Let $\left(a_{n}\right)$ be the sequence defined by
+$$
+a_{n}=(-1)^{n} \,.
+$$
+Then $\left(a_{n}\right)$ does not converge. 
+
+:::
+
+
+
+::: Proof
+
+Suppose by contradiction that $a_n \to a$ for some $a \in \R$. Let
+$$
+\e :=\frac12 \,.
+$$
+Since $a_n \to a$, there exists $N \in \N$ such that 
+$$
+|a_n - a| < \e = \frac13  \, \quad \forall \, n \geq N \,.
+$$
+If we take $n = 2N$, then $n \geq N$ and
+$$
+|a_{2N} - a| = | 1 - a | < \frac12 \,. 
+$$
+If we take $n = 2N + 1$, then $n \geq N$ and
+$$
+|a_{2N+1} - a| = | -1 - a | < \frac12 \,. 
+$$
+Therefore 
+\begin{align*}
+2 & = |  (1 - a) - (-1 - a) | \\
+  & \leq |1 - a| + |-1 - a| \\
+  & < \frac12 + \frac12 = 1 \,,
+\end{align*}
+which is a contradiction. Hence $(a_n)$ is divergent.
+
+:::
+
+
+::: Theorem 
+### Uniqueness of limit  {#theorem-uniqueness-limit}
+
+Let $\left(a_{n}\right)_{n \in \N}$ be a sequence. Suppose that 
+$$
+\lim_{n \rightarrow \infty} a_{n} = a \,, \quad 
+\lim_{n \rightarrow \infty} a_{n} = b \,.
+$$
+Then $a=b$.
+:::
+
+
+
+
+
+::: Definition 
+### Bounded sequence  {#definition-bounded-sequence}
+
+A sequence $\left(a_{n}\right)_{n \in \N}$ is called **bounded** if there exists a constant $M \in \R$, with $M>0$, such that
+$$
+\left|a_{n}\right| \leq M \,, \quad \forall \, n \in \N \,.
+$$
+
+:::
+
+
+::: {.Theorem  #theorem-convergent-bounded}
+
+Every convergent sequence is bounded.
+
+:::
+
+
+
+::: Example
+
+The sequence 
+$$
+a_n = (-1)^n
+$$
+is bounded but not convergent.
+
+:::
+
+
+::: {.Corollary   #corollary-convergent-bounded}
+
+If a sequence is not bounded, then the sequence does not converge.
+
+:::
+
+
+::: Remark
+
+For a sequence $(a_n)$ to be unbounded, it means that
+$$
+\forall \, M > 0 \,, \,\,  \exists \, n \in \N \st \left|a_{n}\right| > M \,.
+$$
+
+:::
+
+
+
+
+::: Theorem 
+
+For all $p>0$, the sequence 
+$$
+a_n = n^p
+$$
+does not converge.
+
+:::
+
+
+
+::: Theorem
+
+The sequence 
+$$
+a_n  = \log n
+$$
+does not converge.
+
+:::
+
+
+::: Theorem 
+### Algebra of limits {#theorem-algebra-limits} 
+
+Let $\left(a_{n}\right)_{n \in \mathbb{N}}$ and $\left(b_{n}\right)_{n \in \mathbb{N}}$ be sequences in $\mathbb{R}$. Suppose that
+$$
+\lim_{n \rightarrow \infty} a_{n}=a \,, \quad  \lim_{n \rightarrow \infty} b_{n}=b \,,
+$$
+for some $a,b \in \R$. Then,
+
+1. Limit of sum is the sum of limits:
+$$
+\lim_{n \rightarrow \infty}\left(a_{n} \pm b_{n}\right)=a \pm b
+$$
+
+2. Limit of product is the product of limits: 
+$$
+\lim _{n \rightarrow \infty}\left(a_{n}  b_{n}\right) = a  b 
+$$
+
+3. If $b_{n} \neq 0$ for all $n \in \mathbb{N}$ and $b \neq 0$, then 
+$$
+\lim_{n \rightarrow \infty} \left(\frac{a_{n}}{b_{n}}\right)=\frac{a}{b} 
+$$
+
+:::
+
+
+
+
+
+
+::: {.Example  #example-limit-ploynomial}
+
+**Question.** Prove that 
+$$
+\lim_{n \to \infty} \, \frac{3 n}{7 n+4} = \frac{3}{7} \,.
+$$
+
+
+**Solution.** We can rewrite
+$$
+\frac{3 n}{7 n+4}=\frac{3}{7+\dfrac{4}{n}}
+$$
+From Theorem \ref{theorem-one-over-np}, we know that 
+$$
+\frac{1}{n} \rightarrow 0 \,.
+$$
+Hence, it follows from Theorem \ref{theorem-algebra-limits} Point 2 that 
+$$
+\frac{4}{n} = 4 \cdot \frac1n \rightarrow 4 \cdot 0 = 0 \,.
+$$
+By Theorem \ref{theorem-algebra-limits} Point 1 we have
+$$
+7 + \frac{4}{n} \rightarrow  7 + 0 = 7 \,.
+$$
+Finally we can use Theorem \ref{theorem-algebra-limits} Point 3 to infer
+$$
+\frac{3 n}{7 n+4}=\frac{3}{7+\dfrac{4}{n}} \rightarrow \frac{3}{7} \,.
+$$
+
+:::
+
+
+
+::: {.Example #example-algebra-of-limits-2}
+
+**Question.** Prove that
+$$
+\lim_{n \rightarrow \infty} \frac{n^{2}-1}{2 n^{2}-3} = \frac{1}{2} \,.
+$$
+
+**Solution.** Factor $n^2$ to obtain
+$$
+\frac{n^{2}-1}{2 n^{2}-3} = \frac{1-\dfrac{1}{n^{2}}}{2-\dfrac{3}{n^{2}}} \,.
+$$
+By Theorem \ref{theorem-one-over-np} we have
+$$
+\frac{1}{n^2} \to 0 \,.
+$$
+We can then use the Algebra of Limits Theorem \ref{theorem-algebra-limits} Point 2 to infer
+$$
+\frac{3}{n^2} \to 3 \cdot 0 = 0
+$$
+and Theorem \ref{theorem-algebra-limits} Point 1 to get
+$$
+1 - \frac{1}{n^2} \to 1 - 0 = 1 \,, \quad 
+2 - \frac{3}{n^2} \to 2 - 0 = 2 \,.
+$$
+Finally we use Theorem \ref{theorem-algebra-limits} Point 3 and conclude
+$$
+ \frac{1-\dfrac{1}{n^{2}}}{2-\dfrac{3}{n^{2}}} \to \frac{1}{2} \,.
+$$
+Therefore
+$$
+\lim_{n \to \infty } \, \frac{n^{2}-1}{2 n^{2}-3} = \lim_{n \to \infty} \, \frac{1-\dfrac{1}{n^{2}}}{2-\dfrac{3}{n^{2}}} = \frac{1}{2} \,.
+$$
+
+:::
+
+
+
+
+::: Example 
+
+**Question.** Prove that the sequence
+$$
+a_n = \frac{4 n^{3}+8 n+1}{7 n^{2}+2 n+1}
+$$
+does not converge.
+
+**Solution.** To show that the sequence $\left(a_n\right)$ does not converge, we divide by the largest power in the denominator, which in this case is $n^2$
+\begin{align*}
+a_n & = \frac{4 n^{3}+8 n+1}{7 n^{2}+2 n+1} \\
+    & =\frac{4 n+ \dfrac{8}{n}  +  \dfrac{1}{n^{2}} }{7+  \dfrac{2}{n}  +  \dfrac{1}{n^{2}} } \\
+    & = \frac{b_n}{c_n}
+\end{align*}
+where we set 
+$$
+b_n := 4 n+ \dfrac{8}{n}  +  \dfrac{1}{n^{2}}\,, \quad
+c_n := 7 + \dfrac{2}{n}  +  \dfrac{1}{n^{2}} \,.
+$$
+Using the Algebra of Limits Theorem \ref{theorem-algebra-limits} we see that
+$$
+c_n = 7+  \dfrac{2}{n}  +  \dfrac{1}{n^{2}}  \to 7 \,.
+$$
+Suppose by contradiction that
+$$
+a_n \to a
+$$
+for some $a \in \R$. Then, by the Algebra of Limits, we would infer
+$$
+b_n = c_n \cdot a_n \to 7 a \,,
+$$
+concluding that $b_n$ is convergent to $7a$. We have that
+$$
+b_n = 4n + d_n \,, \quad d_n := \dfrac{8}{n}  +  \dfrac{1}{n^{2}} \,.
+$$
+Again by the Algebra of Limits Theorem \ref{theorem-algebra-limits} we get that 
+$$
+d_n =  \dfrac{8}{n}  +  \dfrac{1}{n^{2}} \to 0 \,,
+$$
+and hence
+$$
+4n = b_n - d_n \to 7a - 0 = 7a \,.
+$$
+This is a contradiction, since the sequence $(4n)$ is unbounded, and hence cannot be convergent. Hence $(a_n)$ is not convergent.
+:::
+
+
+::: Example 
+
+**Question.** Define the sequence
+$$
+ a_n := \frac{2 n^{3}+7 n+1}{5 n+9} \cdot \frac{8 n+9}{6 n^{3}+8 n^{2}+3} \,.
+$$
+Prove that 
+$$
+\lim_{n \to \infty}  a_n = \frac{8}{15} \,.
+$$
+
+
+**Solution.** The first fraction in $(a_n)$ does not converge, as it is unbounded. Therefore we cannot use Point 2 in Theorem \ref{theorem-algebra-limits} directly. However, we note that
+\begin{align*}
+a_{n} & =\frac{2 n^{3}+7 n+1}{5 n+9} \cdot \frac{8 n+9}{6 n^{3}+8 n^{2}+3} \\
+& = \frac{8 n+9}{5 n+9} \cdot \frac{2 n^{3}+7 n+1}{6 n^{3}+8 n^{2}+3} \,.
+\end{align*}
+Factoring out $n$ and $n^3$, respectively, and using the Algebra of Limits, we see that
+$$
+\frac{8 n+9}{5 n+9}=\frac{8+9 / n}{5+9 / n} \to \frac{8+0}{5+0}=\frac{8}{5}
+$$
+and
+$$
+\frac{2+7 / n^{2}+1 / n^{3}}{6+8 / n+3 / n^{3}} \to \frac{2+0+0}{6+0+0}=\frac{1}{3}
+$$
+Therefore Theorem \ref{theorem-algebra-limits} Point 2 ensures that
+$$
+a_{n} \to \frac{8}{5} \cdot \frac{1}{3}=\frac{8}{15} \,.
+$$
+
+:::
+
+
+
+::: Example
+
+**Question.** Prove that 
+$$
+a_n = \frac{n^{7 / 3}+2 \sqrt{n}+7}{4 n^{3 / 2}+5 n}
+$$
+does not converge.
+
+**Solution.** The largest power of $n$ in the denominator is $n^{3/2}$. Hence we factor out $n^{3/2}$
+\begin{align*}
+a_n & = \frac{n^{7 / 3}+2 \sqrt{n}+7}{4 n^{3 / 2}+5 n} \\
+    & = \frac{n^{7 / 3-3 / 2}+2 n^{1/2 - 3/2} + 7  n^{-3 / 2}}{4 + 5 n^{-3/2} } \\
+    & = \frac{n^{5/6}+2 n^{- 1} + 7  n^{-3 / 2}}{4 + 5 n^{-3/2} } \\
+    & = \frac{b_n}{c_n}
+\end{align*}
+where we set
+$$
+b_n := n^{5/6}+2 n^{- 1} + 7  n^{-3 / 2} \,, \quad 
+c_n := 4 + 5 n^{-3/2} \,.
+$$
+We see that $b_n$ is unbounded while $c_n \to 4$. By the Algebra of Limits (and usual contradiction argument) we conclude that $(a_n)$ is divergent.
+
+:::
+
+
+::: {.Theorem #theorem-square-root-limit}
+
+Let $\left(a_{n}\right)_{n \in \mathbb{N}}$ be a sequence in $\mathbb{R}$ such that 
+$$
+\lim_{n \to \infty} \, a_n = a \,,
+$$
+for some $a \in \R$. If $a_{n} \geq 0$ for all $n \in \mathbb{N}$ and $a \geq 0$, then
+$$
+\lim _{n \rightarrow \infty} \sqrt{a_{n}}=\sqrt{a} \,.
+$$
+
+:::
+
+
+
+::: Example 
+
+**Question.** Define the sequence
+$$
+a_n  = \sqrt{9 n^{2}+3 n+1}-3 n \,.
+$$
+Prove that
+$$
+\lim_{n \to \infty} \, a_n = \frac12 \,.
+$$
+
+
+**Solution.** We first rewrite
+\begin{align*}
+a_n & = \sqrt{9 n^{2}+3 n+1}-3 n \\
+& = \frac{\left(\sqrt{9 n^{2}+3 n+1}-3 n\right)\left(\sqrt{9 n^{2}+3 n+1}+3 n\right)}{\sqrt{9 n^{2}+3 n+1}+3 n} \\
+& =\frac{9 n^{2}+3 n+1-(3 n)^{2}}{\sqrt{9 n^{2}+3 n+1}+3 n} \\
+& =\frac{3 n+1}{\sqrt{9 n^{2}+3 n+1}+3 n} \, .
+\end{align*}
+The biggest power of $n$ in the denominator is $n$. Therefore we factor out $n$:
+\begin{align*}
+a_n & = \sqrt{9 n^{2}+3 n+1}-3 n \\
+& =\frac{3 n+1}{\sqrt{9 n^{2}+3 n+1}+3 n} \\
+& =\frac{3+ \dfrac{1}{n} }{\sqrt{9+ \dfrac{3}{n} + \dfrac{1}{n^{2}}} + 3 } \,.
+\end{align*}
+By the Algebra of Limits we have
+$$
+9+ \frac{3}{n} + \frac{1}{n^{2}} \to 9 + 0 + 0 = 9 \,.
+$$
+Therefore we can use Theorem \ref{theorem-square-root-limit} to infer
+$$
+\sqrt{ 9 + \frac{3}{n} + \frac{1}{n^{2}} } \to \sqrt{9}  \,.
+$$
+By the Algebra of Limits we conclude:
+$$
+a_n = \frac{3+ \dfrac{1}{n} }{\sqrt{9+ \dfrac{3}{n}  + \dfrac{1}{n^{2}} }+ 3 }   \to  \frac{ 3 + 0 }{ \sqrt{9} + 3 } = \frac12 \,.
+$$
+
+
+:::
+
+
+::: Example 
+
+**Question.** Prove that the sequence
+$$
+a_n = \sqrt{9 n^{2}+3 n+1}-2 n
+$$
+does not converge.
+
+**Solution.** We rewrite $a_n$ as
+\begin{align*}
+a_n & = \sqrt{9 n^{2}+3 n+1}-2 n  \\
+& =\frac{  (\sqrt{9 n^{2}+3 n+1} - 2 n)  (\sqrt{9 n^{2}+3 n+1}+2 n) }{\sqrt{9 n^{2}+3 n+1}+2 n} \\
+& =\frac{9 n^{2}+3 n+1-(2 n)^{2}}{\sqrt{9 n^{2}+3 n+1}+2 n} \\
+& =\frac{5 n^{2}+3 n+1}{\sqrt{9 n^{2}+3 n+1}+2 n} \\
+& =\frac{5 n + 3 +  \dfrac{1}{n} }{\sqrt{9+ \dfrac{3}{n}  + \dfrac{1}{ n^2 } } + 2 } \\
+& = \frac{b_n}{c_n} \,,
+\end{align*}
+where we factored $n$, being it the largest power of $n$ in the denominator, and defined
+$$
+b_n : = 5 n + 3 +  \dfrac{1}{n}\,, \quad 
+c_n := \sqrt{9+ \dfrac{3}{n}  + \dfrac{1}{ n^2 } } + 2 \,.
+$$
+Note that 
+$$
+9+ \dfrac{3}{n}  + \dfrac{1}{ n^2 }  \to 9
+$$
+by the Algebra of Limits. Therefore 
+$$
+\sqrt{9+ \dfrac{3}{n}  + \dfrac{1}{ n^2 }}  \to \sqrt{9} = 3 
+$$
+by Theorem \ref{theorem-square-root-limit}. Hence 
+$$
+c_n = \sqrt{9+ \dfrac{3}{n}  + \dfrac{1}{ n^2 }} + 2 \to 3 + 2 = 5  \,.
+$$
+The numerator 
+$$
+b_n = 5 n + 3 +  \dfrac{1}{n}
+$$
+is instead unbounded. Therefore $(a_n)$ is not convergent, by the Algebra of Limits and the usual contradiction argument.
+:::
+
+
+
+
+
+
+
+## Limit Tests
+
+
+
+::: Theorem 
+### Squeeze theorem {#theorem-squeeze}
+
+Let $\left(a_{n}\right), \left(b_{n}\right)$ and $\left(c_{n}\right)$ be sequences in $\R$. Suppose that
+$$
+b_{n} \leq a_{n} \leq c_{n} \,, \quad \forall  \, n \in \N \,,
+$$
+and that
+$$
+\lim_{n \rightarrow \infty} b_{n} = \lim_{n \rightarrow \infty} c_{n} = L \, .
+$$
+Then
+$$
+\lim_{n \rightarrow \infty} a_{n}= L \, .
+$$
+
+:::
+
+
+
+::: Example 
+
+**Question.** Prove that
+$$
+\lim_{n \to \infty} \, \frac{(-1)^{n}}{n} = 0 \,.
+$$
+
+**Solution.** For all $n \in \N$ we can estimate
+$$
+-1 \leq(-1)^{n} \leq 1 \,.
+$$
+Therefore
+$$
+\frac{-1}{n} \leq \frac{(-1)^{n}}{n} \leq \frac{1}{n} \,, \quad \forall \, n \in \N \,.
+$$
+Moreover
+$$
+\lim_{n \to \infty} \frac{-1}{n}= -1 \cdot 0=0 \,, \quad 
+\lim_{n \to \infty} \frac{1}{n}=0 \,.
+$$
+By the Squeeze Theorem \ref{theorem-squeeze} we conclude
+$$
+\lim_{n \to \infty} \frac{(-1)^{n}}{n}=0 \,.
+$$
+
+:::
+
+
+
+::: {.Example #example-squeeze}
+
+**Question.** Prove that 
+$$
+\lim_{n \to \infty} \frac{\cos (3 n) + 9 n^{2}}{11 n^{2}+15 \sin (17 n)} = \frac{9}{11} \,.
+$$
+
+
+**Solution.** We know that 
+$$
+-1 \leq \cos(x) \leq 1 \,, \quad - 1 \leq \sin(x) \leq 1 \,, \quad \forall \, x \in \R \,.
+$$
+Therefore, for all $n \in \N$
+$$
+- 1 \leq \cos(3n) \leq 1 \,, \quad -1 \leq \sin(17n) \leq 1 \,.
+$$
+We can use the above to estimate the numerator in the given sequence:
+$$
+-1 + 9 n^{2} \leq \cos (3 n)+9 n^{2} \leq 1+ 9 n^{2} \,.
+$${#eq-squeeze-example-1}
+Concerning the denominator, we have
+$$
+11 n^{2}-15 \leq 11 n^{2}+15 \sin (17 n) \leq  11 n^{2} + 15
+$$
+and therefore
+$$
+\frac{1}{11 n^{2} + 15} \leq \frac{1}{11 n^{2}+15 \sin (17 n)} \leq \frac{1}{11 n^{2}-15} \,.
+$${#eq-squeeze-example-2}
+Putting together (@eq-squeeze-example-1)-(@eq-squeeze-example-2) we obtain 
+$$
+\frac{-1 + 9 n^{2}}{11 n^{2} + 15} \leq \frac{\cos (3 n)+9 n^{2}}{11 n^{2}+15 \sin (17 n)} \leq \frac{1+ 9 n^{2}}{11 n^{2}-15} \,.
+$$
+By the Algebra of Limits we infer
+$$
+\frac{-1+9 n^{2}}{11 n^{2}+15}=\frac{-\dfrac{1}{n^{2}} + 9}{11 + \dfrac{15}{n^{2}}} \to \frac{0+9}{11+0}=\frac{9}{11}
+$$
+and
+$$
+\frac{1+9 n^{2}}{11 n^{2} - 15}=\frac{ \dfrac{1}{n^{2}} + 9}{ 11 - \dfrac{15}{n^{2}}} \to \frac{0+9}{11+0}=\frac{9}{11} \,.
+$$
+Applying the Squeeze Theorem \ref{theorem-squeeze} we conclude
+$$
+\lim_{n \to \infty} \frac{\cos (3 n)+ 9 n^{2}}{11 n^{2}+15 \sin (17 n)}=\frac{9}{11} \,.
+$$
+
+:::
+ 
+
+
+
+
+::: Theorem 
+### Geometric Sequence Test   {#theorem-geometric-sequence}
+
+Let $x \in \R$ and let $\left(a_{n}\right)$ be the geometric sequence defined by
+$$
+a_{n}:=x^{n} \,.
+$$
+We have:
+
+1. If $|x|<1$, then 
+$$
+\lim_{n \to \infty} a_{n} = 0 \,.
+$$
+
+2. If $|x|>1$, then sequence $\left(a_{n}\right)$ is unbounded, and hence divergent.
+
+:::
+
+
+
+
+
+::: Example 
+
+We can apply Theorem \ref{theorem-geometric-sequence} to prove convergence
+or divergence for the following sequences.
+
+1. We have
+$$
+\left(\frac{1}{2}\right)^{n} \longrightarrow 0
+$$
+since 
+$$
+\left|\frac{1}{2}\right|=\frac{1}{2}<1 \,.
+$$
+
+2. We have
+$$
+\left(\frac{-1}{2}\right)^{n} \longrightarrow 0
+$$
+since 
+$$
+\left|\frac{-1}{2}\right|=\frac{1}{2}<1 \,.
+$$
+
+3. The sequence 
+$$
+a_n = \left(\frac{-3}{2}\right)^{n}
+$$ 
+does not converge, since 
+$$
+\left|\frac{-3}{2}\right|=\frac{3}{2}>1 \,.
+$$
+
+4. As $n \rightarrow \infty$,
+$$
+\frac{3^{n}}{(-5)^{n}}=\left(-\frac{3}{5}\right)^{n} \longrightarrow 0
+$$
+since 
+$$
+\left|-\frac{3}{5}\right|=\frac{3}{5}<1 \,.
+$$
+
+5. The sequence 
+$$
+a_{n}=\frac{(-7)^{n}}{2^{2 n}}
+$$ 
+does not converge, since
+$$
+\frac{(-7)^{n}}{2^{2 n}}=\frac{(-7)^{n}}{\left(2^{2}\right)^{n}}=\left(-\frac{7}{4}\right)^{n}
+$$
+and 
+$$
+\left|-\frac{7}{4}\right|=\frac{7}{4}>1  \,.
+$$
+
+:::
+
+
+
+
+::: Theorem 
+### Ratio Test {#theorem-ratio-test}
+
+Let $\left(a_{n}\right)$ be a sequence in $\R$ such that
+$$
+a_{n} \neq 0 \,, \quad \forall \, n \in \N \,.
+$$ 
+
+
+1. Suppose that the following limit exists:
+$$
+L:=\lim_{n \to \infty}\left|\frac{a_{n+1}}{a_{n}}\right| \,.
+$$
+Then,
+
+    - If $L<1$ we have
+    $$
+    \lim_{n \to\infty} a_{n}=0 \,.
+    $$
+
+    - If $L>1$, the sequence $\left(a_{n}\right)$ is unbounded, and hence does not converge.
+
+2. Suppose that there exists $N \in \N$ and $L>1$ such that
+$$
+\left|\frac{a_{n+1}}{a_{n}}\right| \geq L \,, \quad \forall \, n \geq N \,. 
+$$
+Then the sequence $\left(a_{n}\right)$ is unbounded, and hence does not converge.
+
+:::
+
+
+
+
+
+
+::: Example
+
+**Question.** Let 
+$$
+a_{n}=\frac{3^{n}}{n !} \,,
+$$
+where we recall that $n!$ (pronounced $n$ factorial) is defined by
+$$
+n! := n \cdot (n-1) \cdot (n-2) \cdot  \ldots \cdot  3 \cdot 2 \cdot 1 \,. 
+$$
+Prove that
+$$
+\lim_{n \to \infty} a_n  = 0 \,.
+$$
+
+**Solution.** We have
+\begin{align*}
+\left|\frac{a_{n+1}}{a_{n}}\right| & = \dfrac{\left( \dfrac{3^{n+1}}{(n+1) !} \right) }{  \left( \dfrac{3^{n}}{n !} \right) } \\
+& = \frac{3^{n+1}}{3^{n}} \, \frac{n !}{(n+1) !} \\
+& = \frac{3 \cdot 3^n}{3^n} \, \frac{n!}{(n+1) n!} \\
+& =\frac{3}{n+1} \longrightarrow L = 0 \,.
+\end{align*}
+Hence, $L=0<1$ so $a_{n} \to 0$ by the Ratio Test in Theorem \ref{theorem-ratio-test}.
+
+:::
+
+
+::: Example
+
+**Question.** Consider the sequence
+$$
+a_{n}=\frac{n ! \cdot 3^{n}}{\sqrt{(2 n) !}} \,.
+$$
+Prove that $(a_n)$ is divergent.
+
+**Solution.** We have
+\begin{align*}
+\left|\frac{a_{n+1}}{a_{n}}\right| & =\frac{(n+1) ! \cdot 3^{n+1}}{\sqrt{(2(n+1)) !}}  \frac{\sqrt{(2 n) !}}{n ! \cdot 3^{n}} \\
+& =\frac{(n+1) !}{n !} \cdot \frac{3^{n+1}}{3^{n}} \cdot \frac{\sqrt{(2 n) !}}{\sqrt{(2(n+1)) !}}
+\end{align*}
+For the first two fractions we have
+$$
+\frac{(n+1) !}{n !} \cdot \frac{3^{n+1}}{3^{n}} = 3(n+1) \,,
+$$
+while for the third fraction
+\begin{align*}
+\frac{\sqrt{(2 n) !}}{\sqrt{(2(n+1)) !}} & =\sqrt{\frac{(2 n) !}{(2 n+2) !}} \\
+& = \sqrt{\frac{ (2n)! }{ (2n+2) \cdot (2n+1) \cdot (2n)! }} \\
+& = \frac{1}{\sqrt{(2 n+1)(2 n+2)}} \,.
+\end{align*}
+Therefore, using the Algebra of Limits,
+\begin{align*}
+\left|\frac{a_{n+1}}{a_{n}}\right| & = \frac{3(n+1)}{\sqrt{(2 n+1)(2 n+2)}}\\
+& = \frac{3n \left(1+ \dfrac{1}{n} \right)}{\sqrt{n^2 \left( 2 + \dfrac{1}{n}\right) \left(2 + \dfrac{2}{n} \right)}} \\
+& = \frac{3 \left(1+ \dfrac{1}{n} \right)}{\sqrt{ \left( 2 + \dfrac{1}{n}\right) \left(2 + \dfrac{2}{n} \right)}}  \longrightarrow \frac{3}{\sqrt{4}} = \frac{3}{2} > 1 \,.
+\end{align*}
+By the Ratio Test we conclude that $(a_n)$ is divergent.
+
+:::
+
+
+
+::: Example 
+
+**Question.** Prove that the following sequence is divergent
+$$
+a_{n}=\frac{n !}{100^{n}} \,.
+$$
+
+
+**Solution.** We have
+$$
+\left|\frac{a_{n+1}}{a_{n}}\right| 
+= \frac{100^{n}}{100^{n+1}} \frac{(n+1) !}{n !}
+=\frac{n+1}{100} \,.
+$$
+Choose $N=101$. Then for all $n \geq N$,
+\begin{align*}
+\left|\frac{a_{n+1}}{a_{n}}\right| 
+& = \frac{n+1}{100} \\
+& \geq \frac{N+1}{100} \\
+& = \frac{101}{100} > 1 \,.
+\end{align*}
+Hence $a_{n}$ is divergent by the Ratio Test.
+
+:::
+
+
+
+
+## Monotone sequences
+
+
+::: Definition
+### Monotone sequence
+
+Let $(a_n)$ be a real sequence. We say that:
+
+1. $(a_n)$ is **increasing** if 
+$$
+a_n \leq a_{n+1} \,, \quad \forall \, n \geq N \,.
+$$
+
+2. $(a_n)$ is **decreasing** if 
+$$
+a_n \geq a_{n+1} \,, \quad \forall \, n \geq N \,.
+$$
+
+3. $(a_n)$ is **monotone** if it is either increasing or decreasing.
+
+:::
+
+
+
+::: Example
+
+**Question.** Prove that the following sequence is increasing
+$$
+a_n = \frac{n-1}{n} \,.
+$$
+
+**Solution.** We have
+$$
+a_{n+1} = \frac{n}{n+1} > \frac{n-1}{n} = a_n \,,
+$$
+where the inequality holds because
+\begin{align*}
+\frac{n}{n+1} > \frac{n-1}{n} \quad & \iff \quad 
+n^2 > (n-1)(n+1) \quad  \\
+& \iff \quad n^2 > n^2 - 1 \\
+& \iff \quad 0 >  - 1
+\end{align*}
+:::
+
+
+::: Example
+ 
+**Question.** Prove that the following sequence is decreasing
+$$
+a_n = \frac1n \,.
+$$
+
+**Solution.** We have
+$$
+a_n = \frac1n > \frac{1}{n+1} = a_{n+1} \,,
+$$
+concluding.
+
+:::
+
+
+
+
+::: Theorem
+### Monotone Convergence Theorem  {#theorem-monotone-convergence}
+
+Let $(a_n)$ be a sequence in $\R$. Suppose that $(a_n)$ is bounded and
+monotone. Then $(a_n)$ converges.
+
+:::
+
+
+::: Proof
+
+Assume $(a_n)$ is bounded and monotone. Since $(a_n)$ is bounded, the set 
+$$
+A:=\{ a_n \divider n \in \N \}  \subseteq \R 
+$$
+is bounded below and above. By the Axiom of Completeness of $\R$ there exist $i,s \in \R$ such that
+$$
+i = \inf A \,, \quad s = \sup A \,.
+$$
+
+We have two cases:
+
+1. $(a_n)$ is increasing: We are going to prove that
+$$
+\lim_{n \to \infty} a_n = s \,.
+$$
+Equivalently, we need to prove that
+$$
+\forall \, \e>0 \,, \, \exists \, N \in \N \st \forall \, n \geq N \,, \,\,
+|a_n - s| < \e \,. 
+$${#eq-monotone-conv-proof}
+Let $\e > 0$. Since $s$ is the smallest upper bound for $A$, this means
+$$
+s - \e
+$$
+is not an upper bound. Therefore there exists $N \in \N$ such that 
+$$
+s - \e < a_N \,.
+$${#eq-monotone-convergence-proof-1}
+Let $n \geq N$. Since $a_n$ is increasing, we have
+$$
+a_N \leq a_n \,, \quad \forall \, n \geq N \,.
+$${#eq-monotone-convergence-proof-2}
+Moreover $s$ is the supremum of $A$, so that
+$$
+a_n \leq s < s + \e \,, \quad \forall \, n \in \N \,.
+$${#eq-monotone-convergence-proof-3}
+Putting together estimates (@eq-monotone-convergence-proof-1)-(@eq-monotone-convergence-proof-2)-(@eq-monotone-convergence-proof-3)
+we get
+$$
+s - \e < a_N \leq a_n \leq s < s + \e \,, \quad \forall \, n \geq N \,.
+$$
+The above implies 
+$$
+s - \e < a_n < s + \e \,, \quad \forall \, n \geq N \,,
+$$
+which is equivalent to (@eq-monotone-conv-proof).
+
+
+
+
+2. $(a_n)$ is decreasing: With a similar proof, one can show that
+$$
+\lim_{n \to \infty} a_n = i \,.
+$$
+This is left as an exercise.
+
+
+:::
+
+
+
+
+
+
+
+
+## Example: Euler's Number
+
+
+As an application of the Monotone Convergence Theorem we can give
+a formal definition for the Euler's Number
+$$
+e = 2.71828182845904523536 \dots
+$$
+
+
+::: {.Theorem #theorem-euler-number}
+
+Consider the sequence
+$$
+a_n = \left(  1 + \frac{1}{n}  \right)^n  \,.
+$$
+
+We have that:
+
+1. $(a_n)$ is monotone increasing,
+2. $(a_n)$ is bounded.
+
+In particular $(a_n)$ is convergent.
+
+:::
+
+
+
+::: Proof
+
+
+*Part 1.* We prove that $(a_n)$ is increasing
+$$
+a_{n} \geq a_{n-1} \,, \quad \forall \, n \in \N \,,
+$$
+which by definition is equivalent to
+$$
+\left(  1 + \frac{1}{n}  \right)^n \geq 
+\left(  1 + \frac{1}{n - 1}  \right)^{n-1} \,, \quad \forall \, n \in \N \,.
+$$
+Summing the fractions we get
+$$
+\left(  \frac{n+1}{n}  \right)^n \geq 
+\left(  \frac{n}{n-1}  \right)^{n-1} \,.  
+$$
+Multiplying by $((n-1)/n)^n$ we obtain
+$$
+\left(  \frac{n-1}{n}  \right)^n  \left(  \frac{n+1}{n}  \right)^n  \geq 
+ \frac{n-1}{n}  \,,
+$$
+which simplifies to
+$$
+\left(  1 - \frac{1}{n^2}  \right)^n \geq 1 - \frac1n \,, \quad  \forall \, n \in \N \,.
+$${#eq-proof-euler-1}
+Therefore $(a_n)$ is increasing if and only if (@eq-proof-euler-1) holds.
+Recall Bernoulli's inequality from Lemma \ref{lemma-bernoulli}: For
+$x \in \R$, $x>-1$, it holds
+$$
+(1 + x )^n  \geq 1 + nx  \,, \quad \forall \, n \in \N \,.
+$$
+Appliying Bernoulli's inequality with 
+$$
+x = -\frac{1}{n^2}
+$$
+yields
+$$
+\left(  1 - \frac{1}{n^2}  \right)^n  \geq 1 + n \left( -\frac{1}{n^2} \right) = 1 - \frac{1}{n} \,,
+$$
+which is exactly (@eq-proof-euler-1). Then $(a_n)$ is increasing.
+
+
+
+*Part 2*. We have to prove that $(a_n)$ is bounded, that is, that there
+exists $M > 0$ such that
+$$
+|a_n| \leq M \,, \quad \forall \, n \in \N \,.
+$$
+To this end, introduce the sequence $(b_n)$ by setting
+$$
+b_n := \left(   1  + \frac1n \right)^{n+1} \,.
+$$
+The sequence $(b_n)$ is decreasing.
+
+> To prove $(b_n)$ is decreasing, we need to show that 
+$$
+b_{n-1} \geq b_n \,, \quad \forall \, n \in \N \,. 
+$$
+By definition of $b_n$, the above reads
+$$
+\left(   1  + \frac{1}{n-1} \right)^{n} \geq
+\left(   1  + \frac{1}{n} \right)^{n+1} \,, \quad \forall \, n \in \N \,.
+$$
+Summing the terms inside the brackets, the above is equivalent to
+$$
+\left(   \frac{n}{n-1} \right)^{n} \geq
+\left(   \frac{n+1}{n} \right)^{n} \left(   \frac{n+1}{n} \right) \,.
+$$
+Multiplying  by $(n/(n+1))^n$ we get
+$$
+\left(  \frac{n^2}{n^2 - 1} \right)^{n} \geq  \left(   \frac{n+1}{n} \right) \,.
+$$
+The above is equivalent to
+$$
+\left( 1 +  \frac{1}{n^2 - 1} \right)^{n} \geq  \left(  1 + \frac{1}{n} \right) \,.
+$${#eq-proof-euler-3}
+Therefore $(b_n)$ is decreasing if and only if (@eq-proof-euler-3) holds for all $n \in \N$.
+By choosing 
+$$
+x = \frac{1}{n^2 - 1} 
+$$
+in Bernoulli's inequality, we obtain
+\begin{align*}
+\left( 1 +  \frac{1}{n^2 - 1} \right)^{n} & \geq 1 + n \left(  \frac{1}{n^2 - 1}   \right) \\
+& = 1 + \frac{n}{n^2 - 1} \\
+& \geq 1 + \frac1n \,,
+\end{align*}
+where in the last inequality we used that 
+$$
+ \frac{n}{n^2 - 1} > \frac1n \,,
+$$
+which holds, being equivalent to $n^2 > n^2 - 1$. We have therefore proven
+(@eq-proof-euler-3), and hence $(b_n)$ is decreasing.
+
+
+We now observe that
+For all $n \in \N$
+\begin{align*}
+b_n & = \left(   1  + \frac1n \right)^{n+1} \\
+    & = \left(   1  + \frac1n \right)^n \left(   1  + \frac1n \right) \\ 
+    & = a_n \left(   1  + \frac1n \right) \\
+    & > a_n \,.
+\end{align*}
+Since $(a_n)$ is increasing and $(b_n)$ is decreasing, in particular
+$$
+a_n \geq a_1 \,, \quad b_n \leq b_1 \,.
+$$
+Therefore
+$$
+a_1 \leq a_n < b_n \leq b_1 \,, \quad \forall \, n \in \N \,.
+$$
+We compute
+$$
+a_1 = 2 \,, \quad b_1 = 4 \,,
+$$
+from which we get 
+$$
+2 \leq a_n \leq 4 \,, \quad \forall \, n \in \N \,.
+$$
+Therefore 
+$$
+|a_n| \leq 4 \,, \quad \forall \, n \in \N \,,
+$$
+showing that $(a_n)$ is bounded.
+
+
+*Part 3.* The sequence $(a_n)$ is increasing and bounded above. Therefore $(a_n)$ is convergent by the Monotone Convergence Theorem \ref{theorem-monotone-convergence}.
+
+:::
+
+
+
+
+Thanks to Theorem \ref{theorem-euler-number} we can define the Euler's Number $e$.
+
+
+::: Definition
+### Euler's Number
+
+The Euler's number is defined as
+$$
+e := \lim_{n \to \infty } \, \left(  1 + \frac{1}{n}  \right)^n \,.
+$$
+
+:::
+
+
+Setting $n=1000$ in the formula for $(a_n)$, we get an approximation of $e$:
+$$
+e \approx a_{1000} = 2.7169 \,.
+$$
+
+
+
+
+
+
+## Some important limits
+
+
+
+In this section we investigate limits of some sequences to which 
+the Limit Tests do not apply.
+
+
+::: Theorem
+
+Let $x \in \R$, with $x > 0$. Then
+$$
+\lim_{n \to \infty} \sqrt[n]{x} = 1 \,.
+$$
+
+:::
+
+
+::: Proof
+
+*Step 1.* Assume $x \geq 1$. In this case
+$$
+\sqrt[n]{x} \geq 1 \,.
+$$
+Define 
+$$
+b_n := \sqrt[n]{x} - 1 \,,
+$$
+so that $b_n \geq 0$. By Bernoulli's Inequality we have
+$$
+x = (1 + b_n)^n \geq 1 + n b_n \,.
+$$
+Therefore 
+$$
+0 \leq b_n \leq \frac{x-1}{n} \,.
+$$
+Since 
+$$
+\frac{x-1}{n} \longrightarrow 0 \,,
+$$
+by the Squeeze Theorem we infer $b_n \to 0$, and hence 
+$$
+\sqrt[n]{x} = 1 + b_n \longrightarrow 1 + 0 = 1\,, 
+$$
+by the Algebra of Limits.
+
+*Step 2.* Assume $0< x < 1$. In this case
+$$
+\frac{1}{x} > 1 \,.
+$$
+Therefore
+$$
+\lim_{n \to \infty} \, \sqrt[n]{  1/x  } = 1  \,.
+$$
+by Step 1. Therefore
+$$
+\sqrt[n]{x} = \frac{1}{\sqrt[n]{  1/x  }} \longrightarrow \frac{1}{1} = 1\,,
+$$
+by the Algebra of Limits.
+
+:::
+
+
+
+::: {.Theorem   #theorem-important-limit-1}
+
+Let $(a_n)$ be a sequence such that $a_n \to 0$. Then
+$$
+\sin(a_n) \to 0 \,, \quad 
+\cos(a_n) \to 1 \,.
+$$
+
+:::
+
+::: Proof
+
+Assume that $a_n \to 0$ and set
+$$
+\e := \frac{\pi}{2} \,.
+$$
+By the convergence $a_m \to 0$ there exists $N \in \N$ such that
+$$
+|a_n| < \e = \frac{\pi}{2} \, \quad \forall \, n \geq N \,.
+$${#eq-limiti-notevoli-1}
+
+
+*Step 1*. We prove that 
+$$
+\sin(a_n) \to 0 \,.
+$$
+By elementary trigonometry we have
+$$
+0 \leq |\sin (x)| = \sin |x| \leq |x| \,, \quad \forall  \, x \in \left[
+-\frac{\pi}{2}, \frac{\pi}{2} \right] \,.
+$$
+Therefore, since (@eq-limiti-notevoli-1) holds, we can substitute $x=a_n$ in the above inequality to get
+$$
+0 \leq |\sin (a_n)|  \leq |a_n| \,, \quad \forall \, n \geq \N \,.
+$$
+Since $a_n \to 0$, we also have $|a_n|\to 0$. Therefore 
+$|\sin (a_n)| \to 0$ by the Squeeze Theorem. This immediately implies 
+$\sin(a_n) \to 0$.
+
+*Step 2*. We prove that 
+$$
+\cos(a_n) \to 1 \,.
+$$
+Inverting the relation
+$$
+\cos^2(x) + \sin^2 (x) = 1 \,,
+$$
+we obtain
+$$
+\cos(x) = \pm \sqrt{ 1 - \sin^2 (x) } \,.
+$$
+We have that $\cos(x) \geq 0$ for $-\pi/2 \leq x \leq \pi/2$. Thus
+$$
+\cos(x) = \sqrt{ 1 - \sin^2 (x) } \,, \quad \forall \, x \in 
+\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,.
+$$
+Since (@eq-limiti-notevoli-1) holds, we can set $x=a_n$ in the above inequality and obtain
+$$
+\cos(a_n) = \sqrt{ 1 - \sin^2 (a_n) } \,, \quad \forall \, n \geq N \,. 
+$$
+By Step 1 we know that $\sin(a_n) \to 0$. Therefore, by the Algebra of Limits,
+$$
+ 1 - \sin^2 (a_n) \longrightarrow 1 - 0 \cdot 0 = 1 \,.
+$$
+Using Theorem \ref{theorem-square-root-limit} we have
+$$
+\cos(a_n) = \sqrt{1 - \sin^2 (a_n)} \longrightarrow \sqrt{1} = 1 \,,
+$$
+concluding the proof.
+
+
+:::
+
+
+
+::: {.Theorem  #theorem-important-limit-2}
+
+Suppose $(a_n)$ is such that $a_n \to 0$ and 
+$$
+a_n \neq 0 \,, \quad \forall \, n \in \N \, .
+$$
+Then
+$$
+\lim_{n \to \infty} \frac{\sin(a_n)}{a_n} = 1 \,.
+$$
+
+:::
+
+
+::: Proof
+
+The following elementary trigonometric inequality holds:
+$$
+\sin (x) < x < \tan (x) \,, \quad \forall \, x \in \left[0 ,\frac{\pi}{2} \right]  \,.
+$$
+Note that $\sin x >0$ for $0 < x < \pi/2$. Therefore we can divide the
+above inequality by $\sin(x)$ and take the reciprocals to get
+$$
+\cos(x) < \frac{\sin (x)}{x} < 1 \,, \quad \forall \, x \in \Big( 0 ,\frac{\pi}{2} \Big] \,.
+$$
+If $-\pi/2<x<0$, we can apply the above inequality to $-x$ to obtain
+$$
+\cos(-x) < \frac{\sin(-x)}{-x} < 1  \,.
+$$
+Recalling that $\cos(-x) = \cos(x)$ and $\sin(-x)=-\sin(x)$, we get
+$$
+\cos(x) < \frac{\sin(x)}{x} < 1  \,, \quad \forall \, x \in \Big( -\frac{\pi}{2}, 0 \Big] \,.
+$$
+Thus
+$$
+\cos(x) < \frac{\sin(x)}{x} < 1  \,, \quad \forall  \, x \in \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] \smallsetminus \{0\} \,.
+$${#eq-limiti-notevoli-3}
+Let 
+$$
+\e := \frac{\pi}{2} \,.
+$$
+Since $a_n \to 0$, there exists $N \in \N$ such that
+$$
+|a_n| < \e = \frac{\pi}{2} \,, \quad \forall \, n \geq N \,.
+$$
+Since $a_n \neq 0$ by assumption, the above shows that
+$$
+a_n \in \Big[ -\frac{\pi}{2}, \frac{\pi}{2}  \Big] \smallsetminus \{0\} \,, 
+\quad \forall \, n \geq \N \,.
+$$
+Therefore we can substitute $x=a_n$ into (@eq-limiti-notevoli-3) to get
+$$
+\cos(a_n) < \frac{\sin(a_n)}{a_n} < 1  \,, \quad \forall  \, n \geq N \,.
+$$
+We have
+$$
+\cos(a_n) \to 1
+$$ 
+by Theorem \ref{theorem-important-limit-1}. By the Squeeze Theorem we conclude that
+$$
+\lim_{n \to \infty} \frac{\sin(a_n)}{a_n} = 1 \,.
+$$
+
+:::
+
+
+
+::: Warning
+
+You might be tempted to apply L'Hôpital's rule (which we did not cover in these Lecture Notes) to compute 
+$$
+\lim_{x \to 0} \frac{\sin(x)}{x}  \,.
+$$
+This would yield the correct limit
+$$
+\lim_{x \to 0} \frac{\sin(x)}{x} =
+\lim_{x \to 0} \frac{(\sin(x))'}{(x)'} = 
+\lim_{x \to 0} \cos(x) = 1  \,.
+$$
+However this is a circular argument, since the derivative of 
+$\sin(x)$ at $x=0$ is defined as the limit
+$$
+\lim_{x \to 0} \frac{\sin(x)}{x} \,.
+$$
+
+:::
+
+
+
+
+::: {.Theorem  #theorem-important-limit-3}
+
+Suppose $(a_n)$ is such that $a_n \to 0$ and 
+$$
+a_n \neq 0 \,, \quad \forall \, n \in \N \, .
+$$
+Then
+$$
+\lim_{n \to \infty} \frac{1 - \cos(a_n)}{(a_n)^2} = \frac{1}{2} \,, \quad 
+\lim_{n \to \infty} \frac{1 - \cos(a_n)}{a_n} = 0  \, .
+$$
+
+:::
+
+
+::: Proof
+
+*Step 1.*  By Theorem \ref{theorem-important-limit-1} and Theorem \ref{theorem-important-limit-2}, we have
+$$
+\cos(a_n) \to 1 \,, \quad \frac{\sin(a_n)}{a_n} \to 1 \,.
+$$
+Therefore
+\begin{align*}
+\frac{1 - \cos(a_n)}{(a_n)^2} & = 
+\frac{1 - \cos(a_n)}{(a_n)^2} \, \frac{1 + \cos(a_n)}{1 + \cos(a_n)} \\
+& = \frac{1 - \cos^2(a_n)}{(a_n)^2} \,  \frac{1}{1 + \cos(a_n)} \\
+& = \left( \frac{\sin(a_n)}{a_n}   \right)^2 \, \frac{1}{1 + \cos(a_n)} \longrightarrow 1 \cdot \frac{1}{1 + 1} = \frac12 \,,
+\end{align*}
+where in the last line we use the Algebra of Limits. 
+
+*Step 2.* We have
+$$
+\frac{1 - \cos(a_n)}{a_n} =  a_n \cdot \frac{1 - \cos(a_n)}{(a_n)^2} \longrightarrow 0 \cdot \frac{1}{2} = 0 \,, 
+$$
+using Step 1 and the Algebra of Limits.
+
+
+
+:::
+
+
+
+
+
+::: Example
+
+**Question.** Prove that
+$$
+\lim_{n \to \infty} \, n  \sin \left(  \frac{1}{n} \right)  = 1 \,.
+$${#eq-notable-limits-2}
+
+**Solution.** This is because
+$$
+n  \sin \left(  \frac{1}{n} \right) = \frac{ \sin \left(  \dfrac{1}{n} \right) }{ \dfrac{1}{n} } \longrightarrow 1 \,,
+$$
+by Theorem \ref{theorem-important-limit-2} with $a_n = 1/n$.
+
+:::
+
+
+::: Example
+
+**Question.** Prove that
+$$
+\lim_{n \to \infty} \, n^2 \left(  1 - \cos \left(  \dfrac{1}{n} \right)  \right) = \frac12 \,.
+$${#eq-notable-limits-1}
+
+
+**Solution.** Indeed, 
+$$
+n^2 \left(  1 - \cos \left(  \frac{1}{n} \right)\right) = \dfrac{1 - \cos \left(  \dfrac{1}{n} \right)}{\dfrac{1}{n^2}} \longrightarrow \frac12 \,,
+$$
+by applying Theorem \ref{theorem-important-limit-3} with $a_n = 1/n$.
+
+:::
+
+
+::: Example
+
+**Question.** Prove that
+$$
+\lim_{n \to \infty} \, \frac{n  \left( 1- \cos \left(  \dfrac{1}{n} \right) \right) }{ \sin \left( \dfrac{1}{n} \right) } = \frac12 \,.
+$$
+
+**Solution.** Using (@eq-notable-limits-1)-(@eq-notable-limits-2) and the Algebra of Limits
+\begin{align*}
+ \frac{n  \left( 1- \cos \left(  \dfrac{1}{n} \right) \right) }{ \sin \left( \dfrac{1}{n} \right) } & =
+  \frac{n^2  \left( 1- \cos \left(  \dfrac{1}{n} \right) \right) }{ n \sin \left( \dfrac{1}{n} \right) } \\
+  & \longrightarrow \frac{1/2}{1} = \frac12 \,.
+\end{align*}
+
+:::
+
+
+
+::: Example
+
+**Question.** Prove that
+$$
+\lim_{n \to \infty} \, n \cos \left( \frac{2}{n}  \right) \sin \left( \frac{2}{n}  \right) = 2 \,.
+$$
+
+**Solution.** We have
+$$
+\cos \left( \frac{2}{n}  \right) \longrightarrow 1 \,,
+$$
+by Theorem \ref{theorem-important-limit-1} applied with $a_n = 2/n$. Moreover
+$$
+\frac{\sin \left( \dfrac{2}{n}  \right)}{\dfrac{2}{n}} \longrightarrow 1 \,,
+$$
+by Theorem \ref{theorem-important-limit-2} applied with $a_n = 2/n$. Therefore
+\begin{align*}
+n \cos \left( \frac{2}{n}  \right) \sin \left( \frac{2}{n}  \right) & = 
+2 \cdot \cos \left( \frac{2}{n}  \right) \cdot \frac{\sin \left( \dfrac{2}{n}  \right)}{\dfrac{2}{n}} \\
+& \longrightarrow 2 \cdot 1 \cdot 1 = 2 \,,
+\end{align*}
+where we used the Algebra of Limits.
+
+:::
+
+
+::: Example
+
+**Question.** Prove that
+$$
+\lim_{n \to \infty} \, \frac{n^2+1}{n+1} \sin \left(  \dfrac{1}{n} \right)  = 1 \,.
+$$
+
+**Solution.** Note that
+\begin{align*}
+\frac{n^2+1}{n+1} \sin \left(  \dfrac{1}{n} \right) & = \left( \frac{1+\dfrac{1}{n^2}}{1+ \dfrac{1}{n}} \right) \cdot \left( n \sin \left(  \dfrac{1}{n} \right) \right) \\
+& \longrightarrow \frac{1 + 0}{1 + 0} \cdot 1 = 1\,,
+\end{align*}
+where we used (@eq-notable-limits-2) and the Algebra of Limits.
+
+
+:::
+
+
+
+
+
+

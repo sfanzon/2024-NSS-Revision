@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Properties of \mathbb{R} – Numbers Sequences and Series</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../sections/chap_4.html" rel="next">
+<link href="../sections/chap_2.html" rel="prev">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+.Axiom {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Numbers Sequences and Series</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="../Numbers-Sequences-and-Series.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/chap_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Properties of <span class="math inline">\(\mathbb{R}\)</span></span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Revision Guide</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Real Numbers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Properties of <span class="math inline">\(\mathbb{R}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Complex Numbers</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/license.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">License</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#revisiting-sup-and-inf" id="toc-revisiting-sup-and-inf" class="nav-link active" data-scroll-target="#revisiting-sup-and-inf"><span class="header-section-number">3.1</span> Revisiting Sup and Inf</a></li>
+  <li><a href="#cardinality" id="toc-cardinality" class="nav-link" data-scroll-target="#cardinality"><span class="header-section-number">3.2</span> Cardinality</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Properties of <span class="math inline">\(\mathbb{R}\)</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="theorem-archimedean" class="Theorem" title="Archimedean Property">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 1: </strong>Archimedean Property</summary><div>
+<p>Let <span class="math inline">\(x \in \mathbb{R}\)</span> be given. Then:</p>
+<ol type="1">
+<li><p>There exists <span class="math inline">\(n \in \mathbb{N}\)</span> such that <span class="math display">\[
+n &gt; x \,.
+\]</span></p></li>
+<li><p>Suppose in addition that <span class="math inline">\(x&gt;0\)</span>. There exists <span class="math inline">\(n \in \mathbb{N}\)</span> such that <span class="math display">\[
+\frac1n &lt; x \,.
+\]</span></p></li>
+</ol>
+</div></details>
+</div>
+<div id="theorem-archimedean-alternative" class="Theorem" title="Archimedean Property (Alternative formulation)">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2: </strong>Archimedean Property (Alternative formulation)</summary><div>Let <span class="math inline">\(x,y \in \mathbb{R}\)</span>, with <span class="math inline">\(0&lt;x&lt;y\)</span>. There exists <span class="math inline">\(n \in \mathbb{N}\)</span> such that <span class="math display">\[
+nx &gt; y \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="theorem-nested" class="Theorem" title="Nested Interval Property">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3: </strong>Nested Interval Property</summary><div>For each <span class="math inline">\(n \in \mathbb{N}\)</span> assume given a closed interval <span class="math display">\[
+I_n := [a_n,b_n] = \{   x \in \mathbb{R}\, \colon \,a_n \leq x \leq b_n   \} \,.
+\]</span> Suppose that the intervals are nested, that is, <span class="math display">\[
+I_n \supset I_{n+1}\,, \quad \forall \, n \in \mathbb{N}\,.
+\]</span> Then <span id="eq-theorem-nested-proof-0"><span class="math display">\[
+\bigcap_{n=1}^\infty I_n \neq \emptyset \,.
+\tag{3.1}\]</span></span><p></p>
+</div></details>
+</div>
+<div id="example-nested-open" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 4</strong></summary><div><strong>Question.</strong> Consider the <strong>open</strong> intervals <span class="math display">\[
+I_n := \left( 0, \frac1n \right) \,.
+\]</span> These are clearly nested <span class="math display">\[
+I_n \supset I_{n+1}\,, \quad \forall \, n \in \mathbb{N}\,.
+\]</span> Prove that <span id="eq-example-nested-2"><span class="math display">\[
+\bigcap_{n=1}^\infty I_n = \emptyset \,.
+\tag{3.2}\]</span></span><p></p>
+<p><strong>Solution.</strong> Suppose by contradiction that the intersection is non-empty. Then there exists <span class="math inline">\(x \in \mathbb{N}\)</span> such that <span class="math display">\[
+x \in I_n \,, \quad \forall \, n \in \mathbb{N}\,.
+\]</span> By definition of <span class="math inline">\(I_n\)</span> the above reads <span id="eq-example-nested"><span class="math display">\[
+0 &lt; x &lt; \frac1n  \,, \quad \forall \, n \in \mathbb{N}\,.
+\tag{3.3}\]</span></span> Since <span class="math inline">\(x&gt;0\)</span>, by the Archimedean Property in Theorem <a href="chap_3.html#theorem-archimedean">1</a> Point 2, there exists <span class="math inline">\(n_0 \in \mathbb{N}\)</span> such that <span class="math display">\[
+0 &lt; \frac{1}{n_0} &lt; x \,.
+\]</span> The above contradicts (<a href="#eq-example-nested" class="quarto-xref"><span>3.3</span></a>). Therefore (<a href="#eq-example-nested-2" class="quarto-xref"><span>3.2</span></a>) holds.</p>
+</div></details>
+</div>
+<section id="revisiting-sup-and-inf" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="revisiting-sup-and-inf"><span class="header-section-number">3.1</span> Revisiting Sup and Inf</h2>
+<div id="proposition-supremum-characterization" class="Proposition" title="Characterization of Supremum">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 5: </strong>Characterization of Supremum</summary><div>
+<p>Let <span class="math inline">\(A \subseteq \mathbb{R}\)</span> be a non-empty set. Suppose that <span class="math inline">\(s \in \mathbb{R}\)</span> is an upper bound for <span class="math inline">\(A\)</span>. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(s = \sup A\)</span></li>
+<li>For every <span class="math inline">\(\varepsilon&gt; 0\)</span> there exists <span class="math inline">\(x \in A\)</span> such that <span class="math display">\[
+s - \varepsilon&lt; x \,.
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<div id="prop-supremum-infimum" class="Proposition" title="Characterization of Infimum">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 6: </strong>Characterization of Infimum</summary><div>
+<p>Let <span class="math inline">\(A \subseteq \mathbb{R}\)</span> be a non-empty set. Suppose that <span class="math inline">\(i \in \mathbb{R}\)</span> is a lower bound for <span class="math inline">\(A\)</span>. They are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(i = \inf A\)</span></li>
+<li>For every <span class="math inline">\(\varepsilon\in \mathbb{R}\)</span>, with <span class="math inline">\(\varepsilon&gt; 0\)</span>, there exists <span class="math inline">\(x \in A\)</span> such that <span class="math display">\[
+x &lt; i + \varepsilon\,.
+\]</span></li>
+</ol>
+</div></details>
+</div>
+<div id="proposition-interval-inf-sup" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 7</strong></summary><div>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>. Let <span class="math display">\[
+A:= (a,b) = \{ x \in \mathbb{R}\, \colon \,a &lt; x &lt; b \}\,.
+\]</span> Then <span class="math display">\[
+\inf A = a \,, \quad \sup A = b \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Corollary-8" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 8</strong></summary><div>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>. Let <span class="math display">\[
+A:= (a,b) = \{ x \in \mathbb{R}\, \colon \,a &lt; x &lt; b \}\,.
+\]</span> Then <span class="math inline">\(\min A\)</span> and <span class="math inline">\(\max A\)</span> do not exist.<p></p>
+</div></details>
+</div>
+<div id="Corollary-9" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 9</strong></summary><div>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>. Let <span class="math display">\[
+A:= [a,b) = \{ x \in \mathbb{R}\, \colon \,a \leq x &lt; b \}\,.
+\]</span> Then <span class="math display">\[
+\min A = \inf A = a \,, \quad \sup A = b \,,
+\]</span> <span class="math inline">\(\max A\)</span> does not exist.<p></p>
+</div></details>
+</div>
+<div id="Proposition-10" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10</strong></summary><div>Define the set <span class="math display">\[
+A :=  \left\{ \frac1n \, \colon \,n \in \mathbb{N}\right\} \,.
+\]</span> Then <span class="math display">\[
+\inf A = 0 \,, \quad \sup A = \max A = 1 \,.
+\]</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-1" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div><em>Part 1.</em> We have <span class="math display">\[
+\frac1n \leq 1 \,, \quad \forall \, n \in \mathbb{N}\,.
+\]</span> Therefore <span class="math inline">\(1\)</span> is an upper bound for <span class="math inline">\(A\)</span>. Since <span class="math inline">\(1 \in A\)</span>, by definition of maximum we conclude that <span class="math display">\[
+\max A = 1 \,.
+\]</span> Since the maximum exists, we conclude that also the supremum exists, and <span class="math display">\[
+\sup A = \max A =  1 \,.
+\]</span><p></p>
+<p><em>Part 2.</em> We have <span class="math display">\[
+\frac1n &gt; 0 \,, \quad \forall \, n \in \mathbb{N}\,,
+\]</span> showing that <span class="math inline">\(0\)</span> is a lower bound for <span class="math inline">\(A\)</span>. Suppose by contradiction that <span class="math inline">\(0\)</span> is not the infimum. Therefore <span class="math inline">\(0\)</span> is not the largest lower bound. Then there exists <span class="math inline">\(\varepsilon\in \mathbb{R}\)</span> such that:</p>
+<ul>
+<li><p><span class="math inline">\(\varepsilon\)</span> is a lower bound for <span class="math inline">\(A\)</span>, that is, <span id="eq-lower-bound-1-n"><span class="math display">\[
+\varepsilon\leq \frac1n  \,, \quad \forall \, n \in \mathbb{N}\,,
+\tag{3.4}\]</span></span></p></li>
+<li><p><span class="math inline">\(\varepsilon\)</span> is larger than <span class="math inline">\(0\)</span>: <span class="math display">\[
+0 &lt; \varepsilon\,.
+\]</span></p></li>
+</ul>
+<p>As <span class="math inline">\(\varepsilon&gt;0\)</span>, by the Archimedean Property there exists <span class="math inline">\(n_0 \in \mathbb{N}\)</span> such that <span class="math display">\[
+0 &lt; \frac{1}{n_0} &lt; \varepsilon\,.
+\]</span> This contradicts (<a href="#eq-lower-bound-1-n" class="quarto-xref"><span>3.4</span></a>). Thus <span class="math inline">\(0\)</span> is the largest lower bound of <span class="math inline">\(A\)</span>, that is, <span class="math inline">\(0 = \inf A\)</span>.</p>
+<p><em>Part 3.</em> We have that <span class="math inline">\(\min A\)</span> does not exist. Indeed suppose by contradiction that <span class="math inline">\(\min A\)</span> exists. Then <span class="math display">\[
+\min A = \inf A \,.
+\]</span> As <span class="math inline">\(\inf A = 0\)</span> by Part 2, we conclude <span class="math inline">\(\min A = 0\)</span>. As <span class="math inline">\(\min A \in A\)</span>, we obtain <span class="math inline">\(0 \in A\)</span>, which is a contradiction.</p>
+</div></details>
+</div>
+</section>
+<section id="cardinality" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="cardinality"><span class="header-section-number">3.2</span> Cardinality</h2>
+<div id="definition-cardinality" class="Definition" title="Cardinality, Finite, Countable, Uncountable">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Cardinality, Finite, Countable, Uncountable</summary><div>
+<p>Let <span class="math inline">\(X\)</span> be a set. The <strong>cardinality</strong> of <span class="math inline">\(X\)</span> is the number of elements in <span class="math inline">\(X\)</span>. We denote the cardinality of <span class="math inline">\(X\)</span> by <span class="math display">\[
+|X| := \# \, \mbox{ of elements in } \, X \,.
+\]</span> Further, we say that:</p>
+<ol type="1">
+<li><p><span class="math inline">\(X\)</span> is <strong>finite</strong> if there exists a natural number <span class="math inline">\(n \in \mathbb{N}\)</span> and a bijection <span class="math display">\[
+f \colon \{1,2,\ldots, n \} \to X \,.
+\]</span> In particular <span class="math display">\[
+|X| = n \,.
+\]</span></p></li>
+<li><p><span class="math inline">\(X\)</span> is <strong>countable</strong> if there exists a bijection <span class="math display">\[
+f \colon \mathbb{N}\to X  \,.
+\]</span> In this case we denote the cardinality of <span class="math inline">\(X\)</span> by <span class="math display">\[
+|X| = |\mathbb{N}| \,.
+\]</span></p></li>
+<li><p><span class="math inline">\(X\)</span> is <strong>uncountable</strong> if <span class="math inline">\(X\)</span> is neither finite, nor countable.</p></li>
+</ol>
+</div></details>
+</div>
+<div id="proposition-countable-subset" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 12</strong></summary><div>Let <span class="math inline">\(X\)</span> be a countable set and <span class="math inline">\(A \subseteq X\)</span>. Then either <span class="math inline">\(A\)</span> is finite or countable.<p></p>
+</div></details>
+</div>
+<div id="Example-13" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 13</strong></summary><div><strong>Question.</strong> Prove that <span class="math inline">\(X = \{a,b,c\}\)</span> is finite.<p></p>
+<p><strong>Solution.</strong> Set <span class="math inline">\(Y=\{ 1,2,3\}\)</span>. The function <span class="math inline">\(f \colon X \to Y\)</span> defined by <span class="math display">\[
+f(1)=a \,, \quad f(2) = b \,, \quad f(3) = c \,,
+\]</span> is bijective. Therefore <span class="math inline">\(X\)</span> is finite, with <span class="math inline">\(|X| = 3\)</span>.</p>
+</div></details>
+</div>
+<div id="Example-14" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 14</strong></summary><div><strong>Question.</strong> Prove that the set of natural numbers <span class="math inline">\(\mathbb{N}\)</span> is countable.<p></p>
+<p><strong>Solution.</strong> The function <span class="math inline">\(f \colon X \to \mathbb{N}\)</span> defined by <span class="math display">\[
+f(n):=n \,,
+\]</span> is bijective. Therefore <span class="math inline">\(X = \mathbb{N}\)</span> is countable.</p>
+</div></details>
+</div>
+<div id="Example-15" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 15</strong></summary><div><strong>Question.</strong> Let <span class="math inline">\(X\)</span> be the set of even numbers <span class="math display">\[
+X = \{ 2n \, \colon \,n \in \mathbb{N}\} \,.
+\]</span> Prove that <span class="math inline">\(X\)</span> is countable.<p></p>
+<p><strong>Solution.</strong> Define the map <span class="math inline">\(f \colon \mathbb{N}\to X\)</span> by <span class="math display">\[
+f(n):= 2n \,.
+\]</span> We have that:</p>
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span> is injective, because <span class="math display">\[
+f(m)=f(k) \, \implies \, 2m=2k \,
+\quad \, m=k \,.
+\]</span></p></li>
+<li><p><span class="math inline">\(f\)</span> is surjective: Suppose that <span class="math inline">\(m \in X\)</span>. By definition of <span class="math inline">\(X\)</span>, there exists <span class="math inline">\(n \in \mathbb{N}\)</span> such that <span class="math inline">\(m = 2n\)</span>. Therefore, <span class="math inline">\(f(n) = m\)</span>.</p></li>
+</ol>
+<p>We have shown that <span class="math inline">\(f\)</span> is bijective. Thus, <span class="math inline">\(X\)</span> is countable.</p>
+</div></details>
+</div>
+<div id="Example-16" class="Example">
+<p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 16</strong></summary><div><strong>Question.</strong> Prove that the set of integers <span class="math inline">\(\mathbb{Z}\)</span> is countable.<p></p>
+<p><strong>Solution.</strong> Define <span class="math inline">\(f \colon \mathbb{N}\to \mathbb{Z}\)</span> by <span class="math display">\[
+f(n):=
+\begin{cases}
+\dfrac{n}{2}  &amp; \,\, \mbox{ if } \, n \, \mbox{ even }  \\
+-\dfrac{n+1}{2}  &amp; \,\, \mbox{ if } \, n \, \mbox{ odd }  
+\end{cases}
+\]</span> For example <span class="math display">\[\begin{align*}
+f(0) &amp; = 0 \,, \quad f(1) = -1 \,, \quad f(2) = 1 \,, \quad f(3) = -2 \,, \\
+f(4) &amp; = 2 \,, \quad f(5) = -3 \,, \quad f(6) = 3 \,, \quad f(7) = -4 \,.
+\end{align*}\]</span> We have:</p>
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span> is injective: Indeed, suppose that <span class="math inline">\(m \neq n\)</span>. If <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are both even or both odd we have, respectively <span class="math display">\[\begin{align*}
+f(m) = \frac{m}{2} &amp; \neq \frac{n}{2} = f(n)  \\
+f(m) =  -\frac{m+1}{2} &amp; \neq  - \frac{n+1}{2} = f(n) \,.
+\end{align*}\]</span> If instead <span class="math inline">\(m\)</span> is even and <span class="math inline">\(n\)</span> is odd, we get <span class="math display">\[
+f(m) = \frac{m}{2} \neq  - \frac{n+1}{2} = f(n)  \,,
+\]</span> since the LHS is positive and the RHS is negative. The case when <span class="math inline">\(m\)</span> is odd and <span class="math inline">\(n\)</span> even is similar.</p></li>
+<li><p><span class="math inline">\(f\)</span> is surjective: Let <span class="math inline">\(z \in \mathbb{Z}\)</span>. If <span class="math inline">\(z \geq 0\)</span>, then <span class="math inline">\(m:=2z\)</span> belongs to <span class="math inline">\(\mathbb{N}\)</span>, is even, and <span class="math display">\[
+f(m) = f(2z) = z \,.
+\]</span> If instead <span class="math inline">\(z &lt; 0\)</span>, then <span class="math inline">\(m := -2z -1\)</span> belongs to <span class="math inline">\(\mathbb{N}\)</span>, is odd, and <span class="math display">\[
+f(m) = f(-2z-1) = z \,.
+\]</span></p></li>
+</ol>
+<p>Therefore <span class="math inline">\(f\)</span> is bijective, showing that <span class="math inline">\(\mathbb{Z}\)</span> is countable.</p>
+</div></details>
+</div>
+<div id="proposition-countable-union" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 17</strong></summary><div>Let the set <span class="math inline">\(A_n\)</span> be countable for all <span class="math inline">\(n \in \mathbb{N}\)</span>. Define <span class="math display">\[
+A = \bigcup_{n \in \mathbb{N}} \, A_n \, .
+\]</span> Then <span class="math inline">\(A\)</span> is countable.<p></p>
+</div></details>
+</div>
+<div id="theorem-Q-countable" class="Theorem" title="\mathbb{Q} is countable">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 18: </strong><span class="math inline">\(\mathbb{Q}\)</span> is countable</summary><div>The set of rational numbers <span class="math inline">\(\mathbb{Q}\)</span> is countable.<p></p>
+</div></details>
+</div>
+<div id="theorem-R-uncountable" class="Theorem" title="\mathbb{R} is uncountable">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 19: </strong><span class="math inline">\(\mathbb{R}\)</span> is uncountable</summary><div>The set of Real Numbers <span class="math inline">\(\mathbb{R}\)</span> is <strong>uncountable</strong>.<p></p>
+</div></details>
+</div>
+<div id="Theorem-20" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 20</strong></summary><div>The set of irrational numbers <span class="math display">\[
+\mathcal{I}:=\mathbb{R}\smallsetminus \mathbb{Q}
+\]</span> is uncountable.<p></p>
+</div></details>
+</div>
+<div id="Proof*-2" class="Proof">
+<p></p><details class="Proof fbx-simplebox fbx-default" open=""><summary><strong>Proof</strong></summary><div>We know that <span class="math inline">\(\mathbb{R}\)</span> in uncountable and <span class="math inline">\(\mathbb{Q}\)</span> is countable. Suppose by contradiction that <span class="math inline">\(\mathcal{I}\)</span> is countable. Then <span class="math display">\[
+\mathbb{Q}\cup \mathcal{I}
+\]</span> is countable by Proposition <a href="chap_3.html#proposition-countable-union">17</a>, being union of countable sets. Since by definition <span class="math display">\[
+\mathbb{R}= \mathbb{Q}\cup \mathcal{I} \,,
+\]</span> we conclude that <span class="math inline">\(\mathbb{R}\)</span> is countable. Contradiction.<p></p>
+</div></details>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../sections/chap_2.html" class="pagination-link" aria-label="Real Numbers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Real Numbers</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../sections/chap_4.html" class="pagination-link" aria-label="Complex Numbers">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Complex Numbers</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="../sections/license.html" aria-current="page">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.silviofanzon.com/contact">
+<p>Contact</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

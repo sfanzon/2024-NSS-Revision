@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{polynom}
+\usepackage{tikz}
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\pld@ArrangeResult}{\bigr)}{
+    \,\tikz[overlay]{
+        \coordinate (A) at (0,-3pt);
+        \coordinate (B) at (0,\normalbaselineskip-0.8pt);
+        \draw (A) to[in=-40, out=40, looseness=1] (B);
+    }
+}{}{}
+\makeatother
+
+\begin{document}
+
+\polyset{vars=z}
+
+\polylongdiv{z^3-7z+6}{z-1}
+
+
+
+\end{document}

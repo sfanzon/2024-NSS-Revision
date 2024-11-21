@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{decorations.markings}
+
+\begin{document}
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (2,0) node[right] {\footnotesize$\operatorname{Re}$};
+  \draw[->] (0,-2) -- (0,2) node[above] {\footnotesize$\operatorname{Im}$};
+  
+
+
+\draw[magenta, thick] (0,0) -- (1,1.5);
+\node[anchor=south] at (1.8,0.5) {\footnotesize$|z| = \sqrt{x^2 + y^2}$};
+
+
+   \filldraw (1,1.5) circle (1pt);
+    \node[anchor=south] at (1.6,1.5) {\footnotesize$z = x + i y$};
+  
+  
+  
+  \filldraw (0,0) circle (1pt);
+  \node[anchor=south] at (0.2,-0.4) {\footnotesize$0$};
+  
+  
+  
+  
+\end{tikzpicture}
+\end{document}

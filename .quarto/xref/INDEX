@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "ff78480e"
+  },
+  "sections/chap_1.qmd": {
+    "chap_1.html": "6956a7ea"
+  },
+  "sections/license.qmd": {
+    "license.html": "459972fd"
+  },
+  "sections/chap_2.qmd": {
+    "chap_2.html": "02cda6c4"
+  },
+  "sections/chap_3.qmd": {
+    "chap_3.html": "e2789728"
+  },
+  "sections/chap_4.qmd": {
+    "chap_4.html": "8f47cec5"
+  },
+  "sections/chap_5.qmd": {
+    "chap_5.html": "afcd27d6"
+  }
+}
