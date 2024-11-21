@@ -25,7 +25,7 @@ BibTex citation:
 ```bibtex
 @electronic{Fanzon-NSS-Revision-2024,
 	author = {Fanzon, Silvio},
-	title = {Revision Guide of Numbers, Sequences and Series},
+	title = {Revision Guide of Numbers Sequences and Series},
 	url = {https://www.silviofanzon.com/2024-NSS-Revision/},
 	year = {2024}}
 ```

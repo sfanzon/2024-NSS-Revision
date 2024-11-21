@@ -73,27 +73,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proposition {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
@@ -101,7 +93,19 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Problem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Axiom {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -109,21 +113,13 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Problem {
+.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 .Corollary {
   --color1: #f4cce0;
@@ -133,13 +129,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -265,7 +265,7 @@ window.Quarto = {
   <li><a href="#revision-guide" id="toc-revision-guide" class="nav-link active" data-scroll-target="#revision-guide">Revision Guide</a>
   <ul class="collapse">
   <li><a href="#recommended-revision-strategy" id="toc-recommended-revision-strategy" class="nav-link" data-scroll-target="#recommended-revision-strategy">Recommended revision strategy</a></li>
-  <li><a href="#checklist-sec-checklist" id="toc-checklist-sec-checklist" class="nav-link" data-scroll-target="#checklist-sec-checklist">Checklist {#sec-checklist}</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -314,7 +314,7 @@ window.Quarto = {
 
 <section id="revision-guide" class="level1 unnumbered">
 <h1 class="unnumbered">Revision Guide</h1>
-<p>Revision Guide document for the module <strong>Numbers, Sequences and Series 400297</strong> 2024/25 at the University of Hull. If you have any question or find any typo, please email me at</p>
+<p>Revision Guide document for the module <strong>Numbers Sequences and Series 400297</strong> 2024/25 at the University of Hull. If you have any question or find any typo, please email me at</p>
 <div style="text-align: center;">
 <p><strong><a href="mailto:%20S.Fanzon@hull.ac.uk">S.Fanzon@hull.ac.uk</a></strong></p>
 </div>
@@ -332,8 +332,8 @@ window.Quarto = {
 <li>The Checklist below</li>
 </ol>
 </section>
-<section id="checklist-sec-checklist" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="checklist-sec-checklist">Checklist {#sec-checklist}</h2>
+<section id="checklist" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="checklist">Checklist</h2>
 <p>You should be comfortable with the following topics/taks:</p>
 <p><strong>Preliminaries</strong></p>
 <ul>

@@ -7,7 +7,7 @@ $$
 
 # Revision Guide {.unnumbered}
 
-Revision Guide document for the module **Numbers, Sequences and Series 400297** 2024/25 at the University of Hull. If you have any question or find any typo, please email me at
+Revision Guide document for the module **Numbers Sequences and Series 400297** 2024/25 at the University of Hull. If you have any question or find any typo, please email me at
 
 
 ::: {.content-visible when-format="html"}
@@ -57,7 +57,7 @@ Make sure you are very comfortable with:
 
 
 
-## Checklist {#sec-checklist} {.unnumbered}
+## Checklist {.unnumbered}
 
 You should be comfortable with the following topics/taks:
 

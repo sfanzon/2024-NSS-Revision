@@ -7,7 +7,7 @@ $
 
 
 
-# Sequences in $\R$
+# Sequences in $\mathbb{R}$
 
 
 ::: Definition 
