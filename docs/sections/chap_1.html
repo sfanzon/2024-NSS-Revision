@@ -72,35 +72,23 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Proof {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
-.Axiom {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proposition {
+.Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -108,11 +96,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
-.Important {
+.Lemma {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -120,23 +108,35 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
-.Notation {
+.Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
 }
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Lemma {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Axiom {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -300,39 +300,33 @@ window.Quarto = {
 \sqrt{2} \in \mathbb{Q}\,.
 \tag{1.1}\]</span></span></p>
 <ol type="1">
-<li><p>Therefore, there exists <span class="math inline">\(q \in \mathbb{Q}\)</span> such that <span id="eq-contradiction-root-2"><span class="math display">\[
-q = \sqrt{2} \, .
-\tag{1.2}\]</span></span></p></li>
-<li><p>Since <span class="math inline">\(q \in \mathbb{Q}\)</span>, by definition we have <span class="math display">\[
-q = \frac{m}{n}
-\]</span> for some <span class="math inline">\(m,n \in \mathbb{N}\)</span> with <span class="math inline">\(n \neq 0\)</span>.</p></li>
-<li><p>Recalling (<a href="#eq-contradiction-root-2" class="quarto-xref"><span>1.2</span></a>), we then have <span class="math display">\[
+<li><p>Therefore, there exists <span class="math inline">\(m,n \in \mathbb{N}\)</span>, <span class="math inline">\(n \neq 0\)</span>, such that <span class="math display">\[
 \frac{m}{n} = \sqrt{2} \,.
 \]</span></p></li>
-<li><p>We can square the above equation to get <span id="eq-contradiction-root-2-2"><span class="math display">\[
-\frac{m^2}{n^2} = 2 \,.
-\tag{1.3}\]</span></span></p></li>
 <li><p><strong>Withouth loss of generality</strong>, we can <strong>assume</strong> that <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> have no common factors.</p></li>
-<li><p>Equation (<a href="#eq-contradiction-root-2-2" class="quarto-xref"><span>1.3</span></a>) implies <span id="eq-contradiction-root-2-3"><span class="math display">\[
+<li><p>Square the equation to get <span id="eq-contradiction-root-2-2"><span class="math display">\[
+\frac{m^2}{n^2} = 2 \,.
+\tag{1.2}\]</span></span></p></li>
+<li><p>Equation (<a href="#eq-contradiction-root-2-2" class="quarto-xref"><span>1.2</span></a>) implies <span id="eq-contradiction-root-2-3"><span class="math display">\[
 m^2 = 2 n^2 \,.
-\tag{1.4}\]</span></span> Therefore the integer <span class="math inline">\(m^2\)</span> is an even number.</p></li>
+\tag{1.3}\]</span></span> Therefore the integer <span class="math inline">\(m^2\)</span> is an even number.</p></li>
 <li><p>Since <span class="math inline">\(m^2\)</span> is an even number, it follows that also <span class="math inline">\(m\)</span> is an even number. Then there exists <span class="math inline">\(p \in \mathbb{N}\)</span> such that <span id="eq-contradiction-root-2-4"><span class="math display">\[
 m = 2p \,.
-\tag{1.5}\]</span></span></p></li>
-<li><p>If we substitute (<a href="#eq-contradiction-root-2-4" class="quarto-xref"><span>1.5</span></a>) in (<a href="#eq-contradiction-root-2-3" class="quarto-xref"><span>1.4</span></a>) we get <span class="math display">\[
+\tag{1.4}\]</span></span></p></li>
+<li><p>Substitute (<a href="#eq-contradiction-root-2-4" class="quarto-xref"><span>1.4</span></a>) in (<a href="#eq-contradiction-root-2-3" class="quarto-xref"><span>1.3</span></a>) to get <span class="math display">\[
 m^2 = 2n^2 \, \implies \,  (2p)^2 = 2n^2 \, \implies \,  4 p^2 = 2 n^2
 \]</span> Dividing both terms by <span class="math inline">\(2\)</span>, we obtain <span id="eq-contradiction-root-2-5"><span class="math display">\[
 n^2 = 2p^2\,.
-\tag{1.6}\]</span></span></p></li>
+\tag{1.5}\]</span></span></p></li>
 <li><p>We now make a series of observations:</p>
 <ul>
-<li>Equation (<a href="#eq-contradiction-root-2-5" class="quarto-xref"><span>1.6</span></a>) says that <span class="math inline">\(n^2\)</span> is even.</li>
-<li>The same argument in Step 7 guarantees that also <span class="math inline">\(n\)</span> is even.</li>
+<li>Equation (<a href="#eq-contradiction-root-2-5" class="quarto-xref"><span>1.5</span></a>) says that <span class="math inline">\(n^2\)</span> is even.</li>
+<li>The same argument in Step 5 guarantees that also <span class="math inline">\(n\)</span> is even.</li>
 <li>We have already seen that <span class="math inline">\(m\)</span> is even.</li>
 <li>Therefore <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> are both even.<br>
 </li>
 <li>Hence <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> have <span class="math inline">\(2\)</span> as common factor.</li>
-<li>But Step 5 says that <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> have no common factors.</li>
+<li>But Step 2 says that <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> have no common factors.</li>
 <li><strong>Contradiction</strong></li>
 </ul></li>
 <li><p>Our reasoning has run into a <strong>contradiction</strong>, stemming from assumption (<a href="#eq-contradiction-root-2-false" class="quarto-xref"><span>1.1</span></a>). Therefore (<a href="#eq-contradiction-root-2-false" class="quarto-xref"><span>1.1</span></a>) is <strong>FALSE</strong>, and so <span class="math display">\[
@@ -384,10 +378,10 @@ A_n = \{ n, n+1, n+2, n+3,  \ldots \} \,, \quad n \in \mathbb{N}\,.
 <ol type="1">
 <li><p>Prove that <span id="eq-infinite-union"><span class="math display">\[
 \bigcup_{n \in \mathbb{N}} A_n = \mathbb{N}\,.
-\tag{1.7}\]</span></span></p></li>
+\tag{1.6}\]</span></span></p></li>
 <li><p>Prove that <span id="eq-infinite-intersection"><span class="math display">\[
 \bigcap_{n \in \mathbb{N}} A_n = \emptyset \,.
-\tag{1.8}\]</span></span></p></li>
+\tag{1.7}\]</span></span></p></li>
 </ol>
 <p><strong>Solution.</strong></p>
 <ol type="1">
@@ -395,10 +389,10 @@ A_n = \{ n, n+1, n+2, n+3,  \ldots \} \,, \quad n \in \mathbb{N}\,.
 \bigcup_{n \in \mathbb{N}} A_n \subseteq \mathbb{N}\,.
 \]</span> Conversely, suppose that <span class="math inline">\(m \in \mathbb{N}\)</span>. By definition <span class="math inline">\(m \in A_m\)</span>. Hence there exists at least one index <span class="math inline">\(n\)</span>, <span class="math inline">\(n=m\)</span> in this case, such that <span class="math inline">\(m \in A_n\)</span>. Then by definition <span class="math inline">\(m \in \cup_{n \in \mathbb{N}} A_n\)</span>, showing that <span class="math display">\[
 \mathbb{N}\subseteq \bigcup_{n \in \mathbb{N}} A_n \,.
-\]</span> This proves (<a href="#eq-infinite-union" class="quarto-xref"><span>1.7</span></a>).</p></li>
-<li><p>Suppose that (<a href="#eq-infinite-intersection" class="quarto-xref"><span>1.8</span></a>) is false, i.e., <span class="math display">\[
+\]</span> This proves (<a href="#eq-infinite-union" class="quarto-xref"><span>1.6</span></a>).</p></li>
+<li><p>Suppose that (<a href="#eq-infinite-intersection" class="quarto-xref"><span>1.7</span></a>) is false, i.e., <span class="math display">\[
 \bigcap_{n \in \mathbb{N}} A_n \neq \emptyset \,.
-\]</span> This means there exists some <span class="math inline">\(m \in \mathbb{N}\)</span> such that <span class="math inline">\(m \in \cap_{n \in \mathbb{N}} A_n\)</span>. Hence, by definition, <span class="math inline">\(m \in A_n\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>. However <span class="math inline">\(m \notin A_{m+1}\)</span>, yielding a contradiction. Thus (<a href="#eq-infinite-intersection" class="quarto-xref"><span>1.8</span></a>) holds.</p></li>
+\]</span> This means there exists some <span class="math inline">\(m \in \mathbb{N}\)</span> such that <span class="math inline">\(m \in \cap_{n \in \mathbb{N}} A_n\)</span>. Hence, by definition, <span class="math inline">\(m \in A_n\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>. However <span class="math inline">\(m \notin A_{m+1}\)</span>, yielding a contradiction. Thus (<a href="#eq-infinite-intersection" class="quarto-xref"><span>1.7</span></a>) holds.</p></li>
 </ol>
 </div></details>
 </div>
@@ -562,9 +556,9 @@ x \sim y \quad \iff \quad \exists \, n \in \mathbb{Z}\, \text{ s.t. } \, y = x +
 [x] = \{  x + n \ \colon \ n \in \mathbb{Z}\}  \,.
 \]</span> Each equivalence class has exactly one element in <span class="math inline">\([0,1) \cap \mathbb{Q}\)</span>, meaning that: <span id="eq-equivalence-rel"><span class="math display">\[
 \forall x \in \mathbb{Q}\,, \,\, \exists! \, q \in \mathbb{Q}\, \text{ s.t. } \, 0 \leq q &lt; 1 \, \text{ and } \, q \in [x]\,.
-\tag{1.9}\]</span></span> Indeed: take <span class="math inline">\(x \in \mathbb{Q}\)</span> arbitrary. Then <span class="math inline">\(x \in [n,n+1)\)</span> for some <span class="math inline">\(n \in \mathbb{Z}\)</span>. Setting <span class="math inline">\(q:=x-n\)</span> we obtain that <span class="math display">\[
+\tag{1.8}\]</span></span> Indeed: take <span class="math inline">\(x \in \mathbb{Q}\)</span> arbitrary. Then <span class="math inline">\(x \in [n,n+1)\)</span> for some <span class="math inline">\(n \in \mathbb{Z}\)</span>. Setting <span class="math inline">\(q:=x-n\)</span> we obtain that <span class="math display">\[
 x = q + n \,, \qquad q \in [0,1) \,,
-\]</span> proving (<a href="#eq-equivalence-rel" class="quarto-xref"><span>1.9</span></a>). In particular (<a href="#eq-equivalence-rel" class="quarto-xref"><span>1.9</span></a>) implies that for each <span class="math inline">\(x \in \mathbb{Q}\)</span> there exists <span class="math inline">\(q \in [0,1) \cap \mathbb{Q}\)</span> such that <span class="math display">\[
+\]</span> proving (<a href="#eq-equivalence-rel" class="quarto-xref"><span>1.8</span></a>). In particular (<a href="#eq-equivalence-rel" class="quarto-xref"><span>1.8</span></a>) implies that for each <span class="math inline">\(x \in \mathbb{Q}\)</span> there exists <span class="math inline">\(q \in [0,1) \cap \mathbb{Q}\)</span> such that <span class="math display">\[
 [x] = [q] \,.
 \]</span></p></li>
 <li><p>From Point 2 we conclude that <span class="math display">\[
@@ -682,13 +676,13 @@ x  &amp; \text{ if } \, x \geq 0 \\
 <div id="theorem-triangle-inequality" class="Theorem" title="Triangle inequality">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 26: </strong>Triangle inequality</summary><div>For every <span class="math inline">\(x, y \in \mathbb{R}\)</span> we have <span id="eq-triangle-inequality"><span class="math display">\[
 | |x| - |y| | \leq |x+y| \leq |x| + |y| \,.
-\tag{1.10}\]</span></span><p></p>
+\tag{1.9}\]</span></span><p></p>
 </div></details>
 </div>
 <div id="Proposition-27" class="Proposition">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 27</strong></summary><div>For any <span class="math inline">\(x,y \in \mathbb{R}\)</span> it holds <span id="eq-triangle-inequality-bis"><span class="math display">\[
 ||x|-|y|| \leq |x-y| \leq |x|+|y|\,.
-\tag{1.11}\]</span></span> Moreover for any <span class="math inline">\(x,y,z \in \mathbb{R}\)</span> it holds <span class="math display">\[
+\tag{1.10}\]</span></span> Moreover for any <span class="math inline">\(x,y,z \in \mathbb{R}\)</span> it holds <span class="math display">\[
 |x-y| \leq |x-z| + |z-y| \,.
 \]</span><p></p>
 </div></details>
@@ -708,44 +702,44 @@ x  &amp; \text{ if } \, x \geq 0 \\
 <div id="formula-for-summing-first-n-natural-numbers" class="Example" title="Formula for summing first n natural numbers">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 29: </strong>Formula for summing first <span class="math inline">\(n\)</span> natural numbers</summary><div><strong>Question.</strong> Prove by induction that the following formula holds for all <span class="math inline">\(n \in \mathbb{N}\)</span>: <span id="eq-formula-sum-naturals"><span class="math display">\[
 1 + 2 + 3 + \ldots + (n-1) + n = \frac{n(n+1)}{2} \,.
-\tag{1.12}\]</span></span><p></p>
+\tag{1.11}\]</span></span><p></p>
 <p><strong>Solution</strong>. Define <span class="math display">\[
 S(n) = 1 + 2 + \ldots + n \,.
-\]</span> This way the formula at (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.12</span></a>) is equivalent to <span class="math display">\[
+\]</span> This way the formula at (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.11</span></a>) is equivalent to <span class="math display">\[
 S(n) = \frac{n(n+1)}{2} \,, \quad \forall \, n \in \mathbb{N}\,.
 \]</span></p>
 <ol type="1">
-<li>It is immediate to check that (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.12</span></a>) holds for <span class="math inline">\(n=1\)</span>.</li>
-<li>Suppose (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.12</span></a>) holds for <span class="math inline">\(n = k\)</span>. Then <span class="math display">\[\begin{align}
+<li>It is immediate to check that (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.11</span></a>) holds for <span class="math inline">\(n=1\)</span>.</li>
+<li>Suppose (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.11</span></a>) holds for <span class="math inline">\(n = k\)</span>. Then <span class="math display">\[\begin{align}
 S(k+1) &amp; = 1 + \ldots +  k + (k+1) \\
     &amp; = S(k) + (k+1) \\
     &amp; = \frac{k(k+1)}{2}  + (k+1) \\
 &amp; = \frac{ k(k+1) + 2(k+1) }{2} \\
 &amp; = \frac{(k+1)(k+2)}{2}
-\end{align}\]</span> where in the first equality we used that (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.12</span></a>) holds for <span class="math inline">\(n=k\)</span>. We have proven that <span class="math display">\[
+\end{align}\]</span> where in the first equality we used that (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.11</span></a>) holds for <span class="math inline">\(n=k\)</span>. We have proven that <span class="math display">\[
 S(k+1) = \frac{(k+1)(k+2)}{2}\,.
-\]</span> The RHS in the above expression is exactly the RHS of (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.12</span></a>) computed at <span class="math inline">\(n = k+1\)</span>. Therefore, we have shown that formula (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.12</span></a>) holds for <span class="math inline">\(n = k+1\)</span>.</li>
+\]</span> The RHS in the above expression is exactly the RHS of (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.11</span></a>) computed at <span class="math inline">\(n = k+1\)</span>. Therefore, we have shown that formula (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.11</span></a>) holds for <span class="math inline">\(n = k+1\)</span>.</li>
 </ol>
-<p>By the Principle of Induction, we conclude that (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.12</span></a>) holds for all <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+<p>By the Principle of Induction, we conclude that (<a href="#eq-formula-sum-naturals" class="quarto-xref"><span>1.11</span></a>) holds for all <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
 </div></details>
 </div>
 <div id="bernoullis-inequality" class="Example" title="Bernoulli’s inequality">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 30: </strong>Bernoulli’s inequality</summary><div><strong>Question.</strong> Let <span class="math inline">\(x \in \mathbb{R}\)</span> with <span class="math inline">\(x&gt;-1\)</span>. Bernoulli’s inequality states that <span id="eq-bernoulli-inequality"><span class="math display">\[
 (1+x)^{n} \geq 1+n x \,, \quad \forall \, n \in \mathbb{N}\,.
-\tag{1.13}\]</span></span> Prove Bernoulli’s inequality by induction.<p></p>
+\tag{1.12}\]</span></span> Prove Bernoulli’s inequality by induction.<p></p>
 <p><strong>Solution.</strong> Let <span class="math inline">\(x \in \mathbb{R}, x&gt;-1\)</span>. We prove the statement by induction:</p>
 <ul>
-<li><p>Base case: (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.13</span></a>) holds with equality when <span class="math inline">\(n=1\)</span>.</p></li>
-<li><p>Induction hypothesis: Let <span class="math inline">\(k \in \mathbb{N}\)</span> and suppose that (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.13</span></a>) holds for <span class="math inline">\(n=k\)</span>, i.e., <span class="math display">\[
+<li><p>Base case: (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.12</span></a>) holds with equality when <span class="math inline">\(n=1\)</span>.</p></li>
+<li><p>Induction hypothesis: Let <span class="math inline">\(k \in \mathbb{N}\)</span> and suppose that (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.12</span></a>) holds for <span class="math inline">\(n=k\)</span>, i.e., <span class="math display">\[
 (1+x)^{k} \geq 1+k x \,.
 \]</span> Then <span class="math display">\[\begin{align*}
 (1+x)^{k+1} &amp; = (1+x)^{k}(1+x) \\
           &amp; \geq(1+k x)(1+x) \\
           &amp; =1+k x+x+k x^{2} \\
           &amp; \geq 1+(k+1) x \,,
-\end{align*}\]</span> where we used that <span class="math inline">\(kx^2 \geq 0\)</span>. Then (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.13</span></a>) holds for <span class="math inline">\(n=k+1\)</span>.</p></li>
+\end{align*}\]</span> where we used that <span class="math inline">\(kx^2 \geq 0\)</span>. Then (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.12</span></a>) holds for <span class="math inline">\(n=k+1\)</span>.</p></li>
 </ul>
-<p>By induction we conclude (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.13</span></a>).</p>
+<p>By induction we conclude (<a href="#eq-bernoulli-inequality" class="quarto-xref"><span>1.12</span></a>).</p>
 </div></details>
 </div>
 

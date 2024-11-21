@@ -21,42 +21,34 @@ $$
 \sqrt{2} \in \Q \,.
 $$ {#eq-contradiction-root-2-false}
 
-1. Therefore, there exists $q \in \Q$ such that 
-$$
-q = \sqrt{2} \, .
-$$ {#eq-contradiction-root-2}
-2. Since $q \in \Q$, by definition we have
-$$
-q = \frac{m}{n}
-$$
-for some $m,n \in \N$ with $n \neq 0$.
-3. Recalling (@eq-contradiction-root-2), we then have
+
+1. Therefore, there exists $m,n \in \N$, $n \neq 0$, such that 
 $$
 \frac{m}{n} = \sqrt{2} \,.
 $$
-4. We can square the above equation to get
+
+2. **Withouth loss of generality**, we can **assume** that $m$ and $n$ have no common factors.
+
+3. Square the equation to get
 $$
  \frac{m^2}{n^2} = 2 \,.
 $$ {#eq-contradiction-root-2-2}
-5. **Withouth loss of generality**, we can **assume** that $m$ and $n$ have no common factors.
-    
-    
-6.  Equation (@eq-contradiction-root-2-2) implies 
+
+
+4.  Equation (@eq-contradiction-root-2-2) implies 
 $$
 m^2 = 2 n^2 \,.
 $$ {#eq-contradiction-root-2-3}
 Therefore the integer $m^2$ is an even number. 
 
-   
 
-7. Since $m^2$ is an even number, it follows that also $m$ is an even number. Then there exists $p \in \N$ such that 
+5. Since $m^2$ is an even number, it follows that also $m$ is an even number. Then there exists $p \in \N$ such that 
 $$
 m = 2p \,.
 $$ {#eq-contradiction-root-2-4}
 
    
-
-8. If we substitute (@eq-contradiction-root-2-4) in (@eq-contradiction-root-2-3) we get
+6. Substitute (@eq-contradiction-root-2-4) in (@eq-contradiction-root-2-3) to get
 $$
 m^2 = 2n^2 \, \implies \,  (2p)^2 = 2n^2 \, \implies \,  4 p^2 = 2 n^2
 $$
@@ -64,15 +56,17 @@ Dividing both terms by $2$, we obtain
 $$
 n^2 = 2p^2\,. 
 $${#eq-contradiction-root-2-5}
-9. We now make a series of observations:
+
+7. We now make a series of observations:
     * Equation (@eq-contradiction-root-2-5) says that $n^2$ is even.
-    * The same argument in Step 7 guarantees that also $n$ is even.
+    * The same argument in Step 5 guarantees that also $n$ is even.
     * We have already seen that $m$ is even.
     * Therefore $n$ and $m$ are both even.  
     * Hence $n$ and $m$ have $2$ as common factor.
-    * But Step 5 says that $n$ and $m$ have no common factors.
+    * But Step 2 says that $n$ and $m$ have no common factors.
     * **Contradiction**
-10. Our reasoning has run into a **contradiction**, stemming  from assumption (@eq-contradiction-root-2-false). Therefore (@eq-contradiction-root-2-false) is **FALSE**, and so 
+
+8. Our reasoning has run into a **contradiction**, stemming  from assumption (@eq-contradiction-root-2-false). Therefore (@eq-contradiction-root-2-false) is **FALSE**, and so 
 $$
 \sqrt{2} \notin \Q \,
 $$
