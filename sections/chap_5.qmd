@@ -78,55 +78,61 @@ $$
 \left|\frac{n}{2n+3}-\frac{1}{2}\right| < \e \,, \quad \forall \, n \geq N \,.
 $$
 To this end, we compute:
-\begin{align*}
-\left|\frac{n}{2 n+3}-\frac{1}{2}\right| & 
-=\left|\frac{2n -(2n + 3)}{2(2n +3)}\right| \\
-& =\left|\frac{- 3}{4n + 6}\right| \\
-& = \frac{3}{4n + 6} \,.
-\end{align*}
+$$
+\left|\frac{n}{2 n+3}-\frac{1}{2}\right| 
+=\left|\frac{- 3}{4n + 6}\right| \\
+= \frac{3}{4n + 6} \,.
+$$
 Therefore 
 \begin{align*}
 \left|\frac{n}{2n+3}-\frac{1}{2}\right| < \e
 \quad \iff &  \quad
 \frac{3}{4n + 6} < \e \\
 \quad \iff &  \quad
-\frac{4n + 6}{3} > \frac{1}{\e} \\
-\quad \iff &  \quad
-4n + 6 > \frac{3}{\e} \\
-\quad \iff &  \quad
-4n  > \frac{3}{\e} - 6 \\
-\quad \iff &  \quad
 n  > \frac{3}{4\e} - \frac{6}{4} \,.
 \end{align*}
 Looking at the above equivalences, it is clear that $N \in \N$ has to be chosen so that
 $$
 N  > \frac{3}{4\e} - \frac{6}{4} \,.
-$$
+$${#eq-example-limit-1}
 
 
 2. *Formal Proof:* We have to show that
 $$
 \forall \e>0 \,, \, \exists \, N \in \N \st  \forall \, n \geq N \,, \, \left|\frac{n}{2n+3}-\frac{1}{2}\right| < \e  \,.
 $$
-Let $\e>0$. Choose $N \in \N$ such that
-$$
-N > \frac{3}{4\e} - \frac{6}{4}   \,.
-$${#eq-example-limit-1}
+Let $\e>0$. Choose $N \in \N$ such that (@eq-example-limit-1) holds. 
 By the rough work shown above, inequality (@eq-example-limit-1) is equivalent to 
 $$
  \frac{3}{4N + 6} < \e \,.
 $$
 Let $n \geq N$. Then
-\begin{align*}
+$$
 \left|\frac{n}{2n+3}-\frac{1}{2}\right| 
-& = \frac{3}{4 n+ 6 } \\
-& \leq \frac{3}{4 N+ 6 } \\
-& < \e \,,
-\end{align*}
+ = \frac{3}{4 n+ 6 } 
+ \leq \frac{3}{4 N+ 6 } 
+ < \e \,,
+$$
 where in the third line we used that $n \geq N$.
 
 :::
 
+
+::: Theorem 
+### Uniqueness of limit  {#theorem-uniqueness-limit}
+
+Let $\left(a_{n}\right)_{n \in \N}$ be a sequence. Suppose that 
+$$
+\lim_{n \rightarrow \infty} a_{n} = a \,, \quad 
+\lim_{n \rightarrow \infty} a_{n} = b \,.
+$$
+Then $a=b$.
+:::
+
+
+
+
+## Divergent sequences
 
 
 ::: Definition
@@ -135,7 +141,6 @@ where in the third line we used that $n \geq N$.
 We say that a sequence $\left(a_{n}\right)_{n \in \N}$ in $\R$ is **divergent** if it is not convergent.
 
 :::
-
 
 
 
@@ -179,19 +184,10 @@ which is a contradiction. Hence $(a_n)$ is divergent.
 :::
 
 
-::: Theorem 
-### Uniqueness of limit  {#theorem-uniqueness-limit}
-
-Let $\left(a_{n}\right)_{n \in \N}$ be a sequence. Suppose that 
-$$
-\lim_{n \rightarrow \infty} a_{n} = a \,, \quad 
-\lim_{n \rightarrow \infty} a_{n} = b \,.
-$$
-Then $a=b$.
-:::
 
 
 
+## Bounded sequences
 
 
 ::: Definition 
@@ -219,7 +215,7 @@ The sequence
 $$
 a_n = (-1)^n
 $$
-is bounded but not convergent.
+is bounded ($M=1$) but not convergent.
 
 :::
 
@@ -245,11 +241,7 @@ $$
 
 ::: Theorem 
 
-For all $p>0$, the sequence 
-$$
-a_n = n^p
-$$
-does not converge.
+Let $p>0$. The sequence $a_n = n^p$ is unbounded, and hence divergent.
 
 :::
 
@@ -257,14 +249,14 @@ does not converge.
 
 ::: Theorem
 
-The sequence 
-$$
-a_n  = \log n
-$$
-does not converge.
+The sequence $a_n  = \log n$ is unbounded, and hence divergent.
 
 :::
 
+
+
+
+## Algebra of limits
 
 ::: Theorem 
 ### Algebra of limits {#theorem-algebra-limits} 
@@ -379,8 +371,7 @@ does not converge.
 **Solution.** To show that the sequence $\left(a_n\right)$ does not converge, we divide by the largest power in the denominator, which in this case is $n^2$
 \begin{align*}
 a_n & = \frac{4 n^{3}+8 n+1}{7 n^{2}+2 n+1} \\
-    & =\frac{4 n+ \dfrac{8}{n}  +  \dfrac{1}{n^{2}} }{7+  \dfrac{2}{n}  +  \dfrac{1}{n^{2}} } \\
-    & = \frac{b_n}{c_n}
+    & =\frac{4 n+ \dfrac{8}{n}  +  \dfrac{1}{n^{2}} }{7+  \dfrac{2}{n}  +  \dfrac{1}{n^{2}} } = \frac{b_n}{c_n} \,,
 \end{align*}
 where we set 
 $$
@@ -679,17 +670,23 @@ $$
 :::
  
 
+::: Definition 
+### Geometric sequence
+
+A sequence $\left(a_{n}\right)$ is called a **geometric sequence** if
+$$
+a_{n}=x^{n} \,,
+$$
+for some $x \in \R$.
+
+:::
 
 
 
 ::: Theorem 
 ### Geometric Sequence Test   {#theorem-geometric-sequence}
 
-Let $x \in \R$ and let $\left(a_{n}\right)$ be the geometric sequence defined by
-$$
-a_{n}:=x^{n} \,.
-$$
-We have:
+Let $x \in \R$ and let $\left(a_{n}\right)$ be the sequence defined by $a_{n}:=x^{n}$. We have:
 
 1. If $|x|<1$, then 
 $$
@@ -800,26 +797,21 @@ Then the sequence $\left(a_{n}\right)$ is unbounded, and hence does not converge
 
 ::: Example
 
-**Question.** Let 
+**Question.** Prove that
 $$
-a_{n}=\frac{3^{n}}{n !} \,,
+a_{n}=\frac{3^{n}}{n !} \to 0 \,,
 $$
 where we recall that $n!$ (pronounced $n$ factorial) is defined by
 $$
 n! := n \cdot (n-1) \cdot (n-2) \cdot  \ldots \cdot  3 \cdot 2 \cdot 1 \,. 
 $$
-Prove that
-$$
-\lim_{n \to \infty} a_n  = 0 \,.
-$$
 
 **Solution.** We have
-\begin{align*}
-\left|\frac{a_{n+1}}{a_{n}}\right| & = \dfrac{\left( \dfrac{3^{n+1}}{(n+1) !} \right) }{  \left( \dfrac{3^{n}}{n !} \right) } \\
-& = \frac{3^{n+1}}{3^{n}} \, \frac{n !}{(n+1) !} \\
-& = \frac{3 \cdot 3^n}{3^n} \, \frac{n!}{(n+1) n!} \\
-& =\frac{3}{n+1} \longrightarrow L = 0 \,.
-\end{align*}
+$$
+\left|\frac{a_{n+1}}{a_{n}}\right| 
+ = \dfrac{\left( \dfrac{3^{n+1}}{(n+1) !} \right) }{  \left( \dfrac{3^{n}}{n !} \right) } 
+ =\frac{3}{n+1} \longrightarrow L = 0 \,.
+$$
 Hence, $L=0<1$ so $a_{n} \to 0$ by the Ratio Test in Theorem \ref{theorem-ratio-test}.
 
 :::
@@ -827,11 +819,11 @@ Hence, $L=0<1$ so $a_{n} \to 0$ by the Ratio Test in Theorem \ref{theorem-ratio-
 
 ::: Example
 
-**Question.** Consider the sequence
+**Question.** Prove that the sequence is divergent
 $$
 a_{n}=\frac{n ! \cdot 3^{n}}{\sqrt{(2 n) !}} \,.
 $$
-Prove that $(a_n)$ is divergent.
+
 
 **Solution.** We have
 \begin{align*}
@@ -875,12 +867,12 @@ $$
 =\frac{n+1}{100} \,.
 $$
 Choose $N=101$. Then for all $n \geq N$,
-\begin{align*}
+$$
 \left|\frac{a_{n+1}}{a_{n}}\right| 
-& = \frac{n+1}{100} \\
-& \geq \frac{N+1}{100} \\
-& = \frac{101}{100} > 1 \,.
-\end{align*}
+ = \frac{n+1}{100} 
+ \geq \frac{N+1}{100} 
+ = \frac{101}{100} > 1 \,.
+$$
 Hence $a_{n}$ is divergent by the Ratio Test.
 
 :::
@@ -940,11 +932,10 @@ $$
 a_n = \frac1n \,.
 $$
 
-**Solution.** We have
+**Solution.** We immediately see that
 $$
-a_n = \frac1n > \frac{1}{n+1} = a_{n+1} \,,
+a_n = \frac1n > \frac{1}{n+1} = a_{n+1} \,.
 $$
-concluding.
 
 :::
 
@@ -955,87 +946,25 @@ concluding.
 ### Monotone Convergence Theorem  {#theorem-monotone-convergence}
 
 Let $(a_n)$ be a sequence in $\R$. Suppose that $(a_n)$ is bounded and
-monotone. Then $(a_n)$ converges.
+monotone. Then $(a_n)$ converges. In particular,
 
-:::
-
-
-::: Proof
-
-Assume $(a_n)$ is bounded and monotone. Since $(a_n)$ is bounded, the set 
+1. If $a_n$ is increasing, then
 $$
-A:=\{ a_n \divider n \in \N \}  \subseteq \R 
-$$
-is bounded below and above. By the Axiom of Completeness of $\R$ there exist $i,s \in \R$ such that
-$$
-i = \inf A \,, \quad s = \sup A \,.
+\lim_{n \to \infty} a_n = \sup A \,,
 $$
 
-We have two cases:
+2. If $a_n$ is decreasing, then
+$$
+\lim_{n \to \infty} a_n = \inf A \,,
+$$
 
-1. $(a_n)$ is increasing: We are going to prove that
-$$
-\lim_{n \to \infty} a_n = s \,.
-$$
-Equivalently, we need to prove that
-$$
-\forall \, \e>0 \,, \, \exists \, N \in \N \st \forall \, n \geq N \,, \,\,
-|a_n - s| < \e \,. 
-$${#eq-monotone-conv-proof}
-Let $\e > 0$. Since $s$ is the smallest upper bound for $A$, this means
-$$
-s - \e
-$$
-is not an upper bound. Therefore there exists $N \in \N$ such that 
-$$
-s - \e < a_N \,.
-$${#eq-monotone-convergence-proof-1}
-Let $n \geq N$. Since $a_n$ is increasing, we have
-$$
-a_N \leq a_n \,, \quad \forall \, n \geq N \,.
-$${#eq-monotone-convergence-proof-2}
-Moreover $s$ is the supremum of $A$, so that
-$$
-a_n \leq s < s + \e \,, \quad \forall \, n \in \N \,.
-$${#eq-monotone-convergence-proof-3}
-Putting together estimates (@eq-monotone-convergence-proof-1)-(@eq-monotone-convergence-proof-2)-(@eq-monotone-convergence-proof-3)
-we get
-$$
-s - \e < a_N \leq a_n \leq s < s + \e \,, \quad \forall \, n \geq N \,.
-$$
-The above implies 
-$$
-s - \e < a_n < s + \e \,, \quad \forall \, n \geq N \,,
-$$
-which is equivalent to (@eq-monotone-conv-proof).
-
-
-
-
-2. $(a_n)$ is decreasing: With a similar proof, one can show that
-$$
-\lim_{n \to \infty} a_n = i \,.
-$$
-This is left as an exercise.
-
+where we define $A = \{ a_n \, \colon \, n \in \N \}$.
 
 :::
 
 
 
 
-
-
-
-
-## Example: Euler's Number
-
-
-As an application of the Monotone Convergence Theorem we can give
-a formal definition for the Euler's Number
-$$
-e = 2.71828182845904523536 \dots
-$$
 
 
 ::: {.Theorem #theorem-euler-number}
@@ -1056,170 +985,21 @@ In particular $(a_n)$ is convergent.
 
 
 
-::: Proof
-
-
-*Part 1.* We prove that $(a_n)$ is increasing
-$$
-a_{n} \geq a_{n-1} \,, \quad \forall \, n \in \N \,,
-$$
-which by definition is equivalent to
-$$
-\left(  1 + \frac{1}{n}  \right)^n \geq 
-\left(  1 + \frac{1}{n - 1}  \right)^{n-1} \,, \quad \forall \, n \in \N \,.
-$$
-Summing the fractions we get
-$$
-\left(  \frac{n+1}{n}  \right)^n \geq 
-\left(  \frac{n}{n-1}  \right)^{n-1} \,.  
-$$
-Multiplying by $((n-1)/n)^n$ we obtain
-$$
-\left(  \frac{n-1}{n}  \right)^n  \left(  \frac{n+1}{n}  \right)^n  \geq 
- \frac{n-1}{n}  \,,
-$$
-which simplifies to
-$$
-\left(  1 - \frac{1}{n^2}  \right)^n \geq 1 - \frac1n \,, \quad  \forall \, n \in \N \,.
-$${#eq-proof-euler-1}
-Therefore $(a_n)$ is increasing if and only if (@eq-proof-euler-1) holds.
-Recall Bernoulli's inequality from Lemma \ref{lemma-bernoulli}: For
-$x \in \R$, $x>-1$, it holds
-$$
-(1 + x )^n  \geq 1 + nx  \,, \quad \forall \, n \in \N \,.
-$$
-Appliying Bernoulli's inequality with 
-$$
-x = -\frac{1}{n^2}
-$$
-yields
-$$
-\left(  1 - \frac{1}{n^2}  \right)^n  \geq 1 + n \left( -\frac{1}{n^2} \right) = 1 - \frac{1}{n} \,,
-$$
-which is exactly (@eq-proof-euler-1). Then $(a_n)$ is increasing.
-
-
-
-*Part 2*. We have to prove that $(a_n)$ is bounded, that is, that there
-exists $M > 0$ such that
-$$
-|a_n| \leq M \,, \quad \forall \, n \in \N \,.
-$$
-To this end, introduce the sequence $(b_n)$ by setting
-$$
-b_n := \left(   1  + \frac1n \right)^{n+1} \,.
-$$
-The sequence $(b_n)$ is decreasing.
-
-> To prove $(b_n)$ is decreasing, we need to show that 
-$$
-b_{n-1} \geq b_n \,, \quad \forall \, n \in \N \,. 
-$$
-By definition of $b_n$, the above reads
-$$
-\left(   1  + \frac{1}{n-1} \right)^{n} \geq
-\left(   1  + \frac{1}{n} \right)^{n+1} \,, \quad \forall \, n \in \N \,.
-$$
-Summing the terms inside the brackets, the above is equivalent to
-$$
-\left(   \frac{n}{n-1} \right)^{n} \geq
-\left(   \frac{n+1}{n} \right)^{n} \left(   \frac{n+1}{n} \right) \,.
-$$
-Multiplying  by $(n/(n+1))^n$ we get
-$$
-\left(  \frac{n^2}{n^2 - 1} \right)^{n} \geq  \left(   \frac{n+1}{n} \right) \,.
-$$
-The above is equivalent to
-$$
-\left( 1 +  \frac{1}{n^2 - 1} \right)^{n} \geq  \left(  1 + \frac{1}{n} \right) \,.
-$${#eq-proof-euler-3}
-Therefore $(b_n)$ is decreasing if and only if (@eq-proof-euler-3) holds for all $n \in \N$.
-By choosing 
-$$
-x = \frac{1}{n^2 - 1} 
-$$
-in Bernoulli's inequality, we obtain
-\begin{align*}
-\left( 1 +  \frac{1}{n^2 - 1} \right)^{n} & \geq 1 + n \left(  \frac{1}{n^2 - 1}   \right) \\
-& = 1 + \frac{n}{n^2 - 1} \\
-& \geq 1 + \frac1n \,,
-\end{align*}
-where in the last inequality we used that 
-$$
- \frac{n}{n^2 - 1} > \frac1n \,,
-$$
-which holds, being equivalent to $n^2 > n^2 - 1$. We have therefore proven
-(@eq-proof-euler-3), and hence $(b_n)$ is decreasing.
-
-
-We now observe that
-For all $n \in \N$
-\begin{align*}
-b_n & = \left(   1  + \frac1n \right)^{n+1} \\
-    & = \left(   1  + \frac1n \right)^n \left(   1  + \frac1n \right) \\ 
-    & = a_n \left(   1  + \frac1n \right) \\
-    & > a_n \,.
-\end{align*}
-Since $(a_n)$ is increasing and $(b_n)$ is decreasing, in particular
-$$
-a_n \geq a_1 \,, \quad b_n \leq b_1 \,.
-$$
-Therefore
-$$
-a_1 \leq a_n < b_n \leq b_1 \,, \quad \forall \, n \in \N \,.
-$$
-We compute
-$$
-a_1 = 2 \,, \quad b_1 = 4 \,,
-$$
-from which we get 
-$$
-2 \leq a_n \leq 4 \,, \quad \forall \, n \in \N \,.
-$$
-Therefore 
-$$
-|a_n| \leq 4 \,, \quad \forall \, n \in \N \,,
-$$
-showing that $(a_n)$ is bounded.
-
-
-*Part 3.* The sequence $(a_n)$ is increasing and bounded above. Therefore $(a_n)$ is convergent by the Monotone Convergence Theorem \ref{theorem-monotone-convergence}.
-
-:::
-
-
-
-
-Thanks to Theorem \ref{theorem-euler-number} we can define the Euler's Number $e$.
-
-
 ::: Definition
 ### Euler's Number
 
 The Euler's number is defined as
 $$
-e := \lim_{n \to \infty } \, \left(  1 + \frac{1}{n}  \right)^n \,.
+e = \lim_{n \to \infty } \, \left(  1 + \frac{1}{n}  \right)^n \,.
 $$
 
 :::
 
 
-Setting $n=1000$ in the formula for $(a_n)$, we get an approximation of $e$:
-$$
-e \approx a_{1000} = 2.7169 \,.
-$$
+
+## Special limits
 
 
-
-
-
-
-## Some important limits
-
-
-
-In this section we investigate limits of some sequences to which 
-the Limit Tests do not apply.
 
 
 ::: Theorem
@@ -1228,51 +1008,6 @@ Let $x \in \R$, with $x > 0$. Then
 $$
 \lim_{n \to \infty} \sqrt[n]{x} = 1 \,.
 $$
-
-:::
-
-
-::: Proof
-
-*Step 1.* Assume $x \geq 1$. In this case
-$$
-\sqrt[n]{x} \geq 1 \,.
-$$
-Define 
-$$
-b_n := \sqrt[n]{x} - 1 \,,
-$$
-so that $b_n \geq 0$. By Bernoulli's Inequality we have
-$$
-x = (1 + b_n)^n \geq 1 + n b_n \,.
-$$
-Therefore 
-$$
-0 \leq b_n \leq \frac{x-1}{n} \,.
-$$
-Since 
-$$
-\frac{x-1}{n} \longrightarrow 0 \,,
-$$
-by the Squeeze Theorem we infer $b_n \to 0$, and hence 
-$$
-\sqrt[n]{x} = 1 + b_n \longrightarrow 1 + 0 = 1\,, 
-$$
-by the Algebra of Limits.
-
-*Step 2.* Assume $0< x < 1$. In this case
-$$
-\frac{1}{x} > 1 \,.
-$$
-Therefore
-$$
-\lim_{n \to \infty} \, \sqrt[n]{  1/x  } = 1  \,.
-$$
-by Step 1. Therefore
-$$
-\sqrt[n]{x} = \frac{1}{\sqrt[n]{  1/x  }} \longrightarrow \frac{1}{1} = 1\,,
-$$
-by the Algebra of Limits.
 
 :::
 
@@ -1288,154 +1023,13 @@ $$
 
 :::
 
-::: Proof
-
-Assume that $a_n \to 0$ and set
-$$
-\e := \frac{\pi}{2} \,.
-$$
-By the convergence $a_m \to 0$ there exists $N \in \N$ such that
-$$
-|a_n| < \e = \frac{\pi}{2} \, \quad \forall \, n \geq N \,.
-$${#eq-limiti-notevoli-1}
-
-
-*Step 1*. We prove that 
-$$
-\sin(a_n) \to 0 \,.
-$$
-By elementary trigonometry we have
-$$
-0 \leq |\sin (x)| = \sin |x| \leq |x| \,, \quad \forall  \, x \in \left[
--\frac{\pi}{2}, \frac{\pi}{2} \right] \,.
-$$
-Therefore, since (@eq-limiti-notevoli-1) holds, we can substitute $x=a_n$ in the above inequality to get
-$$
-0 \leq |\sin (a_n)|  \leq |a_n| \,, \quad \forall \, n \geq \N \,.
-$$
-Since $a_n \to 0$, we also have $|a_n|\to 0$. Therefore 
-$|\sin (a_n)| \to 0$ by the Squeeze Theorem. This immediately implies 
-$\sin(a_n) \to 0$.
-
-*Step 2*. We prove that 
-$$
-\cos(a_n) \to 1 \,.
-$$
-Inverting the relation
-$$
-\cos^2(x) + \sin^2 (x) = 1 \,,
-$$
-we obtain
-$$
-\cos(x) = \pm \sqrt{ 1 - \sin^2 (x) } \,.
-$$
-We have that $\cos(x) \geq 0$ for $-\pi/2 \leq x \leq \pi/2$. Thus
-$$
-\cos(x) = \sqrt{ 1 - \sin^2 (x) } \,, \quad \forall \, x \in 
-\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \,.
-$$
-Since (@eq-limiti-notevoli-1) holds, we can set $x=a_n$ in the above inequality and obtain
-$$
-\cos(a_n) = \sqrt{ 1 - \sin^2 (a_n) } \,, \quad \forall \, n \geq N \,. 
-$$
-By Step 1 we know that $\sin(a_n) \to 0$. Therefore, by the Algebra of Limits,
-$$
- 1 - \sin^2 (a_n) \longrightarrow 1 - 0 \cdot 0 = 1 \,.
-$$
-Using Theorem \ref{theorem-square-root-limit} we have
-$$
-\cos(a_n) = \sqrt{1 - \sin^2 (a_n)} \longrightarrow \sqrt{1} = 1 \,,
-$$
-concluding the proof.
-
-
-:::
-
 
 
 ::: {.Theorem  #theorem-important-limit-2}
 
-Suppose $(a_n)$ is such that $a_n \to 0$ and 
-$$
-a_n \neq 0 \,, \quad \forall \, n \in \N \, .
-$$
-Then
+Suppose $(a_n)$ is such that $a_n \to 0$ and $a_n \neq 0$. Then,
 $$
 \lim_{n \to \infty} \frac{\sin(a_n)}{a_n} = 1 \,.
-$$
-
-:::
-
-
-::: Proof
-
-The following elementary trigonometric inequality holds:
-$$
-\sin (x) < x < \tan (x) \,, \quad \forall \, x \in \left[0 ,\frac{\pi}{2} \right]  \,.
-$$
-Note that $\sin x >0$ for $0 < x < \pi/2$. Therefore we can divide the
-above inequality by $\sin(x)$ and take the reciprocals to get
-$$
-\cos(x) < \frac{\sin (x)}{x} < 1 \,, \quad \forall \, x \in \Big( 0 ,\frac{\pi}{2} \Big] \,.
-$$
-If $-\pi/2<x<0$, we can apply the above inequality to $-x$ to obtain
-$$
-\cos(-x) < \frac{\sin(-x)}{-x} < 1  \,.
-$$
-Recalling that $\cos(-x) = \cos(x)$ and $\sin(-x)=-\sin(x)$, we get
-$$
-\cos(x) < \frac{\sin(x)}{x} < 1  \,, \quad \forall \, x \in \Big( -\frac{\pi}{2}, 0 \Big] \,.
-$$
-Thus
-$$
-\cos(x) < \frac{\sin(x)}{x} < 1  \,, \quad \forall  \, x \in \left[-\frac{\pi}{2}, \frac{\pi}{2} \right] \smallsetminus \{0\} \,.
-$${#eq-limiti-notevoli-3}
-Let 
-$$
-\e := \frac{\pi}{2} \,.
-$$
-Since $a_n \to 0$, there exists $N \in \N$ such that
-$$
-|a_n| < \e = \frac{\pi}{2} \,, \quad \forall \, n \geq N \,.
-$$
-Since $a_n \neq 0$ by assumption, the above shows that
-$$
-a_n \in \Big[ -\frac{\pi}{2}, \frac{\pi}{2}  \Big] \smallsetminus \{0\} \,, 
-\quad \forall \, n \geq \N \,.
-$$
-Therefore we can substitute $x=a_n$ into (@eq-limiti-notevoli-3) to get
-$$
-\cos(a_n) < \frac{\sin(a_n)}{a_n} < 1  \,, \quad \forall  \, n \geq N \,.
-$$
-We have
-$$
-\cos(a_n) \to 1
-$$ 
-by Theorem \ref{theorem-important-limit-1}. By the Squeeze Theorem we conclude that
-$$
-\lim_{n \to \infty} \frac{\sin(a_n)}{a_n} = 1 \,.
-$$
-
-:::
-
-
-
-::: Warning
-
-You might be tempted to apply L'Hôpital's rule (which we did not cover in these Lecture Notes) to compute 
-$$
-\lim_{x \to 0} \frac{\sin(x)}{x}  \,.
-$$
-This would yield the correct limit
-$$
-\lim_{x \to 0} \frac{\sin(x)}{x} =
-\lim_{x \to 0} \frac{(\sin(x))'}{(x)'} = 
-\lim_{x \to 0} \cos(x) = 1  \,.
-$$
-However this is a circular argument, since the derivative of 
-$\sin(x)$ at $x=0$ is defined as the limit
-$$
-\lim_{x \to 0} \frac{\sin(x)}{x} \,.
 $$
 
 :::
@@ -1445,11 +1039,7 @@ $$
 
 ::: {.Theorem  #theorem-important-limit-3}
 
-Suppose $(a_n)$ is such that $a_n \to 0$ and 
-$$
-a_n \neq 0 \,, \quad \forall \, n \in \N \, .
-$$
-Then
+Suppose $(a_n)$ is such that $a_n \to 0$ and $a_n \neq 0$. Then,
 $$
 \lim_{n \to \infty} \frac{1 - \cos(a_n)}{(a_n)^2} = \frac{1}{2} \,, \quad 
 \lim_{n \to \infty} \frac{1 - \cos(a_n)}{a_n} = 0  \, .
@@ -1494,11 +1084,10 @@ $$
 \lim_{n \to \infty} \, n  \sin \left(  \frac{1}{n} \right)  = 1 \,.
 $${#eq-notable-limits-2}
 
-**Solution.** This is because
+**Solution.** By Theorem \ref{theorem-important-limit-2} with $a_n = 1/n$, we get
 $$
-n  \sin \left(  \frac{1}{n} \right) = \frac{ \sin \left(  \dfrac{1}{n} \right) }{ \dfrac{1}{n} } \longrightarrow 1 \,,
+n  \sin \left(  \frac{1}{n} \right) = \frac{ \sin \left(  \dfrac{1}{n} \right) }{ \dfrac{1}{n} } \longrightarrow 1 \,.
 $$
-by Theorem \ref{theorem-important-limit-2} with $a_n = 1/n$.
 
 :::
 
@@ -1511,11 +1100,10 @@ $$
 $${#eq-notable-limits-1}
 
 
-**Solution.** Indeed, 
+**Solution.** By Theorem \ref{theorem-important-limit-3} with $a_n = 1/n$, we have
 $$
-n^2 \left(  1 - \cos \left(  \frac{1}{n} \right)\right) = \dfrac{1 - \cos \left(  \dfrac{1}{n} \right)}{\dfrac{1}{n^2}} \longrightarrow \frac12 \,,
+n^2 \left(  1 - \cos \left(  \frac{1}{n} \right)\right) = \dfrac{1 - \cos \left(  \dfrac{1}{n} \right)}{\dfrac{1}{n^2}} \longrightarrow \frac12 \,.
 $$
-by applying Theorem \ref{theorem-important-limit-3} with $a_n = 1/n$.
 
 :::
 
@@ -1571,12 +1159,11 @@ $$
 \lim_{n \to \infty} \, \frac{n^2+1}{n+1} \sin \left(  \dfrac{1}{n} \right)  = 1 \,.
 $$
 
-**Solution.** Note that
+**Solution.** Using (@eq-notable-limits-2) and the Algebra of Limits,
 \begin{align*}
 \frac{n^2+1}{n+1} \sin \left(  \dfrac{1}{n} \right) & = \left( \frac{1+\dfrac{1}{n^2}}{1+ \dfrac{1}{n}} \right) \cdot \left( n \sin \left(  \dfrac{1}{n} \right) \right) \\
-& \longrightarrow \frac{1 + 0}{1 + 0} \cdot 1 = 1\,,
+& \longrightarrow \frac{1 + 0}{1 + 0} \cdot 1 = 1\,.
 \end{align*}
-where we used (@eq-notable-limits-2) and the Algebra of Limits.
 
 
 :::

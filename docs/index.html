@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Silvio Fanzon">
-<meta name="dcterms.date" content="2024-11-21">
 
 <title>Numbers Sequences and Series</title>
 <style>
@@ -73,9 +72,21 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Lemma {
   --color1: #f4cce0;
@@ -85,42 +96,6 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
 .Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
@@ -129,17 +104,41 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -248,6 +247,18 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sections/chap_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{C}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/chap_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sections/license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
@@ -300,7 +311,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">21 Nov 2024</p>
+      <p class="date">6 Dec 2024</p>
     </div>
   </div>
   
@@ -314,7 +325,7 @@ window.Quarto = {
 
 <section id="revision-guide" class="level1 unnumbered">
 <h1 class="unnumbered">Revision Guide</h1>
-<p>Revision Guide document for the module <strong>Numbers Sequences and Series 400297</strong> 2024/25 at the University of Hull. If you have any question or find any typo, please email me at</p>
+<p>Revision Guide for the Exam of the module <strong>Numbers Sequences and Series 400297</strong> 2024/25 at the University of Hull. If you have any question or find any typo, please email me at</p>
 <div style="text-align: center;">
 <p><strong><a href="mailto:%20S.Fanzon@hull.ac.uk">S.Fanzon@hull.ac.uk</a></strong></p>
 </div>
@@ -338,12 +349,34 @@ window.Quarto = {
 <p><strong>Preliminaries</strong></p>
 <ul>
 <li>Prove that <span class="math inline">\(\sqrt{p} \notin \mathbb{Q}\)</span> for <span class="math inline">\(p\)</span> a prime number</li>
-<li></li>
+<li>Compute infinite union / intersection</li>
+<li>Show that a binary relation is of equivalence / order / total order</li>
+<li>Characterize the equivalence classes of a given equivalence relation</li>
+<li>Prove statements by induction (such as Bernoulli’s inequality)</li>
+<li>Compute the absolute value of a real number</li>
+<li>Understand how to apply triangle inequality</li>
+</ul>
+<p><strong>Real Numbers</strong></p>
+<ul>
+<li>Determine if a given set with binary operation is a field</li>
+<li>Prove uniqueness of neutral element / inverse</li>
+<li>Computing Sup / Max and Inf / Min of a given set</li>
+<li>Prove that a given set is inductive</li>
+<li>Remember that <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span> are not fields, <span class="math inline">\(\mathbb{Q}\)</span> is an ordered field, <span class="math inline">\(\mathbb{R}\)</span> is a complete ordered field</li>
+<li>State the axiom of completeness</li>
+</ul>
+<p><strong>Properties of <span class="math inline">\(\mathbb{R}\)</span></strong></p>
+<ul>
+<li>Know how to use the Archimedean property</li>
+<li>Characterization of sup / inf in terms of <span class="math inline">\(\varepsilon\)</span></li>
+<li>Sup / Inf and Max / Min of intervals</li>
+<li>Determine if a given set is finite / countable / uncountable</li>
+<li>Remember that <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span> are countable</li>
+<li>Remember that <span class="math inline">\(\mathbb{R}\)</span> and the irrationals are uncountable</li>
 </ul>
 <p><strong>Complex Numbers</strong></p>
 <ul>
-<li>Sum, multiplication and division of complex numbers</li>
-<li>Computing the complex conjugate</li>
+<li>Sum, multiplication, division, conjugate of complex numbers</li>
 <li>Computing the inverse of a complex number</li>
 <li>Find modulus and argument of a complex number</li>
 <li>Compute Cartesian, Trigonometric and Exponential form of a complex number</li>
@@ -354,6 +387,41 @@ window.Quarto = {
 <li>Solving higher degree polynomial equations in <span class="math inline">\(\mathbb{C}\)</span></li>
 <li>Finding the roots of unity</li>
 <li>Finding the n-th roots of a complex number</li>
+</ul>
+<p><strong>Sequences in <span class="math inline">\(\mathbb{R}\)</span></strong></p>
+<ul>
+<li>Use the definition of convergence to prove convergence of a given real sequence</li>
+<li>Prove that a given sequence is bounded</li>
+<li>Remember that convergent sequences are bounded</li>
+<li>Use the Algebra of Limits to prove convergence / divergence of a given sequence</li>
+<li>Use the Squeeze Theorem to prove convergence of a given sequence</li>
+<li>Use the Geometric Sequence Test to prove convergence / divergence of a given sequence</li>
+<li>Use the Ratio Test to prove convergence / divergence of a given sequence</li>
+<li>Prove that a sequence is monotone increasing / decreasing</li>
+<li>Know the statement of the Monotone Convergence Theorem</li>
+<li>Memorize the 4 Special Limits, and know how to apply them to study convergence / divergence of a given sequence</li>
+</ul>
+<p><strong>Sequences in <span class="math inline">\(\mathbb{C}\)</span></strong></p>
+<ul>
+<li>Use the definition of convergence to prove convergence of a given complex sequence</li>
+<li>Prove that a complex sequence is bounded</li>
+<li>Use the Algebra of Limits to prove convergence / divergence of a given sequence</li>
+<li>Use the Geometric Sequence Test / Ratio Test to prove convergence / divergence of a given complex sequence</li>
+<li>Determine convergence of real and imaginary part of a given complex sequence</li>
+</ul>
+<p><strong>Series</strong></p>
+<ul>
+<li>Compute the partial sums of a given series</li>
+<li>Compute the sum of a telescopic series</li>
+<li>Apply the Necessary Condition for Convergence to prove that a given series is divergent</li>
+<li>Use the Geometric Series test to determine convergence / divergence of a given geometric series</li>
+<li>Compute the sum of a given (convergent) geometric series</li>
+<li>Determine convergence / divergence of non-negative series by using the Cauchy Condensation Test, Comparison Test, Limit Comparison Test and Ratio Test</li>
+<li>Study convergence / divergence of <span class="math inline">\(p\)</span>-series</li>
+<li>Prove that a given series converges absolutely</li>
+<li>Prove that a complex series converges / diverges by using the Ratio Test for general series</li>
+<li>Prove that a series converges conditionally</li>
+<li>Use the Dirichlet / Alternate Convergence / Abel’s tests to study the convergence of a given series</li>
 </ul>
 
 

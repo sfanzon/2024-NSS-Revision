@@ -24,6 +24,9 @@ which maps the ordered pair $(x,y)$ into $x \circ y$.
 
 
 ::: Definition
+### Properties of binary operations
+
+
 Let $K$ be a set and $\circ \ \colon K \times K \to K$ be a binary operation on $K$. We say that:
 
 1. $\circ$ is **commutative** if 
@@ -64,17 +67,12 @@ $$
 
 **Solution.**
 
-1. We have
+1. The operation $\circ$ is not commutative, since
 $$
-0 \circ 1 = 1 \, , \quad 1 \circ 0 = 0
+0 \circ 1 = 1 \neq 0 = 1 \circ 0 \,.
 $$
-and therefore
-$$
-0 \circ 1 \neq 1 \circ 0 \,.
-$$
-showing that $\circ$ is not commutative.
 
-2. We have
+2. The operation $\circ$ is not associative, since
 $$
 (0 \circ 1) \circ 1 = 1 \circ 1 = 0 \,,
 $$
@@ -86,12 +84,13 @@ so that
 $$
 (0 \circ 1) \circ 1  \neq 0 \circ (1 \circ 1)\,.
 $$
-Thus, $\circ$ is not associative.
+
 
 :::
 
 
 
+## Fields
 
 ::: Definition
 ### Field
@@ -148,20 +147,6 @@ We call the triple $(K, + , \cdot)$ a **field** if:
 :::
 
 
-::: Theorem
-Consider the sets $\N$, $\Z$, $\Q$ with the usual operations $+$ and $\cdot$. We have:
-
-- $(\N, + , \cdot)$ is **not a field**.
-
-- $(\Z, + , \cdot)$ is **not a field**.
-
-- $(\Q, + , \cdot)$ **is a field**.
-
-
-:::
-
-
-
 
 
 
@@ -186,6 +171,23 @@ Then $(K,+,\cdot)$ is a field.
 :::
 
 
+
+::: Definition
+### Subtraction and division
+Let $(K,+,\cdot)$ be a field. We define:
+
+1. **Subtraction** as the operation $-$ defined by 
+$$
+x - y := x + (-y) \,, \quad \forall \, x , y \in K \,,
+$$
+where $-y$ is the additive inverse of $y$.
+
+2. **Division** as the operation $/$ defined by
+$$
+x/y := x \cdot y^{-1}\,, \quad \forall \, x , y \in K \,, \,\, y \neq 0 \,,
+$$
+where $y^{-1}$ is the multiplicative inverse of $y$.
+:::
 
 
 ::: Proposition
@@ -236,6 +238,21 @@ with $-x$ the element from property (A3).
 4. Exercise.
 :::
 
+
+::: Theorem
+Consider the sets $\N$, $\Z$, $\Q$ with the usual operations $+$ and $\cdot$. We have:
+
+- $(\N, + , \cdot)$ is **not a field**.
+
+- $(\Z, + , \cdot)$ is **not a field**.
+
+- $(\Q, + , \cdot)$ **is a field**.
+
+
+:::
+
+
+## Ordered fields
 
 
 ::: Definition
@@ -289,8 +306,16 @@ $(\Q,+,\cdot,\leq)$ is an **ordered field**.
 ## Supremum and infimum
 
 
+::: Assumption
+
+In the following we assume that $(K,+,\cdot,\leq)$ is an ordered field.
+
+:::
+
+
+
 ::: Definition
-### Upper bound, bounded above, supremum, maximum
+### Upper bound and bounded above
 
 Let $A \subseteq K$:
 
@@ -299,19 +324,45 @@ $$
 a \leq b \,, \quad \forall \, a \in A \,.
 $$
 2. We say that $A$ is **bounded above** if there exists and upper bound $b \in K$ for $A$.
+:::
 
-3. We say that $s \in K$ is the **least upper bound** or **supremum** of $A$ if:
-    - $s$ is an upper bound for $A$,
-    - $s$ is the smallest upper bound of $A$, that is, 
+
+
+::: Definition 
+### Supremum
+
+Let $A \subseteq K$. A number $s \in K$ is called **least upper bound** or **supremum** of $A$ if:
+
+1. $s$ is an upper bound for $A$,
+2. $s$ is the smallest upper bound of $A$, that is, 
     $$
     \mbox{If } \, b \in K \, \mbox{ is upper bound for } \, A \, \mbox{ then } \, s \leq b \,.  
     $$
-    If it exists, the supremum is denoted by
-    $$
-    s = \sup \ A \,.
-    $$
 
-4. Let $A \subseteq K$. We say that $M \in K$ is the **maximum** of $A$ if:
+If it exists, the supremum is denoted by
+$$
+s := \sup \ A \,.
+$$
+
+:::
+
+
+::: Remark
+Note that if a set $A \subseteq K$ in **NOT** bounded above, then the supremum does not exist, as there are no upper bounds of $A$. 
+:::
+
+
+
+::: Proposition
+### Uniqueness of the supremum {#proposition-sup-unique}
+
+Let $A \subseteq K$. If $\sup A$ exists, then it is unique.  
+:::
+
+
+::: Definition 
+### Maximum
+Let $A \subseteq K$. A number $M \in K$ is called the **maximum** of $A$ if:
 $$
 M \in A   \,\, \mbox{ and } \,\, a \leq M  \,, \, \forall a \in A \,.
 $$
@@ -319,15 +370,7 @@ If it exists, we denote the maximum by
 $$
 M = \max A \,.
 $$
-
 :::
-
-
-
-::: Remark
-Note that if a set $A \subseteq K$ in **NOT** bounded above, then the supremum does not exist, as there are no upper bounds of $A$. 
-:::
-
 
 
 
@@ -342,8 +385,10 @@ $$
 $$
 :::
 
+
+
 ::: Definition
-### Upper bound, bounded below, infimum, minimum
+### Lower bound, bounded below, infimum, minimum
 
 Let $A \subseteq K$:
 
@@ -376,7 +421,10 @@ $$
 
 
 ::: Proposition
-Let $A \subseteq K$. If the minimum of $A$ exists, then also the infimum exists, and
+Let $A \subseteq K$:
+
+1. If $\inf A$ exists, then it is unique.
+2. If the minimum of $A$ exists, then also the infimum exists, and
 $$
 \inf A = \min A \,.
 $$  
@@ -421,7 +469,7 @@ $$
 ::: Definition
 ### Completeness
 
-Let $(K,+,\cdot,\leq)$ be an ordered field. We say that $K$ is **complete** if it holds the property:
+Let $(K,+,\cdot,\leq)$ be an ordered field. We say that $K$ is **complete** if the following property holds:
 
 - (AC) For every $A \subseteq K$ non-empty and bounded above 
 $$
@@ -476,7 +524,7 @@ a total order relation $\leq$, such that
 
 
 
-### Inductive sets
+## Inductive sets
 
 ::: Definition
 ### Inductive set
@@ -526,7 +574,6 @@ $$
 $$
 
 :::
-
 
 
 

@@ -141,6 +141,11 @@ so indeed $z^{-1}=w$.
 
 
 
+
+
+
+
+
 ::: Example
 
 **Question.** Let $z = 3 + 2 i$. Compute $z^{-1}$. 
@@ -233,7 +238,13 @@ For all $z_1, z_2 \in \mathbb{C}$ it holds:
 :::
 
 
+
+
+
 ## The complex plane
+
+
+![A point $z = x + iy \in \C$ can be represented on the complex plane by the point of coordinates $(x,y)$. The distance between $z$ and $0$ is given by $|z| = \sqrt{z^2 + y^2}$. ](/images/complex_plane.png){#fig-complex-plane width=30%}
 
 
 ::: Definition
@@ -318,6 +329,9 @@ For all $x, y, z \in \C$,
 
 
 
+## Polar coordinates
+
+![Polar coordinates $(\rho,\theta)$ for the complex number $z \in \C$. ](/images/polar_coordinates.png){#fig-polar-coordinates width=30%}
 
 
 ::: Definition 
@@ -422,6 +436,7 @@ where $\arctan$ is the inverse of $\tan$.
 :::
 
 
+![The definition of $\arg(z)$ depends on the position of $z$ in the complex plane.](/images/argument_1.png){#fig-argument-1 width=35%}
 
 
 ::: Example 
@@ -442,6 +457,9 @@ $$
 :::
 
 
+
+
+## Exponential form
 
 ::: Theorem 
 ### Euler's identity   {#theorem-euler-identity}
@@ -588,9 +606,9 @@ by $2\pi$ periodicity of $e^{i\theta}$ and Euler's identity.
 ::: Definition
 ### Complex exponential
 
-The complex exponential of $z \in \C$ is defined as
+The complex exponential of $z = a + ib \in \C$ is defined as
 $$
-e^z = |z| e^{i\theta} \,, \quad \theta = \arg(z) \,.
+e^z = e^a e^{ib}  \,.
 $$
 
 :::
@@ -716,6 +734,7 @@ $$
 
 
 ::: Definition
+### Multiplicity
 
 Suppose that the polynomial $p_n$ factorizes as 
 $$
@@ -948,7 +967,7 @@ $$
 $$
 z^{3}-7 z^{2}+6 z=z\left(z^{2}-7 z+6\right) \,.
 $$
-We could now use the quadratic formula on the term $z^{2}-7 z+6$ to find the remaining two roots. However, we have already observed that $z=1$ is a solution. Therefore $z-1$ divides $z^{2}-7 z+6$. Using polynomial long division, we find that
+We could now use the quadratic formula on the term $z^{2}-7 z+6$ to find the remaining two roots. However, we have already observed that $z=1$ is a solution. Therefore $z-1$ divides $z^{2}-7 z+6$. Using polynomial long division, see @fig-polynomial, we find that
 $$
 \frac{z^{2}-7 z+6}{z-1}=z-6 \,.
 $$
@@ -959,6 +978,9 @@ $$
 
 :::
 
+![Polynomial long division between $z^{2}-7 z+6$ and $z-1$.](/images/polynomial_1.png){#fig-polynomial width=20%}
+
+
 
 ::: Example
 
@@ -967,7 +989,7 @@ $$
 z^{3}-7 z+6=0 \,.
 $$ 
 
-**Solution.** It is easy to see $z=1$ is a solution. This means that $z-1$ divides $z^{3}-7 z+6$. By using polynomial long division, we compute that
+**Solution.** It is easy to see $z=1$ is a solution. This means that $z-1$ divides $z^{3}-7 z+6$. By using polynomial long division, see @fig-polynomial-1, we compute that
 $$
 \frac{z^{3}-7 z+6}{z-1}=z^{2}+z-6 \,.
 $$
@@ -983,10 +1005,12 @@ $$
 
 :::
 
+![Polynomial long division between $z^{3}-7 z+6$ and $z-1$.](/images/polynomial_2.png){#fig-polynomial-1 width=20%}
 
 
 
-## Roots
+
+## Roots of unity
 
 ::: Theorem
 
@@ -1063,6 +1087,7 @@ $$
 
 
 
+## Roots in $\C$
 
 
 

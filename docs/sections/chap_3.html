@@ -72,47 +72,23 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.Conjecture {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Problem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
 .Example {
   --color1: #bce5de;
   --color2: #21aa93;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
-  --color1: #f4cce0;
-  --color2: #db4d92;
 }
 .Definition {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
-.Corollary {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -120,7 +96,31 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
 .Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -128,17 +128,17 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Conjecture {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
 }
 </style>
 
@@ -243,6 +243,18 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../sections/chap_5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{C}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -359,29 +371,28 @@ x &lt; i + \varepsilon\,.
 </div></details>
 </div>
 <div id="proposition-interval-inf-sup" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 7</strong></summary><div>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>. Let <span class="math display">\[
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 7</strong></summary><div>
+<p>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>. Let <span class="math display">\[
 A:= (a,b) = \{ x \in \mathbb{R}\, \colon \,a &lt; x &lt; b \}\,.
-\]</span> Then <span class="math display">\[
+\]</span></p>
+<ol type="1">
+<li><p>We have that <span class="math display">\[
 \inf A = a \,, \quad \sup A = b \,.
-\]</span><p></p>
+\]</span></p></li>
+<li><p><span class="math inline">\(\min A\)</span> and <span class="math inline">\(\max A\)</span> do not exist.</p></li>
+</ol>
 </div></details>
 </div>
 <div id="Corollary-8" class="Corollary">
 <p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 8</strong></summary><div>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>. Let <span class="math display">\[
-A:= (a,b) = \{ x \in \mathbb{R}\, \colon \,a &lt; x &lt; b \}\,.
-\]</span> Then <span class="math inline">\(\min A\)</span> and <span class="math inline">\(\max A\)</span> do not exist.<p></p>
-</div></details>
-</div>
-<div id="Corollary-9" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 9</strong></summary><div>Let <span class="math inline">\(a, b \in \mathbb{R}\)</span> with <span class="math inline">\(a&lt;b\)</span>. Let <span class="math display">\[
 A:= [a,b) = \{ x \in \mathbb{R}\, \colon \,a \leq x &lt; b \}\,.
 \]</span> Then <span class="math display">\[
 \min A = \inf A = a \,, \quad \sup A = b \,,
 \]</span> <span class="math inline">\(\max A\)</span> does not exist.<p></p>
 </div></details>
 </div>
-<div id="Proposition-10" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 10</strong></summary><div>Define the set <span class="math display">\[
+<div id="Proposition-9" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 9</strong></summary><div>Define the set <span class="math display">\[
 A :=  \left\{ \frac1n \, \colon \,n \in \mathbb{N}\right\} \,.
 \]</span> Then <span class="math display">\[
 \inf A = 0 \,, \quad \sup A = \max A = 1 \,.
@@ -418,6 +429,20 @@ A :=  \left\{ \frac1n \, \colon \,n \in \mathbb{N}\right\} \,.
 </section>
 <section id="cardinality" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="cardinality"><span class="header-section-number">3.2</span> Cardinality</h2>
+<div id="bijective-function" class="Definition" title="Bijective function">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Bijective function</summary><div>
+<p>Let <span class="math inline">\(X,Y\)</span> be sets and <span class="math inline">\(f \colon X \to Y\)</span> be a function. We say that:</p>
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span> is <strong>injective</strong> if it holds: <span class="math display">\[
+f(x)=f(y) \quad \implies \quad x = y \,.
+\]</span></p></li>
+<li><p><span class="math inline">\(f\)</span> is <strong>surjective</strong> if it holds: <span class="math display">\[
+\forall \, y \in Y \,, \,\, \exists \, x \in X \, \text{ s.t. } \, f(x) = y \,.
+\]</span></p></li>
+<li><p><span class="math inline">\(f\)</span> is <strong>bijective</strong> if it is both <strong>injective</strong> and <strong>surjective</strong>.</p></li>
+</ol>
+</div></details>
+</div>
 <div id="definition-cardinality" class="Definition" title="Cardinality, Finite, Countable, Uncountable">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Cardinality, Finite, Countable, Uncountable</summary><div>
 <p>Let <span class="math inline">\(X\)</span> be a set. The <strong>cardinality</strong> of <span class="math inline">\(X\)</span> is the number of elements in <span class="math inline">\(X\)</span>. We denote the cardinality of <span class="math inline">\(X\)</span> by <span class="math display">\[

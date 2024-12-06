@@ -22,7 +22,7 @@ $$
 $$ {#eq-contradiction-root-2-false}
 
 
-1. Therefore, there exists $m,n \in \N$, $n \neq 0$, such that 
+1. Therefore, there exist $m \in \Z$, $n \in \N$, $n \neq 0$, such that 
 $$
 \frac{m}{n} = \sqrt{2} \,.
 $$
@@ -52,36 +52,32 @@ $$
 n^2 = 2p^2\,. 
 $${#eq-contradiction-root-2-5}
 
-6. We now make a series of observations:
-    * Equation (@eq-contradiction-root-2-5) says that $n^2$ is even.
-    * The same argument in Step 4 guarantees that also $n$ is even.
-    * Therefore $n$ and $m$ are both even, meaning they have $2$ as common factor.
-    * But Step 2 says that $n$ and $m$ have no common factors. **Contradiction**
+Now, observe that:
 
-7. Our reasoning has run into a **contradiction**, stemming from assumption (@eq-contradiction-root-2-false). Therefore (@eq-contradiction-root-2-false) is **FALSE**, and so 
-$$
-\sqrt{2} \notin \Q \,
-$$
-ending the proof.
+- Equation (@eq-contradiction-root-2-5) says that $n^2$ is even. The argument in Step 4 guarantees that also $n$ is even.
+- Therefore $n$ and $m$ are both even, meaning they have $2$ as common factor.
+- But Step 2 says that $n$ and $m$ have no common factors. **Contradiction**
+
+The **contradiction** stems from assumption (@eq-contradiction-root-2-false). Thus, (@eq-contradiction-root-2-false) is false, ending the proof.
+
 :::
 
 
 ## Set Theory
 
 
+::: Definition 
+
+Let $A$ be a set. 
+
+1. We write $x \in A$ if the element $x$ belongs to the set $A$. 
+2. We write $x \notin A$ if the element $x$ does not belong to the set $A$. 
+
+:::
+
+
 ::: Definition
-For two sets $A$ and $B$ we define their **union** as the set
-$$
-A \cup B := \{ x\, \colon \, x \in A  \, \text{ or } \, x \in B \} \,.
-$$
-The **intersection** of $A$ and $B$ is defined by
-$$
-A \cap B := \{ x\, \colon \, x \in A  \, \text{ and } \, x \in B \} \,.
-$$
-We denote the **empty set** by the symbol $\emptyset$. Two sets are **disjoint** if 
-$$
-A \cap B = \emptyset \,.
-$$
+
 Given two sets $A$ and $B$, we say that $A$ is **contained** in $B$, in symbols
 $$
 A \subseteq B  \,,
@@ -94,6 +90,39 @@ if they contain the same elements.
 :::
 
 
+
+
+::: Remark 
+
+The inclusion $A \subseteq B$ is equivalent to the implication:
+$$
+x \in A \,\, \implies \,\, x \in B 
+$$
+for all $x \in A$. The symbol $\implies$ reads **implies**, and denotes the fact that the first condition implies the second.
+
+:::
+
+
+
+::: Definition
+### Union and Intersection
+
+For two sets $A$ and $B$ we define their **union** as the set
+$$
+A \cup B := \{ x\, \colon \, x \in A  \, \text{ or } \, x \in B \} \,.
+$$
+The **intersection** of $A$ and $B$ is defined by
+$$
+A \cap B := \{ x\, \colon \, x \in A  \, \text{ and } \, x \in B \} \,.
+$$
+We denote the **empty set** by the symbol $\emptyset$. Two sets are **disjoint** if 
+$$
+A \cap B = \emptyset \,.
+$$
+:::
+
+
+
 ::: Proposition
 
 Let $A$ and $B$ be sets. Then 
@@ -104,8 +133,8 @@ $$
 :::
 
 
-
 ::: Definition
+## Infinite union and intersection
 
 Let $\Omega$ be a set, and $A_n \subseteq \Omega$ a family of subsets, where $n \in \N$. 
 
@@ -162,6 +191,8 @@ This means there exists some $m \in \N$ such that $m \in \cap_{n \in \N} A_n$. H
 
 
 ::: Definition
+### Complement
+
 Let $A,B \subseteq \Omega$. The **complement** of $A$ with respect to $B$ is the set of elements of $B$ which do not belong to $A$, that is
 $$
 B \smallsetminus A := \{ x \in \Omega \, \colon \, x \in B \, \text{ and } \, x \notin A \} \,.
@@ -225,15 +256,16 @@ $$
 $$
 
 **Solution.** $\mathcal{P}(\Omega)$ has $2^3 = 8$, and
-\begin{align}
+\begin{align*}
 \mathcal{P}(\Omega) = \{ \emptyset, & \, \{x\} , \,  \{y\} , \, \{z\} , \{x,y\} \\
 &  \{x,z\}, \, \{y,z\} , \, \{x,y,z\} \} \,. 
-\end{align}
+\end{align*}
 :::
 
 
 
 ::: Definition
+### Product of sets
 
 Let $A,B$ be sets. The **product** of $A$ and $B$ is the set of pairs
 $$
@@ -244,9 +276,11 @@ $$
 
 
 
-## Relations
+## Eequivalence Relations
+
 
 ::: Definition
+### Binary relation
 
 Suppose $A$ is a set. A **binary relation** $R$ on $A$ is a subset 
 $$
@@ -288,7 +322,7 @@ and we say that $x$ and $y$ are **equivalent**.
 
 
 ::: Definition
-### Equivalence classes
+### Equivalence classes {#definition-equivalence-class}
 
 Suppose $R$ is an **equivalence relation** on $A$. The **equivalence class** of an element $x \in A$ is the set
 $$
@@ -306,13 +340,11 @@ $$
 
 
 ::: Proposition
+### Well-posedness of Definition \ref{definition-equivalence-class}
 
 Let $\sim$ be an equivalence relation on $A$. Then
 
-1. For each $x \in A$ we have
-$$
-[x] \neq \emptyset
-$$
+1. For each $x \in A$ we have $[x] \neq \emptyset$.
 
 2. For all $x,y \in A$ it holds
 $$
@@ -427,6 +459,9 @@ $$
 
 
 
+## Order relations
+
+
 ::: Definition
 ### Partial order
 
@@ -538,7 +573,7 @@ $$
 
 
 
-::: Definition
+::: Axiom
 ### Principle of Inducion
 
 Let $\alpha(n)$ be a statement which depends on $n \in \N$. Suppose that 
@@ -570,13 +605,13 @@ $$
 
 1. It is immediate to check that (@eq-formula-sum-naturals) holds for $n=1$.
 2. Suppose (@eq-formula-sum-naturals) holds for $n = k$. Then
-\begin{align}
+\begin{align*}
 S(k+1) & = 1 + \ldots +  k + (k+1) \\
        & = S(k) + (k+1) \\
        & = \frac{k(k+1)}{2}  + (k+1) \\
 & = \frac{ k(k+1) + 2(k+1) }{2} \\
 & = \frac{(k+1)(k+2)}{2}
-\end{align}
+\end{align*}
 where in the first equality we used that (@eq-formula-sum-naturals) holds for $n=k$. We have proven that
 $$
 S(k+1) = \frac{(k+1)(k+2)}{2}\,.
@@ -627,7 +662,7 @@ By induction we conclude (@eq-bernoulli-inequality).
 
 ::: Definition
 ### Absolute value 
-For $x \in \R$ we define its **absolute value** as the quantity
+Let $x \in \R$. The **absolute value** of $x$ is
 $$
 |x| = 
 \begin{cases}
@@ -637,7 +672,11 @@ x  & \text{ if } \, x \geq 0 \\
 $$
 :::
 
+
+
 ::: Proposition
+### Properties of absolute value
+
 For all $x \in \R$ they hold:
 
 1. $|x| \geq 0$.
@@ -645,6 +684,7 @@ For all $x \in \R$ they hold:
 3. $|x| = |-x|$.
 
 :::
+
 
 
 ::: {.Lemma #lemma-absolute-value}

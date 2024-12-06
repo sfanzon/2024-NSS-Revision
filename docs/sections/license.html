@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/chap_5.html" rel="prev">
+<link href="../sections/chap_7.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -109,25 +109,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Important {
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Important {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
+}
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Corollary {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .Conjecture {
   --color1: #f4cce0;
@@ -137,27 +153,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
 .Question {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
 .Axiom {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -169,9 +169,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 </style>
 
@@ -280,6 +280,18 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{C}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../sections/license.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">License</span></a>
   </div>
@@ -331,7 +343,7 @@ window.Quarto = {
 <h2 class="unnumbered anchored" data-anchor-id="citation">Citation</h2>
 <p>For attribution, please cite this work as:</p>
 <blockquote class="blockquote">
-<p>Fanzon, Silvio. (2024). <em>Revision Guide of Numbers, Sequences and Series</em>.<br>
+<p>Fanzon, Silvio. (2024). <em>Revision Guide of Numbers Sequences and Series</em>.<br>
 <a href="https://www.silviofanzon.com/2024-NSS-Revision/">https://www.silviofanzon.com/2024-NSS-Revision/</a></p>
 </blockquote>
 <p>BibTex citation:</p>
@@ -913,8 +925,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/chap_5.html" class="pagination-link" aria-label="Sequences in $\mathbb{R}$">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{R}\)</span></span></span>
+      <a href="../sections/chap_7.html" class="pagination-link" aria-label="Series">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

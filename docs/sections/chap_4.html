@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Conjecture {
+.Warning {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -80,23 +80,19 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Example {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Remark {
   --color1: #bce5de;
   --color2: #21aa93;
+}
+.Theorem {
+  --color1: #f4cce0;
+  --color2: #db4d92;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Important {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Question {
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -104,27 +100,11 @@ ul.task-list li input[type="checkbox"] {
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
-.Corollary {
+.Conjecture {
   --color1: #f4cce0;
   --color2: #db4d92;
-}
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
 }
 .Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Theorem {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Notation {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
-}
-.Proposition {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -132,11 +112,31 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f1f1f2;
   --color2: #c0c0c1;
 }
-.Warning {
+.Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
+.Proposition {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Example {
+  --color1: #bce5de;
+  --color2: #21aa93;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Question {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Notation {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -247,6 +247,18 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{C}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../sections/license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
@@ -262,9 +274,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#the-complex-plane" id="toc-the-complex-plane" class="nav-link active" data-scroll-target="#the-complex-plane"><span class="header-section-number">4.1</span> The complex plane</a></li>
-  <li><a href="#fundamental-theorem-of-algebra" id="toc-fundamental-theorem-of-algebra" class="nav-link" data-scroll-target="#fundamental-theorem-of-algebra"><span class="header-section-number">4.2</span> Fundamental Theorem of Algebra</a></li>
-  <li><a href="#solving-polynomial-equations" id="toc-solving-polynomial-equations" class="nav-link" data-scroll-target="#solving-polynomial-equations"><span class="header-section-number">4.3</span> Solving polynomial equations</a></li>
-  <li><a href="#roots" id="toc-roots" class="nav-link" data-scroll-target="#roots"><span class="header-section-number">4.4</span> Roots</a></li>
+  <li><a href="#polar-coordinates" id="toc-polar-coordinates" class="nav-link" data-scroll-target="#polar-coordinates"><span class="header-section-number">4.2</span> Polar coordinates</a></li>
+  <li><a href="#exponential-form" id="toc-exponential-form" class="nav-link" data-scroll-target="#exponential-form"><span class="header-section-number">4.3</span> Exponential form</a></li>
+  <li><a href="#fundamental-theorem-of-algebra" id="toc-fundamental-theorem-of-algebra" class="nav-link" data-scroll-target="#fundamental-theorem-of-algebra"><span class="header-section-number">4.4</span> Fundamental Theorem of Algebra</a></li>
+  <li><a href="#solving-polynomial-equations" id="toc-solving-polynomial-equations" class="nav-link" data-scroll-target="#solving-polynomial-equations"><span class="header-section-number">4.5</span> Solving polynomial equations</a></li>
+  <li><a href="#roots-of-unity" id="toc-roots-of-unity" class="nav-link" data-scroll-target="#roots-of-unity"><span class="header-section-number">4.6</span> Roots of unity</a></li>
+  <li><a href="#roots-in-mathbbc" id="toc-roots-in-mathbbc" class="nav-link" data-scroll-target="#roots-in-mathbbc"><span class="header-section-number">4.7</span> Roots in <span class="math inline">\(\mathbb{C}\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -431,6 +446,16 @@ z^{-1} &amp; = \frac{x}{x^{2}+y^{2}} + i \, \frac{-y}{x^{2}+y^{2}} \\
 </div>
 <section id="the-complex-plane" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="the-complex-plane"><span class="header-section-number">4.1</span> The complex plane</h2>
+<div id="fig-complex-plane" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-complex-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/complex_plane.png" class="img-fluid figure-img" style="width:30.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-complex-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: A point <span class="math inline">\(z = x + iy \in \mathbb{C}\)</span> can be represented on the complex plane by the point of coordinates <span class="math inline">\((x,y)\)</span>. The distance between <span class="math inline">\(z\)</span> and <span class="math inline">\(0\)</span> is given by <span class="math inline">\(|z| = \sqrt{z^2 + y^2}\)</span>.
+</figcaption>
+</figure>
+</div>
 <div id="modulus" class="Definition" title="Modulus">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Modulus</summary><div>The <strong>modulus</strong> of a complex number <span class="math inline">\(z=x+i y\)</span> is defined by <span class="math display">\[
 |z|: = \sqrt{x^{2}+y^{2}} \,.
@@ -480,6 +505,19 @@ w = -5+i \,.
 <li><p><span class="math inline">\(|x-z| \leq|x-y|+|y-z|\)</span></p></li>
 </ol>
 </div></details>
+</div>
+</section>
+<section id="polar-coordinates" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="polar-coordinates"><span class="header-section-number">4.2</span> Polar coordinates</h2>
+<div id="fig-polar-coordinates" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polar-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/polar_coordinates.png" class="img-fluid figure-img" style="width:30.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Polar coordinates <span class="math inline">\((\rho,\theta)\)</span> for the complex number <span class="math inline">\(z \in \mathbb{C}\)</span>.
+</figcaption>
+</figure>
 </div>
 <div id="argument" class="Definition" title="Argument">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Argument</summary><div>Let <span class="math inline">\(z \in \mathbb{C}\)</span>. The angle <span class="math inline">\(\theta\)</span> between the line connecting the origin and <span class="math inline">\(z\)</span> and the positive real axis is called the <strong>argument</strong> of <span class="math inline">\(z\)</span>, and is denoted by <span class="math display">\[
@@ -537,6 +575,16 @@ z = x + i y = - 2 + 2 i \,.
 \]</span> where <span class="math inline">\(\arctan\)</span> is the inverse of <span class="math inline">\(\tan\)</span>.<p></p>
 </div></details>
 </div>
+<div id="fig-argument-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-argument-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/argument_1.png" class="img-fluid figure-img" style="width:35.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-argument-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: The definition of <span class="math inline">\(\arg(z)\)</span> depends on the position of <span class="math inline">\(z\)</span> in the complex plane.
+</figcaption>
+</figure>
+</div>
 <div id="Example-23" class="Example">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 23</strong></summary><div><strong>Question.</strong> Compute the arguments of the complex numbers <span class="math display">\[
 z = 3+4 i\,, \quad \bar{z} = 3-4 i \,, \quad  - \bar{z} = -3+4 i \,, \quad - z= -3-4 i \,.
@@ -549,6 +597,9 @@ z = 3+4 i\,, \quad \bar{z} = 3-4 i \,, \quad  - \bar{z} = -3+4 i \,, \quad - z= 
 \end{align*}\]</span></p>
 </div></details>
 </div>
+</section>
+<section id="exponential-form" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="exponential-form"><span class="header-section-number">4.3</span> Exponential form</h2>
 <div id="theorem-euler-identity" class="Theorem" title="Euler’s identity">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 24: </strong>Euler’s identity</summary><div>For all <span class="math inline">\(\theta \in \mathbb{R}\)</span> it holds <span class="math display">\[
 e^{i \theta}=\cos (\theta)+ i \sin (\theta) \,.
@@ -570,7 +621,7 @@ z = \rho e^{i\theta}\,,
 \]</span><p></p>
 </div></details>
 </div>
-<div id="exponential-form" class="Definition" title="Exponential form">
+<div id="exponential-form-1" class="Definition" title="Exponential form">
 <p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 27: </strong>Exponential form</summary><div>The <strong>exponential form</strong> of a complex number <span class="math inline">\(z \in \mathbb{C}\)</span> is <span class="math display">\[
 z= \rho e^{i\theta} = |z| \, e^{i \arg(z)}  \,.
 \]</span><p></p>
@@ -635,8 +686,8 @@ e^{i 3 \pi} = e^{i \pi} = \cos(\pi) + i \sin(\pi) = - 1
 </div></details>
 </div>
 <div id="complex-exponential" class="Definition" title="Complex exponential">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 32: </strong>Complex exponential</summary><div>The complex exponential of <span class="math inline">\(z \in \mathbb{C}\)</span> is defined as <span class="math display">\[
-e^z = |z| e^{i\theta} \,, \quad \theta = \arg(z) \,.
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 32: </strong>Complex exponential</summary><div>The complex exponential of <span class="math inline">\(z = a + ib \in \mathbb{C}\)</span> is defined as <span class="math display">\[
+e^z = e^a e^{ib}  \,.
 \]</span><p></p>
 </div></details>
 </div>
@@ -658,8 +709,8 @@ i^{i}=\left(e^{i \frac{\pi}{2}}\right)^{i}=e^{i^2\frac{\pi}{2}}=e^{-\frac{\pi}{2
 </div></details>
 </div>
 </section>
-<section id="fundamental-theorem-of-algebra" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="fundamental-theorem-of-algebra"><span class="header-section-number">4.2</span> Fundamental Theorem of Algebra</h2>
+<section id="fundamental-theorem-of-algebra" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="fundamental-theorem-of-algebra"><span class="header-section-number">4.4</span> Fundamental Theorem of Algebra</h2>
 <div id="theorem-fta" class="Theorem" title="Fundamental theorem of algebra">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 35: </strong>Fundamental theorem of algebra</summary><div>Let <span class="math inline">\(p_{n}(z)\)</span> be a polynomial of degree <span class="math inline">\(n\)</span> with complex coefficients, i.e., <span class="math display">\[
 p_{n}(z)=a_{n} z^{n}+a_{n-1} z^{n-1}+\ldots+a_{1} z+a_{0},
@@ -705,8 +756,8 @@ p(z) = z^4 - 1 = (z-1)(z+1)(z-i)(z+i) \,.
 \]</span></p>
 </div></details>
 </div>
-<div id="Definition-38" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 38</strong></summary><div>Suppose that the polynomial <span class="math inline">\(p_n\)</span> factorizes as <span class="math display">\[
+<div id="multiplicity" class="Definition" title="Multiplicity">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 38: </strong>Multiplicity</summary><div>Suppose that the polynomial <span class="math inline">\(p_n\)</span> factorizes as <span class="math display">\[
 p_n(z) = a_n (z-z_1)^{k_1} (z-z_2)^{k_2} \cdots (z-z_m)^{k_m}
 \]</span> with <span class="math inline">\(a_n \neq 0\)</span>, <span class="math inline">\(z_1,\ldots, z_m \in \mathbb{C}\)</span> and <span class="math inline">\(k_1, \ldots , k_m \in \mathbb{N}\)</span>, <span class="math inline">\(k_i \geq 1\)</span>. In this case <span class="math inline">\(p_n\)</span> has degree <span class="math display">\[
 n = k_1 + \ldots + k_m = \sum_{i=1}^m k_i \,.
@@ -728,8 +779,8 @@ p_n(z) = 0
 </div></details>
 </div>
 </section>
-<section id="solving-polynomial-equations" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="solving-polynomial-equations"><span class="header-section-number">4.3</span> Solving polynomial equations</h2>
+<section id="solving-polynomial-equations" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="solving-polynomial-equations"><span class="header-section-number">4.5</span> Solving polynomial equations</h2>
 <div id="proposition-quadratic-formula" class="Proposition" title="Quadratic formula">
 <p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 40: </strong>Quadratic formula</summary><div>Let <span class="math inline">\(a, b, c \in \mathbb{R}, a \neq 0\)</span> and consider the equation <span id="eq-quadratic-formula"><span class="math display">\[
 ax^2 + bx + c = 0 \,.
@@ -846,7 +897,7 @@ z^{3}-7 z^{2}+6 z=0 \,.
 <li><p>By direct inspection we see that <span class="math inline">\(z=0\)</span> and <span class="math inline">\(z=1\)</span> are solutions.</p></li>
 <li><p>Since <span class="math inline">\(z = 0\)</span> is a solution, we can factorize <span class="math display">\[
 z^{3}-7 z^{2}+6 z=z\left(z^{2}-7 z+6\right) \,.
-\]</span> We could now use the quadratic formula on the term <span class="math inline">\(z^{2}-7 z+6\)</span> to find the remaining two roots. However, we have already observed that <span class="math inline">\(z=1\)</span> is a solution. Therefore <span class="math inline">\(z-1\)</span> divides <span class="math inline">\(z^{2}-7 z+6\)</span>. Using polynomial long division, we find that <span class="math display">\[
+\]</span> We could now use the quadratic formula on the term <span class="math inline">\(z^{2}-7 z+6\)</span> to find the remaining two roots. However, we have already observed that <span class="math inline">\(z=1\)</span> is a solution. Therefore <span class="math inline">\(z-1\)</span> divides <span class="math inline">\(z^{2}-7 z+6\)</span>. Using polynomial long division, see <a href="#fig-polynomial" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>, we find that <span class="math display">\[
 \frac{z^{2}-7 z+6}{z-1}=z-6 \,.
 \]</span> Therefore the last solution is <span class="math inline">\(z=6\)</span>, and <span class="math display">\[
 z^{3}-7 z^{2}+6 z=z(z-1)(z-6) \,.
@@ -854,11 +905,21 @@ z^{3}-7 z^{2}+6 z=z(z-1)(z-6) \,.
 </ol>
 </div></details>
 </div>
+<div id="fig-polynomial" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polynomial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/polynomial_1.png" class="img-fluid figure-img" style="width:20.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polynomial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: Polynomial long division between <span class="math inline">\(z^{2}-7 z+6\)</span> and <span class="math inline">\(z-1\)</span>.
+</figcaption>
+</figure>
+</div>
 <div id="Example-45" class="Example">
 <p></p><details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 45</strong></summary><div><strong>Question.</strong> Find all the complex solutions to <span class="math display">\[
 z^{3}-7 z+6=0 \,.
 \]</span><p></p>
-<p><strong>Solution.</strong> It is easy to see <span class="math inline">\(z=1\)</span> is a solution. This means that <span class="math inline">\(z-1\)</span> divides <span class="math inline">\(z^{3}-7 z+6\)</span>. By using polynomial long division, we compute that <span class="math display">\[
+<p><strong>Solution.</strong> It is easy to see <span class="math inline">\(z=1\)</span> is a solution. This means that <span class="math inline">\(z-1\)</span> divides <span class="math inline">\(z^{3}-7 z+6\)</span>. By using polynomial long division, see <a href="#fig-polynomial-1" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>, we compute that <span class="math display">\[
 \frac{z^{3}-7 z+6}{z-1}=z^{2}+z-6 \,.
 \]</span> We are now left to solve <span class="math display">\[
 z^{2}+z-6 = 0\,.
@@ -867,9 +928,19 @@ z^{3}-7 z+6 = (z-1)(z-2)(z+3) \,.
 \]</span></p>
 </div></details>
 </div>
+<div id="fig-polynomial-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polynomial-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/polynomial_2.png" class="img-fluid figure-img" style="width:20.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polynomial-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: Polynomial long division between <span class="math inline">\(z^{3}-7 z+6\)</span> and <span class="math inline">\(z-1\)</span>.
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="roots" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="roots"><span class="header-section-number">4.4</span> Roots</h2>
+<section id="roots-of-unity" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="roots-of-unity"><span class="header-section-number">4.6</span> Roots of unity</h2>
 <div id="Theorem-46" class="Theorem">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 46</strong></summary><div>Let <span class="math inline">\(n \in \mathbb{N}\)</span> and consider the equation <span id="eq-root-unity-1"><span class="math display">\[
 z^{n}=1 \,.
@@ -911,6 +982,9 @@ z_2 = e^{i \frac{4 \pi}{3}}=\cos \left(\frac{4 \pi}{3}\right)+i \sin \left(\frac
 \]</span></p>
 </div></details>
 </div>
+</section>
+<section id="roots-in-mathbbc" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="roots-in-mathbbc"><span class="header-section-number">4.7</span> Roots in <span class="math inline">\(\mathbb{C}\)</span></h2>
 <div id="Theorem-50" class="Theorem">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 50</strong></summary><div>Let <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\(c \in \mathbb{C}\)</span> and consider the equation <span id="eq-root-C"><span class="math display">\[
 z^{n}=c \,.

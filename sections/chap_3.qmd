@@ -136,23 +136,16 @@ Let $a, b \in \R$ with $a<b$. Let
 $$
 A:= (a,b) = \{ x \in \R \divider a < x < b \}\,.
 $$
-Then
+
+1. We have that
 $$
 \inf A = a \,, \quad \sup A = b \,.
 $$
 
+2. $\min A$ and $\max A$ do not exist.
+
 :::
 
-
-
-::: Corollary
-
-Let $a, b \in \R$ with $a<b$. Let
-$$
-A:= (a,b) = \{ x \in \R \divider a < x < b \}\,.
-$$
-Then $\min A$ and $\max A$ do not exist.
-:::
 
 
 ::: Corollary
@@ -169,6 +162,7 @@ $\max A$ does not exist.
 
 
 :::
+
 
 
 ::: Proposition
@@ -235,6 +229,27 @@ As $\inf A = 0$ by Part 2, we conclude $\min A = 0$. As $\min A \in A$, we obtai
 
 
 ## Cardinality
+
+
+
+::: Definition
+### Bijective function
+
+Let $X,Y$ be sets and $f \colon X \to Y$ be a function. We say that:
+
+1. $f$ is **injective** if it holds:
+$$
+f(x)=f(y) \quad \implies \quad x = y \,.
+$$
+
+2. $f$ is **surjective** if it holds:
+$$
+\forall \, y \in Y \,, \,\, \exists \, x \in X \st f(x) = y \,.
+$$
+
+3. $f$ is **bijective** if it is both **injective** and **surjective**.
+
+:::
 
 
 ::: Definition

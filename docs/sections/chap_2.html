@@ -72,15 +72,27 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.Definition {
-  --color1: #c6e6ed;
-  --color2: #1995ad;
+.Remark {
+  --color1: #bce5de;
+  --color2: #21aa93;
 }
 .Important {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Theorem {
+.Lemma {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Warning {
+  --color1: #f4cce0;
+  --color2: #db4d92;
+}
+.Corollary {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -88,19 +100,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #bce5de;
   --color2: #21aa93;
 }
-.Lemma {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Remark {
-  --color1: #bce5de;
-  --color2: #21aa93;
-}
 .Proposition {
-  --color1: #f4cce0;
-  --color2: #db4d92;
-}
-.Axiom {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Problem {
+.Theorem {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -116,19 +116,7 @@ ul.task-list li input[type="checkbox"] {
   --color1: #c6e6ed;
   --color2: #1995ad;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Proof {
-  --color1: #f1f1f2;
-  --color2: #c0c0c1;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Warning {
+.Axiom {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
@@ -136,9 +124,21 @@ ul.task-list li input[type="checkbox"] {
   --color1: #f4cce0;
   --color2: #db4d92;
 }
-.Corollary {
+.Proof {
+  --color1: #f1f1f2;
+  --color2: #c0c0c1;
+}
+.Problem {
   --color1: #f4cce0;
   --color2: #db4d92;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Definition {
+  --color1: #c6e6ed;
+  --color2: #1995ad;
 }
 </style>
 
@@ -247,6 +247,18 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../sections/chap_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sequences in <span class="math inline">\(\mathbb{C}\)</span></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/chap_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Series</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../sections/license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
@@ -262,11 +274,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#fields" id="toc-fields" class="nav-link active" data-scroll-target="#fields"><span class="header-section-number">2.1</span> Fields</a></li>
-  <li><a href="#supremum-and-infimum" id="toc-supremum-and-infimum" class="nav-link" data-scroll-target="#supremum-and-infimum"><span class="header-section-number">2.2</span> Supremum and infimum</a></li>
-  <li><a href="#axioms-of-real-numbers" id="toc-axioms-of-real-numbers" class="nav-link" data-scroll-target="#axioms-of-real-numbers"><span class="header-section-number">2.3</span> Axioms of Real Numbers</a>
-  <ul class="collapse">
-  <li><a href="#inductive-sets" id="toc-inductive-sets" class="nav-link" data-scroll-target="#inductive-sets"><span class="header-section-number">2.3.1</span> Inductive sets</a></li>
-  </ul></li>
+  <li><a href="#fields-1" id="toc-fields-1" class="nav-link" data-scroll-target="#fields-1"><span class="header-section-number">2.2</span> Fields</a></li>
+  <li><a href="#ordered-fields" id="toc-ordered-fields" class="nav-link" data-scroll-target="#ordered-fields"><span class="header-section-number">2.3</span> Ordered fields</a></li>
+  <li><a href="#supremum-and-infimum" id="toc-supremum-and-infimum" class="nav-link" data-scroll-target="#supremum-and-infimum"><span class="header-section-number">2.4</span> Supremum and infimum</a></li>
+  <li><a href="#axioms-of-real-numbers" id="toc-axioms-of-real-numbers" class="nav-link" data-scroll-target="#axioms-of-real-numbers"><span class="header-section-number">2.5</span> Axioms of Real Numbers</a></li>
+  <li><a href="#inductive-sets" id="toc-inductive-sets" class="nav-link" data-scroll-target="#inductive-sets"><span class="header-section-number">2.6</span> Inductive sets</a></li>
   </ul>
 </nav>
     </div>
@@ -300,8 +312,8 @@ window.Quarto = {
 \]</span> which maps the ordered pair <span class="math inline">\((x,y)\)</span> into <span class="math inline">\(x \circ y\)</span>.<p></p>
 </div></details>
 </div>
-<div id="Definition-2" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2</strong></summary><div>
+<div id="properties-of-binary-operations" class="Definition" title="Properties of binary operations">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2: </strong>Properties of binary operations</summary><div>
 <p>Let <span class="math inline">\(K\)</span> be a set and <span class="math inline">\(\circ \ \colon K \times K \to K\)</span> be a binary operation on <span class="math inline">\(K\)</span>. We say that:</p>
 <ol type="1">
 <li><span class="math inline">\(\circ\)</span> is <strong>commutative</strong> if <span class="math display">\[
@@ -334,21 +346,22 @@ x \circ y = y \circ x = e \,.
 </ol>
 <p><strong>Solution.</strong></p>
 <ol type="1">
-<li><p>We have <span class="math display">\[
-0 \circ 1 = 1 \, , \quad 1 \circ 0 = 0
-\]</span> and therefore <span class="math display">\[
-0 \circ 1 \neq 1 \circ 0 \,.
-\]</span> showing that <span class="math inline">\(\circ\)</span> is not commutative.</p></li>
-<li><p>We have <span class="math display">\[
+<li><p>The operation <span class="math inline">\(\circ\)</span> is not commutative, since <span class="math display">\[
+0 \circ 1 = 1 \neq 0 = 1 \circ 0 \,.
+\]</span></p></li>
+<li><p>The operation <span class="math inline">\(\circ\)</span> is not associative, since <span class="math display">\[
 (0 \circ 1) \circ 1 = 1 \circ 1 = 0 \,,
 \]</span> while <span class="math display">\[
 0 \circ (1 \circ 1) = 0 \circ 0 = 1 \,,
 \]</span> so that <span class="math display">\[
 (0 \circ 1) \circ 1  \neq 0 \circ (1 \circ 1)\,.
-\]</span> Thus, <span class="math inline">\(\circ\)</span> is not associative.</p></li>
+\]</span></p></li>
 </ol>
 </div></details>
 </div>
+</section>
+<section id="fields-1" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="fields-1"><span class="header-section-number">2.2</span> Fields</h2>
 <div id="field" class="Definition" title="Field">
 <details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4: </strong>Field</summary><div>
 <p>Let <span class="math inline">\(K\)</span> be a set with binary operations of <strong>addition</strong> <span class="math display">\[
@@ -395,17 +408,7 @@ x \cdot (y + z) = (x \cdot y) + (y \cdot z) \,.
 </div></details>
 </div>
 <div id="Theorem-5" class="Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5</strong></summary><div>
-<p>Consider the sets <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span> with the usual operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>. We have:</p>
-<ul>
-<li><p><span class="math inline">\((\mathbb{N}, + , \cdot)\)</span> is <strong>not a field</strong>.</p></li>
-<li><p><span class="math inline">\((\mathbb{Z}, + , \cdot)\)</span> is <strong>not a field</strong>.</p></li>
-<li><p><span class="math inline">\((\mathbb{Q}, + , \cdot)\)</span> <strong>is a field</strong>.</p></li>
-</ul>
-</div></details>
-</div>
-<div id="Theorem-6" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 6</strong></summary><div>Let <span class="math inline">\(K\)</span> with <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span> defined by <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5</strong></summary><div>Let <span class="math inline">\(K\)</span> with <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span> defined by <span class="math display">\[
 \begin{array}{c|cc}
 + &amp; 0 &amp; 1 \\ \hline
 0 &amp; 0 &amp; 1 \\
@@ -418,6 +421,19 @@ x \cdot (y + z) = (x \cdot y) + (y \cdot z) \,.
     1 &amp; 0 &amp; 1 \\
 \end{array}
 \]</span> Then <span class="math inline">\((K,+,\cdot)\)</span> is a field.<p></p>
+</div></details>
+</div>
+<div id="subtraction-and-division" class="Definition" title="Subtraction and division">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 6: </strong>Subtraction and division</summary><div>
+<p>Let <span class="math inline">\((K,+,\cdot)\)</span> be a field. We define:</p>
+<ol type="1">
+<li><p><strong>Subtraction</strong> as the operation <span class="math inline">\(-\)</span> defined by <span class="math display">\[
+x - y := x + (-y) \,, \quad \forall \, x , y \in K \,,
+\]</span> where <span class="math inline">\(-y\)</span> is the additive inverse of <span class="math inline">\(y\)</span>.</p></li>
+<li><p><strong>Division</strong> as the operation <span class="math inline">\(/\)</span> defined by <span class="math display">\[
+x/y := x \cdot y^{-1}\,, \quad \forall \, x , y \in K \,, \,\, y \neq 0 \,,
+\]</span> where <span class="math inline">\(y^{-1}\)</span> is the multiplicative inverse of <span class="math inline">\(y\)</span>.</p></li>
+</ol>
 </div></details>
 </div>
 <div id="uniqueness-of-neutral-elements-and-inverses" class="Proposition" title="Uniqueness of neutral elements and inverses">
@@ -457,8 +473,21 @@ y = \widetilde{y} = -x \,,
 </ol>
 </div></details>
 </div>
-<div id="Definition-8" class="Definition">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8</strong></summary><div>
+<div id="Theorem-8" class="Theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 8</strong></summary><div>
+<p>Consider the sets <span class="math inline">\(\mathbb{N}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span> with the usual operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>. We have:</p>
+<ul>
+<li><p><span class="math inline">\((\mathbb{N}, + , \cdot)\)</span> is <strong>not a field</strong>.</p></li>
+<li><p><span class="math inline">\((\mathbb{Z}, + , \cdot)\)</span> is <strong>not a field</strong>.</p></li>
+<li><p><span class="math inline">\((\mathbb{Q}, + , \cdot)\)</span> <strong>is a field</strong>.</p></li>
+</ul>
+</div></details>
+</div>
+</section>
+<section id="ordered-fields" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="ordered-fields"><span class="header-section-number">2.3</span> Ordered fields</h2>
+<div id="Definition-9" class="Definition">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9</strong></summary><div>
 <p>Let <span class="math inline">\(K\)</span> be a set with binary operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>, and with an order relation <span class="math inline">\(\leq\)</span>. We call <span class="math inline">\((K,+,\cdot,\leq)\)</span> an <strong>ordered field</strong> if:</p>
 <ol type="1">
 <li><p><span class="math inline">\((K,+,\cdot)\)</span> is a field</p></li>
@@ -493,50 +522,64 @@ x \geq 0, \, y \geq 0  \,\, \implies \,\, x \cdot y  \geq 0
 </ol>
 </div></details>
 </div>
-<div id="Theorem-9" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 9</strong></summary><div><span class="math inline">\((\mathbb{Q},+,\cdot,\leq)\)</span> is an <strong>ordered field</strong>.<p></p>
+<div id="Theorem-10" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 10</strong></summary><div><span class="math inline">\((\mathbb{Q},+,\cdot,\leq)\)</span> is an <strong>ordered field</strong>.<p></p>
 </div></details>
 </div>
 </section>
-<section id="supremum-and-infimum" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="supremum-and-infimum"><span class="header-section-number">2.2</span> Supremum and infimum</h2>
-<div id="upper-bound-bounded-above-supremum-maximum" class="Definition" title="Upper bound, bounded above, supremum, maximum">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Upper bound, bounded above, supremum, maximum</summary><div>
+<section id="supremum-and-infimum" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="supremum-and-infimum"><span class="header-section-number">2.4</span> Supremum and infimum</h2>
+<div class="Assumption">
+<p>In the following we assume that <span class="math inline">\((K,+,\cdot,\leq)\)</span> is an ordered field.</p>
+</div>
+<div id="upper-bound-and-bounded-above" class="Definition" title="Upper bound and bounded above">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 11: </strong>Upper bound and bounded above</summary><div>
 <p>Let <span class="math inline">\(A \subseteq K\)</span>:</p>
 <ol type="1">
-<li><p>We say that <span class="math inline">\(b \in K\)</span> is an <strong>upper bound</strong> for <span class="math inline">\(A\)</span> if <span class="math display">\[
+<li>We say that <span class="math inline">\(b \in K\)</span> is an <strong>upper bound</strong> for <span class="math inline">\(A\)</span> if <span class="math display">\[
 a \leq b \,, \quad \forall \, a \in A \,.
-\]</span></p></li>
-<li><p>We say that <span class="math inline">\(A\)</span> is <strong>bounded above</strong> if there exists and upper bound <span class="math inline">\(b \in K\)</span> for <span class="math inline">\(A\)</span>.</p></li>
-<li><p>We say that <span class="math inline">\(s \in K\)</span> is the <strong>least upper bound</strong> or <strong>supremum</strong> of <span class="math inline">\(A\)</span> if:</p>
-<ul>
-<li><span class="math inline">\(s\)</span> is an upper bound for <span class="math inline">\(A\)</span>,</li>
-<li><span class="math inline">\(s\)</span> is the smallest upper bound of <span class="math inline">\(A\)</span>, that is, <span class="math display">\[
-\mbox{If } \, b \in K \, \mbox{ is upper bound for } \, A \, \mbox{ then } \, s \leq b \,.  
-\]</span> If it exists, the supremum is denoted by <span class="math display">\[
-s = \sup \ A \,.
 \]</span></li>
-</ul></li>
-<li><p>Let <span class="math inline">\(A \subseteq K\)</span>. We say that <span class="math inline">\(M \in K\)</span> is the <strong>maximum</strong> of <span class="math inline">\(A\)</span> if: <span class="math display">\[
-M \in A   \,\, \mbox{ and } \,\, a \leq M  \,, \, \forall a \in A \,.
-\]</span> If it exists, we denote the maximum by <span class="math display">\[
-M = \max A \,.
-\]</span></p></li>
+<li>We say that <span class="math inline">\(A\)</span> is <strong>bounded above</strong> if there exists and upper bound <span class="math inline">\(b \in K\)</span> for <span class="math inline">\(A\)</span>.</li>
 </ol>
 </div></details>
 </div>
-<div id="Remark-11" class="Remark">
-<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 11</strong></summary><div>Note that if a set <span class="math inline">\(A \subseteq K\)</span> in <strong>NOT</strong> bounded above, then the supremum does not exist, as there are no upper bounds of <span class="math inline">\(A\)</span>.<p></p>
+<div id="supremum" class="Definition" title="Supremum">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12: </strong>Supremum</summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. A number <span class="math inline">\(s \in K\)</span> is called <strong>least upper bound</strong> or <strong>supremum</strong> of <span class="math inline">\(A\)</span> if:<p></p>
+<ol type="1">
+<li><span class="math inline">\(s\)</span> is an upper bound for <span class="math inline">\(A\)</span>,</li>
+<li><span class="math inline">\(s\)</span> is the smallest upper bound of <span class="math inline">\(A\)</span>, that is, <span class="math display">\[
+\mbox{If } \, b \in K \, \mbox{ is upper bound for } \, A \, \mbox{ then } \, s \leq b \,.  
+\]</span></li>
+</ol>
+<p>If it exists, the supremum is denoted by <span class="math display">\[
+s := \sup \ A \,.
+\]</span></p>
+</div></details>
+</div>
+<div id="Remark-13" class="Remark">
+<p></p><details class="Remark fbx-simplebox fbx-default" open=""><summary><strong>Remark 13</strong></summary><div>Note that if a set <span class="math inline">\(A \subseteq K\)</span> in <strong>NOT</strong> bounded above, then the supremum does not exist, as there are no upper bounds of <span class="math inline">\(A\)</span>.<p></p>
+</div></details>
+</div>
+<div id="proposition-sup-unique" class="Proposition" title="Uniqueness of the supremum">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 14: </strong>Uniqueness of the supremum</summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. If <span class="math inline">\(\sup A\)</span> exists, then it is unique.<p></p>
+</div></details>
+</div>
+<div id="maximum" class="Definition" title="Maximum">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 15: </strong>Maximum</summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. A number <span class="math inline">\(M \in K\)</span> is called the <strong>maximum</strong> of <span class="math inline">\(A\)</span> if: <span class="math display">\[
+M \in A   \,\, \mbox{ and } \,\, a \leq M  \,, \, \forall a \in A \,.
+\]</span> If it exists, we denote the maximum by <span class="math display">\[
+M = \max A \,.
+\]</span><p></p>
 </div></details>
 </div>
 <div id="proposition-max-sup" class="Proposition" title="Relationship between Max and Sup">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 12: </strong>Relationship between Max and Sup</summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. If the maximum of <span class="math inline">\(A\)</span> exists, then also the supremum exists, and <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 16: </strong>Relationship between Max and Sup</summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. If the maximum of <span class="math inline">\(A\)</span> exists, then also the supremum exists, and <span class="math display">\[
 \sup A = \max A \,.
 \]</span><p></p>
 </div></details>
 </div>
-<div id="upper-bound-bounded-below-infimum-minimum" class="Definition" title="Upper bound, bounded below, infimum, minimum">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 13: </strong>Upper bound, bounded below, infimum, minimum</summary><div>
+<div id="lower-bound-bounded-below-infimum-minimum" class="Definition" title="Lower bound, bounded below, infimum, minimum">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Lower bound, bounded below, infimum, minimum</summary><div>
 <p>Let <span class="math inline">\(A \subseteq K\)</span>:</p>
 <ol type="1">
 <li><p>We say that <span class="math inline">\(l \in K\)</span> is a <strong>lower bound</strong> for <span class="math inline">\(A\)</span> if <span class="math display">\[
@@ -560,20 +603,25 @@ m = \min A \,.
 </ol>
 </div></details>
 </div>
-<div id="Proposition-14" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 14</strong></summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. If the minimum of <span class="math inline">\(A\)</span> exists, then also the infimum exists, and <span class="math display">\[
+<div id="Proposition-18" class="Proposition">
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 18</strong></summary><div>
+<p>Let <span class="math inline">\(A \subseteq K\)</span>:</p>
+<ol type="1">
+<li>If <span class="math inline">\(\inf A\)</span> exists, then it is unique.</li>
+<li>If the minimum of <span class="math inline">\(A\)</span> exists, then also the infimum exists, and <span class="math display">\[
 \inf A = \min A \,.
-\]</span><p></p>
+\]</span></li>
+</ol>
 </div></details>
 </div>
-<div id="Proposition-15" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 15</strong></summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. If <span class="math inline">\(\inf A\)</span> and <span class="math inline">\(\sup A\)</span> exist, then <span class="math display">\[
+<div id="Proposition-19" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 19</strong></summary><div>Let <span class="math inline">\(A \subseteq K\)</span>. If <span class="math inline">\(\inf A\)</span> and <span class="math inline">\(\sup A\)</span> exist, then <span class="math display">\[
 \inf A \leq a \leq \sup A \,, \quad \forall \, a \in A \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="proposition-inf-sup" class="Proposition" title="Relationship between sup and inf">
-<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 16: </strong>Relationship between sup and inf</summary><div>
+<details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 20: </strong>Relationship between sup and inf</summary><div>
 <p>Let <span class="math inline">\(A \subseteq K\)</span>. Define <span class="math display">\[
 - A := \{ - a \, \colon \,a \in A \} \,.
 \]</span> They hold</p>
@@ -588,11 +636,11 @@ m = \min A \,.
 </div></details>
 </div>
 </section>
-<section id="axioms-of-real-numbers" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="axioms-of-real-numbers"><span class="header-section-number">2.3</span> Axioms of Real Numbers</h2>
+<section id="axioms-of-real-numbers" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="axioms-of-real-numbers"><span class="header-section-number">2.5</span> Axioms of Real Numbers</h2>
 <div id="completeness" class="Definition" title="Completeness">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 17: </strong>Completeness</summary><div>
-<p>Let <span class="math inline">\((K,+,\cdot,\leq)\)</span> be an ordered field. We say that <span class="math inline">\(K\)</span> is <strong>complete</strong> if it holds the property:</p>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 21: </strong>Completeness</summary><div>
+<p>Let <span class="math inline">\((K,+,\cdot,\leq)\)</span> be an ordered field. We say that <span class="math inline">\(K\)</span> is <strong>complete</strong> if the following property holds:</p>
 <ul>
 <li>(AC) For every <span class="math inline">\(A \subseteq K\)</span> non-empty and bounded above <span class="math display">\[
 \sup A \in K \,.
@@ -601,7 +649,7 @@ m = \min A \,.
 </div></details>
 </div>
 <div id="theorem-Q-not-complete" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 18</strong></summary><div><span class="math inline">\(\mathbb{Q}\)</span> is not complete. In particular, there exists a set <span class="math inline">\(A \subseteq \mathbb{Q}\)</span> such that<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 22</strong></summary><div><span class="math inline">\(\mathbb{Q}\)</span> is not complete. In particular, there exists a set <span class="math inline">\(A \subseteq \mathbb{Q}\)</span> such that<p></p>
 <ul>
 <li><span class="math inline">\(A\)</span> is non-empty,</li>
 <li><span class="math inline">\(A\)</span> is bounded above,</li>
@@ -612,14 +660,14 @@ A = \{ q \in \mathbb{Q}\, \colon \,q \geq 0 \,, \,\, q^2 &lt; 2 \} \,.
 \]</span></p>
 </div></details>
 </div>
-<div id="Proposition-19" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 19</strong></summary><div>Let <span class="math inline">\((K,+,\cdot,\leq)\)</span> be a complete ordered field. Suppose that <span class="math inline">\(A \subseteq K\)</span> is non-empty and bounded below. Then <span class="math display">\[
+<div id="Proposition-23" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 23</strong></summary><div>Let <span class="math inline">\((K,+,\cdot,\leq)\)</span> be a complete ordered field. Suppose that <span class="math inline">\(A \subseteq K\)</span> is non-empty and bounded below. Then <span class="math display">\[
 \inf A \in K\,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="definition-R" class="Definition" title="System of Real Numbers \mathbb{R}">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 20: </strong>System of Real Numbers <span class="math inline">\(\mathbb{R}\)</span></summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>System of Real Numbers <span class="math inline">\(\mathbb{R}\)</span></summary><div>
 <p>A system of Real Numbers is a set <span class="math inline">\(\mathbb{R}\)</span> with two operations <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>, and a total order relation <span class="math inline">\(\leq\)</span>, such that</p>
 <ul>
 <li><p><span class="math inline">\((\mathbb{R},+,\cdot, \leq)\)</span> is an ordered field</p></li>
@@ -627,10 +675,11 @@ A = \{ q \in \mathbb{Q}\, \colon \,q \geq 0 \,, \,\, q^2 &lt; 2 \} \,.
 </ul>
 </div></details>
 </div>
-<section id="inductive-sets" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="inductive-sets"><span class="header-section-number">2.3.1</span> Inductive sets</h3>
+</section>
+<section id="inductive-sets" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="inductive-sets"><span class="header-section-number">2.6</span> Inductive sets</h2>
 <div id="inductive-set" class="Definition" title="Inductive set">
-<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 21: </strong>Inductive set</summary><div>
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 25: </strong>Inductive set</summary><div>
 <p>Let <span class="math inline">\(S \subseteq \mathbb{R}\)</span>. We say that <span class="math inline">\(S\)</span> is an inductive set if they are satisfied:</p>
 <ul>
 <li><span class="math inline">\(1 \in S\)</span>,</li>
@@ -638,8 +687,8 @@ A = \{ q \in \mathbb{Q}\, \colon \,q \geq 0 \,, \,\, q^2 &lt; 2 \} \,.
 </ul>
 </div></details>
 </div>
-<div id="Example-22" class="Example">
-<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 22</strong></summary><div>
+<div id="Example-26" class="Example">
+<details class="Example fbx-simplebox fbx-default" open=""><summary><strong>Example 26</strong></summary><div>
 <p><strong>Question.</strong> Prove the following:</p>
 <ol type="1">
 <li><p><span class="math inline">\(\mathbb{R}\)</span> is an inductive set.</p></li>
@@ -652,33 +701,32 @@ A = \{ q \in \mathbb{Q}\, \colon \,q \geq 0 \,, \,\, q^2 &lt; 2 \} \,.
 </ol>
 </div></details>
 </div>
-<div id="Proposition-23" class="Proposition">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 23</strong></summary><div>Let <span class="math inline">\(\mathcal{M}\)</span> be a collection of inductive subsets of <span class="math inline">\(\mathbb{R}\)</span>. Then <span class="math display">\[
+<div id="Proposition-27" class="Proposition">
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 27</strong></summary><div>Let <span class="math inline">\(\mathcal{M}\)</span> be a collection of inductive subsets of <span class="math inline">\(\mathbb{R}\)</span>. Then <span class="math display">\[
 S := \bigcap_{M \in \mathcal{M}} \, M
 \]</span> is an inductive subset of <span class="math inline">\(\mathbb{R}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="definition-natural-numbers" class="Definition" title="Set of Natural Numbers">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24: </strong>Set of Natural Numbers</summary><div>Let <span class="math inline">\(\mathcal{M}\)</span> be the collection of <strong>all</strong> inductive subsets of <span class="math inline">\(\mathbb{R}\)</span>. We define the set of natural numbers in <span class="math inline">\(\mathbb{R}\)</span> as <span class="math display">\[
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 28: </strong>Set of Natural Numbers</summary><div>Let <span class="math inline">\(\mathcal{M}\)</span> be the collection of <strong>all</strong> inductive subsets of <span class="math inline">\(\mathbb{R}\)</span>. We define the set of natural numbers in <span class="math inline">\(\mathbb{R}\)</span> as <span class="math display">\[
 \mathbb{N}:= \bigcap_{M \in \mathcal{M}} \, M \,.
 \]</span><p></p>
 </div></details>
 </div>
 <div id="proposition-smallest-inductive" class="Proposition" title="{\mathbb{N}}_{\mathbb{R}} is the smallest inductive subset of \mathbb{R}">
-<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 25: </strong><span class="math inline">\({\mathbb{N}}_{\mathbb{R}}\)</span> is the smallest inductive subset of <span class="math inline">\(\mathbb{R}\)</span></summary><div>Let <span class="math inline">\(C \subseteq \mathbb{R}\)</span> be an inductive subset. Then <span class="math display">\[
+<p></p><details class="Proposition fbx-simplebox fbx-default" open=""><summary><strong>Proposition 29: </strong><span class="math inline">\({\mathbb{N}}_{\mathbb{R}}\)</span> is the smallest inductive subset of <span class="math inline">\(\mathbb{R}\)</span></summary><div>Let <span class="math inline">\(C \subseteq \mathbb{R}\)</span> be an inductive subset. Then <span class="math display">\[
 \mathbb{N}\subseteq C \,.
 \]</span> In other words, <span class="math inline">\(\mathbb{N}\)</span> is the smallest inductive set in <span class="math inline">\(\mathbb{R}\)</span>.<p></p>
 </div></details>
 </div>
 <div id="theorem-n-1" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 26</strong></summary><div>Let <span class="math inline">\(x \in \mathbb{N}\)</span>. Then <span class="math display">\[
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 30</strong></summary><div>Let <span class="math inline">\(x \in \mathbb{N}\)</span>. Then <span class="math display">\[
 x \geq 1 \,.
 \]</span><p></p>
 </div></details>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
